@@ -6,16 +6,28 @@ namespace AngularBevgobs.DAL
     public class CommentRepository : ICommentRepository
     {
         private readonly ForumDbContext _db;
+        private readonly ILogger<CommentRepository> _logger;
 
-        public CommentRepository(ForumDbContext db)
+        public CommentRepository(ForumDbContext db, ILogger<CommentRepository> logger)
         {
             _db = db;
+            _logger = logger;
         }
 
-        public async Task Create(Comment comment)
+        public async Task<bool> Create(Comment comment)
         {
-            _db.Comments.Add(comment);
-            await _db.SaveChangesAsync();
+            try
+            {
+                _db.Comments.Add(comment);
+                await _db.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError($"[CommentRepository] Comment creation failed for item {comment.CommentId}, error message: {e}");
+                return false;
+            }
+
         }
 
         public async Task<bool> Delete(int id)
@@ -41,10 +53,20 @@ namespace AngularBevgobs.DAL
             return await _db.Comments.FindAsync(id);
         }
 
-        public async Task Update(Comment comment)
+        public async Task<bool> Update(Comment comment)
         {
-            _db.Comments.Update(comment);
-            await _db.SaveChangesAsync();
+            try
+            {
+                _db.Comments.Update(comment);
+                await _db.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError($"[CommentRepository] Comment update failed for item {comment.CommentId}, error message: {e}");
+                return false;
+            }
+            
         }
     }
 }

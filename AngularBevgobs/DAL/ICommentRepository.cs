@@ -6,8 +6,8 @@ namespace AngularBevgobs.DAL
     {
         Task<IEnumerable<Comment>?> GetAll();
         Task<Comment?> GetCommentById(int id);
-        Task Create(Comment comment);
-        Task Update(Comment comment);
+        Task<bool> Create(Comment comment);
+        Task<bool> Update(Comment comment);
         Task<bool> Delete(int id);
     }
 }
