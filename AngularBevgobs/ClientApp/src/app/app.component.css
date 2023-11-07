@@ -1,0 +1,20 @@
+a {
+  color: #171717;
+  text-decoration: none;
+}
+
+  a:hover {
+    color: white;
+  }
+
+  a[aria-expanded=true] .fa-plus {
+    display: none;
+  }
+
+  a[aria-expanded=false] .fa-minus {
+    display: none;
+  }
+
+body {
+  background-color: #2d293c;
+}
