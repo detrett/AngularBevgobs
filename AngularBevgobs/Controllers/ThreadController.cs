@@ -22,65 +22,52 @@ namespace AngularBevgobs.Controllers
             _logger = logger;
         }
 
-        // This method creates a container for a thread
-        public async Task<IActionResult> Container(int id, int commentId)
-        {
-            // Redirects to the last comment if its ID was given
-            if(commentId != 0)
-            {
-                return Redirect($"{Url.Action("Container", "Thread", new { id = id })}#comment-" + commentId);
-            }
-
-            // Get Data
-            var thread = await _threadRepository.GetThreadById(id);
-
-            // Make ViewModel with Data and return it
-            var threadListViewModel = new ThreadListViewModel(thread, "Container");
-            return View(threadListViewModel);
-        }
 
         // CRUD
 
         // CREATE
-        // Redirect the user to a form to input the data
-        [HttpGet]
-        public IActionResult Create()
+        [HttpPost("create")]
+        public async Task<IActionResult> Create(Thread newThread)
         {
-            return View();
-        }
-
-        // Inject data into the DB
-        [HttpPost]
-        public async Task<IActionResult> Create(Thread thread)
-        {
-            if (ModelState.IsValid)
+            if(newThread == null)
             {
-                Console.WriteLine("Model State valid");
-                thread.Comments = new List<Comment>();
-
-                // Add thread to DB
-                await _threadRepository.Create(thread);
-
-                var firstComment = new Comment();
-                firstComment.Title = thread.Name;
-                firstComment.UserId = thread.UserId;
-                firstComment.Body = thread.Description;
-                firstComment.ThreadId = thread.ThreadId;
-                firstComment.CreatedAt = thread.CreatedAt;
-                     
-                await _threadRepository.CreateComment(firstComment);
-
-                thread.ParentSubforum = await _threadRepository.GetSubforumById(thread.SubforumId);
-
-                return Redirect($"{Url.Action("Container", "Thread", new { id = thread.ThreadId })}#comment-" + firstComment.CommentId);
+                return BadRequest("Invalid thread data.");
             }
-            Console.WriteLine("Model State NOT valid");
 
-            return View(thread);
+            newThread.Comments = new List<Comment>();
+
+            // Add thread to DB
+            bool threadReturnOk = await _threadRepository.Create(newThread);
+
+            var firstComment = new Comment();
+            firstComment.Title = newThread.Name;
+            firstComment.UserId = newThread.UserId;
+            firstComment.Body = newThread.Description;
+            firstComment.ThreadId = newThread.ThreadId;
+            firstComment.CreatedAt = newThread.CreatedAt;
+                     
+            bool commentReturnOk = await _threadRepository.CreateComment(firstComment);
+
+            newThread.ParentSubforum = await _threadRepository.GetSubforumById(newThread.SubforumId);
+
+            if(threadReturnOk && commentReturnOk)
+            {
+                var response = new { success = true, message = "Thread " + newThread.Name + " created successfully" };
+                return Ok(response);
+
+            }
+            else
+            {
+                var response = new { success = false, message = "Thread " + newThread.Name + " creation failed" };
+                return Ok(response);
+            }
+
+
         }
 
         // READ
         // Obtain data from an item based on its id
+        [HttpGet("{id}")]
         public async Task<IActionResult> Details(int id)
         {
             // Get Data
@@ -88,75 +75,53 @@ namespace AngularBevgobs.Controllers
 
             if (item == null)
             {
+                _logger.LogError("[ThreadController] Thread not found while executing Details()");
                 return BadRequest("Thread not found.");
             }
 
-            return View(item);
+            return Ok(item);
         }
 
         // UPDATE
-        // Return a Forum object based on its id
-        [HttpGet]
-        public async Task<IActionResult> Update(int id)
-        {
-            var item = await _threadRepository.GetThreadById(id);
-
-            if (item == null)
-            {
-                return NotFound();
-            }
-            return View(item);
-        }
-
         // Inject updated data into the DB
-        [HttpPost]
+        [HttpPut("update/{id}")]
         public async Task<IActionResult> Update(Models.Thread thread)
         {
-            if (ModelState.IsValid)
+            if (thread == null)
             {
-                Console.WriteLine("Model State valid. Thread id: " + thread.ThreadId);
+                return BadRequest("Invalid thread data.");
 
-                await _threadRepository.Update(thread);
-
-                return Redirect($"{Url.Action("Container", "Thread", new { id = thread.ThreadId })}");
             }
-            return View(thread);
+            bool returnOk = await _threadRepository.Update(thread);
+
+            if (returnOk)
+            {
+                var response = new { success = true, message = "Thread " + thread.Name + " updated successfully" };
+                return Ok(response);
+            }
+            else
+            {
+                _logger.LogError("[ThreadController] Thread could not be updated");
+                var response = new { success = false, message = "Thread " + thread.Name + " updated successfully" };
+                return Ok(response);
+            }
         }
 
         // DELETE
         // Return a Forum object based on its id
-        [HttpGet]
+        [HttpDelete("delete/{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var item = await _threadRepository.GetThreadById(id);
-            if (item == null)
-            {
-                return NotFound();
-            }
-            return View(item);
-        }
-
-        // Delete data from the DB
-        [HttpPost]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            Console.WriteLine("In THREAD CONTROLLER: DeleteConfirmed, thread id = " + id);
-
-            var thread = await _threadRepository.GetThreadById(id);
-            var subforumId = thread.SubforumId;
-
             bool returnOk = await _threadRepository.Delete(id);
             if (!returnOk)
             {
+                _logger.LogError("[ThreadController] Topic could not be deleted");
                 return BadRequest("Topic deletion failed");
+
             }
+            var response = new { success = true, message = "Thread " + id.ToString() + " deleted successfully" };
+            return Ok(response);
 
-            return RedirectToAction("Container", "Subforum", new { id = subforumId });
-        }
-
-        public IActionResult Index()
-        {
-            return View();
         }
     }
 }

@@ -7,10 +7,10 @@ namespace AngularBevgobs.DAL
     {
         Task<IEnumerable<Models.Thread>?> GetAll();
         Task<Models.Thread?> GetThreadById(int id);
-        Task Create(Models.Thread thread);
-        Task Update(Models.Thread thread);
+        Task<bool> Create(Models.Thread thread);
+        Task<bool> Update(Models.Thread thread);
         Task<bool> Delete(int id);
-        Task CreateComment(Comment comment);
+        Task<bool> CreateComment(Comment comment);
         Task<Subforum?> GetSubforumById(int subforumId);
     }
 }

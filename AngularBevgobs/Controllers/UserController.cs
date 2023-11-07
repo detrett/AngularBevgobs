@@ -24,106 +24,88 @@ namespace AngularBevgobs.Controllers
             _logger = logger;
         }
 
-        // This method creates a container for a subforum
-        public async Task<IActionResult> Container()
-        {
-            // Get Data
-            var users = await _userRepository.GetAll();
-
-            // Make ViewModel with Data and return it
-            var userListViewModel = new UserListViewModel(users, "Container");
-            return View(userListViewModel);
-        }
-
         // CRUD
 
         // CREATE
-        // Redirect the user to a form to input the data
-        [HttpGet]
-        public IActionResult Create()
-        {
-            return View();
-        }
-
-        // Inject data into the DB
-        [HttpPost]
+        [HttpPost("create")]
         public async Task<IActionResult> Create(ApplicationUser applicationUser)
         {
-            if (ModelState.IsValid)
+            if (applicationUser == null)
             {
-                await _userRepository.Create(applicationUser);
-                return RedirectToAction(nameof(Container));
+                return BadRequest("Invalid user data.");
             }
-            return View(applicationUser);
+            bool returnOk = await _userRepository.Create(applicationUser);
+
+            if (returnOk)
+            {
+                var response = new { success = true, message = "User " + applicationUser.Id + " created successfully" };
+                return Ok(response);
+            }
+            else
+            {
+                var response = new { success = false, message = "User " + applicationUser.Id + " creation failed." };
+                return Ok(response);
+            }
+
+
         }
 
         // READ
         // Obtain data from an item based on its id
+        [HttpGet("{id}")]
         public async Task<IActionResult> Details(int id)
         {
             // Get Data
-            var item = await _userRepository.GetUserById(id);
+            var user = await _userRepository.GetUserById(id);
 
-            if (item == null)
+            if (user == null)
             {
+                _logger.LogError("[UserController] User not found while executing Details()");
                 return BadRequest("User not found.");
             }
 
-            return View(item);
+            return Ok(user);
         }
 
         // UPDATE
-        // Return a Forum object based on its id
-        [HttpGet]
-        public async Task<IActionResult> Update(int id)
-        {
-            var item = await _userRepository.GetUserById(id);
-
-            if (item == null)
-            {
-                return NotFound();
-            }
-            return View(item);
-        }
-
         // Inject updated data into the DB
-        [HttpPost]
+        [HttpPut("update/{id}")]
         public async Task<IActionResult> Update(ApplicationUser applicationUser)
         {
-            if (ModelState.IsValid)
+            if(applicationUser == null)
             {
-                await _userRepository.Update(applicationUser);
-
-                return RedirectToAction(nameof(Container));
+                return BadRequest("Invalid user data.");
             }
-            return View(applicationUser);
+            bool returnOk = await _userRepository.Update(applicationUser);
+            
+            if (returnOk)
+            {
+                var response = new { success = true, message = "User " + applicationUser.Id + " updated successfully" };
+                return Ok(response);
+            }
+            else
+            {
+                _logger.LogError("[UserController] User could not be updated");
+                var response = new { success = false, message = "User " + applicationUser.Id + " failed to update" };
+                return Ok(response);
+            }
         }
 
         // DELETE
         // Return a Forum object based on its id
-        [HttpGet]
+        [HttpDelete("delete/{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var item = await _userRepository.GetUserById(id);
-            if (item == null)
+            bool returnOk = await _userRepository.Delete(id);
+            if (!returnOk)
             {
-                return NotFound();
+                _logger.LogError("[UserController] User could not be deleted");
+                return BadRequest("User deletion failed");
             }
-            return View(item);
+            var response = new { success = true, message = "User " + id.ToString() + " deleted successfully" };
+            return Ok(response);
+
         }
 
-        // Delete data from the DB
-        [HttpPost]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            await _userRepository.Delete(id);
-            return RedirectToAction(nameof(Container));
-        }
-
-
-        public IActionResult Index()
-    {
-        return View();
-    }
     }
 }

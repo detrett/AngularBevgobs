@@ -24,7 +24,7 @@ namespace AngularBevgobs.DAL
             }
             catch (Exception e)
             {
-                _logger.LogError($"[CommentRepository] Comment creation failed for item {comment.CommentId}, error message: {e}");
+                _logger.LogError($"[CommentRepository] Comment creation failed for comment {comment.CommentId}, error message: {e}");
                 return false;
             }
 
@@ -63,7 +63,7 @@ namespace AngularBevgobs.DAL
             }
             catch (Exception e)
             {
-                _logger.LogError($"[CommentRepository] Comment update failed for item {comment.CommentId}, error message: {e}");
+                _logger.LogError($"[CommentRepository] Comment update failed for comment {comment.CommentId}, error message: {e}");
                 return false;
             }
             

@@ -6,15 +6,26 @@ namespace AngularBevgobs.DAL
     public class SubforumRepository : ISubforumRepository
     {
         private readonly ForumDbContext _db;
+        private readonly ILogger<SubforumRepository> _logger;
 
-        public SubforumRepository(ForumDbContext db)
+        public SubforumRepository(ForumDbContext db, ILogger<SubforumRepository> logger)
         {
             _db = db;
+            _logger = logger;
         }
-        public async Task Create(Subforum subforum)
+        public async Task<bool> Create(Subforum subforum)
         {
-            _db.Subforums.Add(subforum);
-            await _db.SaveChangesAsync();
+            try
+            {
+                _db.Subforums.Add(subforum);
+                await _db.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError($"[SubforumRepository] Subforum creation failed for subforum {subforum.SubforumId}, error message: {e}");
+                return false;
+            }
 
         }
 
@@ -42,10 +53,20 @@ namespace AngularBevgobs.DAL
         }
 
 
-        public async Task Update(Subforum subforum)
+        public async Task<bool> Update(Subforum subforum)
         {
-            _db.Subforums.Update(subforum);
-            await _db.SaveChangesAsync();
+            try
+            {
+                _db.Subforums.Update(subforum);
+                await _db.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError($"[SubforumRepository] Subforum update failed for subforum {subforum.SubforumId}, error message: {e}");
+                return false;
+            }
+
         }
     }
 }

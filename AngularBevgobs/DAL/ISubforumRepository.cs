@@ -7,8 +7,8 @@ namespace AngularBevgobs.DAL
     {
         Task<IEnumerable<Subforum>?> GetAll();
         Task<Subforum?> GetSubforumById(int id);
-        Task Create(Subforum subforum);
-        Task Update(Subforum subforum);
+        Task<bool> Create(Subforum subforum);
+        Task<bool> Update(Subforum subforum);
         Task<bool> Delete(int id);
     }
 }

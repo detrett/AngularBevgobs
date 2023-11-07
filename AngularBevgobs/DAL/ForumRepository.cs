@@ -6,15 +6,27 @@ namespace AngularBevgobs.DAL
     public class ForumRepository : IForumRepository
     {
         private readonly ForumDbContext _db;
+        private readonly ILogger<ForumRepository> _logger;
 
-        public ForumRepository(ForumDbContext db)
+        public ForumRepository(ForumDbContext db, ILogger<ForumRepository> logger)
         {
             _db = db;
+            _logger = logger;
         }
-        public async Task Create(Forum forum)
+        public async Task<bool> Create(Forum forum)
         {
-            _db.Forums.Add(forum);
-            await _db.SaveChangesAsync();
+            try
+            {
+                _db.Forums.Add(forum);
+                await _db.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError($"[ForumRepository] Forum update failed for forum {forum.ForumId}, error message: {e}");
+                return false;
+            }
+
 
         }
 
@@ -41,10 +53,20 @@ namespace AngularBevgobs.DAL
             return await _db.Forums.FindAsync(id);
         }
 
-        public async Task Update(Forum forum)
+        public async Task<bool> Update(Forum forum)
         {
-            _db.Forums.Update(forum);
-            await _db.SaveChangesAsync();
+            try
+            {
+                _db.Forums.Update(forum);
+                await _db.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError($"[ForumRepository] Forum update failed for forum {forum.ForumId}, error message: {e}");
+                return false;
+            }
+
         }
     }
 }

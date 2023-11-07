@@ -6,8 +6,8 @@ namespace AngularBevgobs.DAL
     {
         Task<IEnumerable<ApplicationUser>?> GetAll();
         Task<ApplicationUser?> GetUserById(int id);
-        Task Create(ApplicationUser applicationUser);
-        Task Update(ApplicationUser applicationUser);
+        Task<bool> Create(ApplicationUser applicationUser);
+        Task<bool> Update(ApplicationUser applicationUser);
         Task<bool> Delete(int id);
     }
 }

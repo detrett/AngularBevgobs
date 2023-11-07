@@ -19,105 +19,84 @@ namespace AngularBevgobs.Controllers
             _logger = logger;
         }
 
-        // This method creates a container for a subforum based on its id
-        public async Task<IActionResult> Container(int id)
-        {
-            // Get Data
-            var subforum = await _subforumRepository.GetSubforumById(id);
-
-            // Make ViewModel with Data and return it
-            var subforumListViewModel = new SubforumListViewModel(subforum, "Container");
-            return View(subforumListViewModel);
-        }
-
         // CRUD
 
         // CREATE
-        // Redirect the user to a form to input the data
-        [HttpGet]
-        public IActionResult Create()
+        [HttpPost("create")]
+        public async Task<IActionResult> Create([FromBody] Subforum newSubforum)
         {
-            return View();
-        }
-
-        // Inject data into the DB
-        [HttpPost]
-        public async Task<IActionResult> Create(Subforum subforum)
-        {
-            if (ModelState.IsValid)
+            if (newSubforum == null)
             {
-                await _subforumRepository.Create(subforum);
-                return RedirectToAction(nameof(Container));
+                return BadRequest("Invalid subforum data.");
             }
-            return View(subforum);
+            bool returnOk = await _subforumRepository.Create(newSubforum);
+            if (returnOk)
+            {
+                var response = new { success = true, message = "Subforum " + newSubforum.Name + " created successfully" };
+                return Ok(response);
+            }
+            else
+            {
+                var response = new { success = false, message = "Subforum " + newSubforum.Name + " creation failed" };
+                return Ok(response);
+            }
         }
 
         // READ
         // Obtain data from an item based on its id
+        [HttpGet("{id}")]
         public async Task<IActionResult> Details(int id)
         {
             // Get Data
-            var item = await _subforumRepository.GetSubforumById(id);
+            var subforum = await _subforumRepository.GetSubforumById(id);
 
-            if (item == null)
+            if (subforum == null)
             {
+                _logger.LogError("[SubforumController] Subforum not found while executing Details()");
                 return BadRequest("Subforum not found.");
             }
 
-            return View(item);
-        }
-
-        // UPDATE
-        // Return a Forum object based on its id
-        [HttpGet]
-        public async Task<IActionResult> Update(int id)
-        {
-            var item = await _subforumRepository.GetSubforumById(id);
-
-            if (item == null)
-            {
-                return NotFound();
-            }
-            return View(item);
+            return Ok(subforum);
         }
 
         // Inject updated data into the DB
-        [HttpPost]
-        public async Task<IActionResult> Update(Subforum subforum)
+        [HttpPut("update/{id}")]
+        public async Task<IActionResult> Update(Subforum newSubforum)
         {
-            if (ModelState.IsValid)
+            if (newSubforum == null)
             {
-                await _subforumRepository.Update(subforum);
-
-                return RedirectToAction(nameof(Container));
+                return BadRequest("Invalid subforum data.");
             }
-            return View(subforum);
+            bool returnOk = await _subforumRepository.Update(newSubforum);
+
+            if (returnOk)
+            {
+                var response = new { success = true, message = "Forum " + newSubforum.Name + " updated successfully" };
+                return Ok(response);
+            }
+            else
+            {
+                _logger.LogError("[SubforumController] Subforum could not be updated");
+                var response = new { success = false, message = "Forum " + newSubforum.Name + " failed to update" };
+                return Ok(response);
+
+            }
         }
 
         // DELETE
         // Return a Forum object based on its id
-        [HttpGet]
+        [HttpDelete("delete/{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var item = await _subforumRepository.GetSubforumById(id);
-            if (item == null)
+            bool returnOk = await _subforumRepository.Delete(id);
+            if (!returnOk)
             {
-                return NotFound();
+                _logger.LogError("[SubforumController] Subforum could not be deleted");
+                return BadRequest("Subforum deletion failed");
             }
-            return View(item);
-        }
+            var response = new { success = true, message = "Subforum " + id.ToString() + " deleted successfully" };
+            return Ok(response);
 
-        // Delete data from the DB
-        [HttpPost]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            await _subforumRepository.Delete(id);
-            return RedirectToAction(nameof(Container));
-        }
-
-        public IActionResult Index()
-        {
-            return View();
         }
 
     }

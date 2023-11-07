@@ -21,107 +21,100 @@ namespace AngularBevgobs.Controllers
             _logger = logger;
         }
 
-
-        // This method creates a container for a forum
-        public async Task<IActionResult> Container()
-        {
-            // Get Data
-            var forums = await _forumRepository.GetAll();
-
-            // Make ViewModel with Data and return it
-            var forumListViewModel = new ForumListViewModel(forums, "Container");
-            return View(forumListViewModel);
-        }
-
         // CRUD
 
         // CREATE
-        // Redirect the user to a form to input the data
-        [HttpGet]
-        public IActionResult Create()
-        {     
-            return View();
-        }     
-              
-        // Inject data into the DB
-        [HttpPost]
-        public async Task<IActionResult> Create(Forum forum)
+        [HttpPost("create")]
+        public async Task<IActionResult> Create([FromBody] Forum newForum)
         {
-            if (ModelState.IsValid)
+            if (newForum == null)
             {
-                await _forumRepository.Create(forum);
-                return RedirectToAction(nameof(Container));
+                return BadRequest("Invalid forum data.");
             }
-            return View(forum);
+            bool returnOk = await _forumRepository.Create(newForum);
+
+            if (returnOk)
+            {
+                var response = new { success = true, message = "Forum " + newForum.Name + " created successfully" };
+                return Ok(response);
+            }
+            else
+            {
+                var response = new { success = false, message = "Forum creation failed" };
+                return Ok(response);
+            }
         }
+
 
         // READ
         // Obtain data from an item based on its id
+        [HttpGet("{id}")]
         public async Task<IActionResult> Details(int id)
         {
             // Get Data
-            var item = await _forumRepository.GetForumById(id);
+            var forum = await _forumRepository.GetForumById(id);
 
-            if (item == null)
+            if (forum == null)
             {
+                _logger.LogError("[ForumController] Forum item not found while executing Details()");
                 return BadRequest("Forum not found.");
             }
 
-            return View(item);
+            return Ok(forum);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            var forums = await _forumRepository.GetAll();
+            if (forums == null)
+            {
+                _logger.LogError("[ForumController] Forum list not found while executing GetAll()");
+                return NotFound("Forum list not found");
+            }
+            return Ok(forums);
         }
 
         // UPDATE
-        // Return a Forum object based on its id
-        [HttpGet]
-        public async Task<IActionResult> Update(int id)
+        [HttpPut("update/{id}")]
+        public async Task<IActionResult> Update(Forum newForum)
         {
-            var item = await _forumRepository.GetForumById(id);
-
-            if (item == null) 
+            if(newForum == null)
             {
-                return NotFound();
+                return BadRequest("Invalid forum data.");
             }
-            return View(item);
+
+            bool returnOk = await _forumRepository.Update(newForum);
+
+            if (returnOk) 
+            {
+                var response = new { success = true, message = "Forum " + newForum.Name + " updated successfully" };
+                return Ok(response);
+            }
+            else
+            {
+                _logger.LogError("[ForumController] Forum could not be updated");
+                var response = new { success = false, message = "Forum " + newForum.Name + " failed to update" };
+                return Ok(response);
+            }
         }
 
-        // Inject updated data into the DB
-        [HttpPost]
-        public async Task<IActionResult> Update(Forum forum)
-        {
-            if (ModelState.IsValid)
-            {
-                await _forumRepository.Update(forum);
-
-                return RedirectToAction(nameof(Container));
-            }
-            return View(forum);
-        }
 
         // DELETE
         // Return a Forum object based on its id
-        [HttpGet]
+        [HttpDelete("delete/{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var item = await _forumRepository.GetForumById(id);
-            if (item == null)
+            bool returnOk = await _forumRepository.Delete(id);
+            if(!returnOk)
             {
-                return NotFound();
+                _logger.LogError("[ForumController] Forum could not be deleted");
+                return BadRequest("Forum deletion failed");
             }
-            return View(item);
+            var response = new { success = true, message = "Forum " + id.ToString() + " deleted successfully" };
+            return Ok(response);
         }
 
-        // Delete data from the DB
-        [HttpPost]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            await _forumRepository.Delete(id);
-            return RedirectToAction(nameof(Container));
-        }
-
-        public IActionResult Index()
-        {
-            return View();
-        }
 
     }
 }

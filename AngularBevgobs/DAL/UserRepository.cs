@@ -6,15 +6,26 @@ namespace AngularBevgobs.DAL
     public class UserRepository : IUserRepository
     {
         private readonly ForumDbContext _db;
+        private readonly ILogger<UserRepository> _logger;
 
-        public UserRepository(ForumDbContext db)
+        public UserRepository(ForumDbContext db, ILogger<UserRepository> logger)
         {
             _db = db;
+            _logger = logger;
         }
-        public async Task Create(ApplicationUser applicationUser)
+        public async Task<bool> Create(ApplicationUser applicationUser)
         {
-            _db.Users.Add(applicationUser);
-            await _db.SaveChangesAsync();
+            try
+            {
+                _db.Users.Add(applicationUser);
+                await _db.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError($"[UserRepository] User creation failed for user {applicationUser.Id}, error message: {e}");
+                return false;
+            }
         }
 
         public async Task<bool> Delete(int id)
@@ -40,10 +51,19 @@ namespace AngularBevgobs.DAL
             return await _db.Users.FindAsync(id);
         }
 
-        public async Task Update(ApplicationUser applicationUser)
+        public async Task<bool> Update(ApplicationUser applicationUser)
         {
-            _db.Users.Update(applicationUser);
-            await _db.SaveChangesAsync();
+            try
+            {
+                _db.Users.Update(applicationUser);
+                await _db.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError($"[UserRepository] User creation failed for user {applicationUser.Id}, error message: {e}");
+                return false;
+            }
         }
     }
 }
