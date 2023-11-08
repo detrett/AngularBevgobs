@@ -1,11 +1,11 @@
 {
-  "name": "angularbevgobs",
+  "name": "myshopangular",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 44468",
+    "start": "ng serve --port 44479",
     "build": "ng build",
-    "build:ssr": "ng run AngularBevgobs:server:dev",
+    "build:ssr": "ng run MyShopAngular:server:dev",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

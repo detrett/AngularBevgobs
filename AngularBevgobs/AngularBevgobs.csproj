@@ -8,6 +8,7 @@
     <SpaProxyServerUrl>http://localhost:44468</SpaProxyServerUrl>
     <SpaProxyLaunchCommand>npm start</SpaProxyLaunchCommand>
     <ImplicitUsings>enable</ImplicitUsings>
+    <TypeScriptModuleKind>none</TypeScriptModuleKind>
   </PropertyGroup>
 
   <ItemGroup>
@@ -33,6 +34,26 @@
     <Content Remove="$(SpaRoot)**" />
     <None Remove="$(SpaRoot)**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ClientApp\src\app\comment\comment.ts" />
+    <None Remove="ClientApp\src\app\forum\forum.component.ts" />
+    <None Remove="ClientApp\src\app\forum\forum.service.ts" />
+    <None Remove="ClientApp\src\app\forum\forum.ts" />
+    <None Remove="ClientApp\src\app\subforum\subforum.ts" />
+    <None Remove="ClientApp\src\app\thread\thread.ts" />
+    <None Remove="ClientApp\src\app\user\user.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\comment\comment.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\forum\forum.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\forum\forum.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\forum\forum.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\subforum\subforum.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\thread\thread.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\user\user.ts" />
   </ItemGroup>
 
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

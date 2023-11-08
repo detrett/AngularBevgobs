@@ -134,10 +134,10 @@ header > div {
   box-shadow: 0 0 4px 1px #FFFEEB, 0 0 6px 2px #f9a3b2;
 }
 
-#banner:hover #registerBtn {
+  #banner:hover #registerBtn {
     animation: bounce 1s normal forwards ease-in-out;
     animation-iteration-count: infinite;
-}
+  }
 
 /* Inspired by the one in FontAwesome */
 @keyframes bounce {
@@ -195,19 +195,18 @@ header > div {
   text-decoration: none;
   text-shadow: 0px 1px 0px #2d293c;
   width: 150px;
-
-  &:hover  {
-  background-color: #ba2b45;
-  transform: translateY(1px);
-  transition: transform 0.1s ease;
-  }
-
-  &:active {
-  position: relative;
-  top: 1px;
-  } 
-
 }
+
+ .std-pink-btn:hover {
+    background-color: #ba2b45;
+    transform: translateY(1px);
+    transition: transform 0.1s ease;
+ }
+
+ .std-pink-btn:active {
+    position: relative;
+    top: 1px;
+ }
 
 .std-purple-btn {
   background-color: #433b60;
@@ -225,16 +224,16 @@ header > div {
   width: 150px;
 }
 
-.std-purple-btn:hover {
-  background-color: #2d293c;
-  transform: translateY(1px);
-  transition: transform 0.1s ease;
-}
+  .std-purple-btn:hover {
+    background-color: #2d293c;
+    transform: translateY(1px);
+    transition: transform 0.1s ease;
+  }
 
-.std-purple-btn:active {
-  position: relative;
-  top: 1px;
-}
+  .std-purple-btn:active {
+    position: relative;
+    top: 1px;
+  }
 
 .text-justify {
   display: flex;
@@ -242,9 +241,9 @@ header > div {
   margin: auto;
 }
 
-.text-justify a {
+  .text-justify a {
     text-align: center;
-}
+  }
 
 
 /* MEDIA */
