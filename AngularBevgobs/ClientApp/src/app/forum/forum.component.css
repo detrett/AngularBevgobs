@@ -1,0 +1,66 @@
+a[aria-expanded=true] .fa-plus {
+  display: none;
+}
+
+a[aria-expanded=false] .fa-minus {
+  display: none;
+}
+
+.bg-gradient {
+  background-color: #D5D19C40;
+  background-position-x: 0%;
+  background-position-y: 0%;
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-image: none;
+  background-size: auto;
+  background-origin: padding-box;
+  background-clip: border-box;
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+}
+
+.fa-minus, .fa-plus {
+  color: white;
+  text-shadow: -1px -1px 0 #fc375c36, 1px -1px 0 #433b6036, -1.5px 1.5px 0 #433b60, 1px 1px 0 #433b6061;
+}
+
+.forum-container {
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.icon-right {
+  float: right;
+  margin-right: 30px;
+  margin-top: 3px;
+}
+
+.list-title-font {
+  color: #ffffff;
+  font-size: 1em;
+  font-weight: 600;
+  margin: auto;
+  text-shadow: -1px -1px 0 #fc375c36, 1px -1px 0 #433b6036, -1.5px 1.5px 0 #433b60, 1px 1px 0 #433b6061;
+}
+
+section > div.bg-gradient {
+  padding: 8px 12px;
+}
+
+#title {
+  margin-top: 50px;
+  padding-left: 0px;
+}
+
+.title-font {
+  color: #fff;
+  font-size: 1.5em;
+  margin-bottom: 0px;
+  padding-left: 25px;
+}
+
+ul {
+  list-style-type: none;
+  padding-inline-start: 0px;
+}
