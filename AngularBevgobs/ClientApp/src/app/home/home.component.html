@@ -45,78 +45,78 @@
 
     <!--Member only - Member panel-->
     <!--@if (User.Identity.IsAuthenticated)
-  {
-  <div class="m-1 col-md-5 member-only flex-1" id="userPanel">-->
+    {
+    <div class="m-1 col-md-5 member-only flex-1" id="userPanel">-->
     <!--User picture-->
     <!--<div class="user-picture-container-header">
-    <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Go to profile">
-      @{
-      if (currentUser.UserPhoto != null)
-      {
-      var base64Image = Convert.ToBase64String(currentUser.UserPhoto);
-      var source = String.Format("data:image/png;base64,{0}", base64Image);
-      <img src="@source" alt="Profile Picture" class="img-thumbnail">
-      }
-      else
-      {
-      <img src="~/images/defaultpp.png" alt="Profile Picture" class="img-thumbnail">
-      }
-      }
-    </a>
-  </div>-->
+      <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Go to profile">
+        @{
+        if (currentUser.UserPhoto != null)
+        {
+        var base64Image = Convert.ToBase64String(currentUser.UserPhoto);
+        var source = String.Format("data:image/png;base64,{0}", base64Image);
+        <img src="@source" alt="Profile Picture" class="img-thumbnail">
+        }
+        else
+        {
+        <img src="~/images/defaultpp.png" alt="Profile Picture" class="img-thumbnail">
+        }
+        }
+      </a>
+    </div>-->
     <!--User welcome-->
     <!--<div class="m-auto text-center" id="userWelcome">
-    <span class="p-1">
-      <em>
-        Welcome,
-        <span class="userTitle">@User.Identity.Name</span>!
-      </em>
-    </span>
-  </div>
+      <span class="p-1">
+        <em>
+          Welcome,
+          <span class="userTitle">@User.Identity.Name</span>!
+        </em>
+      </span>
+    </div>
 
-  <div class="m-auto" id="banner-user-options">
+    <div class="m-auto" id="banner-user-options">
 
-    <div class="p-2">-->
+      <div class="p-2">-->
     <!--Profile-->
     <!--<div class="p-1">
-    <a title="Go to profile" class="lighter-link" asp-area="Identity" asp-page="/Account/Manage/Index">
-      <i class="fa-solid fa-user"></i>
-      My Profile
-    </a>
-  </div>-->
+      <a title="Go to profile" class="lighter-link" asp-area="Identity" asp-page="/Account/Manage/Index">
+        <i class="fa-solid fa-user"></i>
+        My Profile
+      </a>
+    </div>-->
     <!--Settings-->
     <!--<div class="p-1">
-      <a title="Edit your profile" class="lighter-link" asp-area="Identity" asp-page="/Account/Manage/Index">
-        <i class="fa-solid fa-gear"></i>
-        Settings
-      </a>
+        <a title="Edit your profile" class="lighter-link" asp-area="Identity" asp-page="/Account/Manage/Index">
+          <i class="fa-solid fa-gear"></i>
+          Settings
+        </a>
+      </div>
     </div>
-  </div>
 
-  <div class="p-2">-->
+    <div class="p-2">-->
     <!--Inbox-->
     <!--<div class="p-1">
-    <a href="#" title="Go to inbox" class="lighter-link">
-      <i class="fa-solid fa-inbox"></i>
-      Inbox
-    </a>
-  </div>-->
+      <a href="#" title="Go to inbox" class="lighter-link">
+        <i class="fa-solid fa-inbox"></i>
+        Inbox
+      </a>
+    </div>-->
     <!--Sign Out-->
     <!--<div class="p-1">
-          <a title="Sign Out" class="lighter-link" asp-area="Identity" asp-page="/Account/Logout">
-            <i class="fa-solid fa-right-from-bracket"></i>
-            Sign Out
-          </a>
+            <a title="Sign Out" class="lighter-link" asp-area="Identity" asp-page="/Account/Logout">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              Sign Out
+            </a>
+          </div>
         </div>
+
       </div>
 
-    </div>
-
-  </div>-->
+    </div>-->
     <!--End of member panel-->
     <!--}
-  else
-  {-->
+    else
+    {-->
     <!-- Guest only -->
     <div class="col-md-4 text-justify guest-only" id="buttonPanel">
       <span class="">
@@ -142,5 +142,10 @@
     </div>
 
   </div>
+
+  <main role="main" class="pb-3">
+    <app-forums></app-forums>
+  </main>
+
 </div>
 
