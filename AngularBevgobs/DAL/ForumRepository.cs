@@ -45,7 +45,15 @@ namespace AngularBevgobs.DAL
 
         public async Task<IEnumerable<Forum>?> GetAll()
         {
-            return await _db.Forums.ToListAsync();
+            try
+            {
+                return await _db.Forums.ToListAsync();
+            }
+            catch (Exception e)
+            {
+                _logger.LogError("[ForumRepository] forums ToListAsync() failed when GetAll(), error message: {e}", e.Message);
+                return null;
+            }
         }
 
         public async Task<Forum?> GetForumById(int id)

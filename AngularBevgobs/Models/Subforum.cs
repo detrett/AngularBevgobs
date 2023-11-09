@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace AngularBevgobs.Models
 {
@@ -22,6 +23,7 @@ namespace AngularBevgobs.Models
         public string? BackgroundColor { get; set; } // Options: 'dark' or 'light'
 
         public int ForumId { get; set; }    // Mapping the relationship between forum/subforum
+        //[JsonIgnore]
         public virtual Forum? ParentForum { get; set; }
 
         public int CurrentPage { get; set; }    

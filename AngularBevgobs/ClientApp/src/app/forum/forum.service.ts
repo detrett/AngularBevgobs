@@ -8,7 +8,7 @@ import { IForum } from './forum';
 })
 
 export class ForumService {
-  private apiUrl = 'api/forums';
+  private apiUrl = 'api/forum';
   constructor(private _http: HttpClient) { }
 
   getForums(): Observable<IForum[]> {

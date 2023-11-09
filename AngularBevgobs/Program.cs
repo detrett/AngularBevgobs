@@ -3,7 +3,9 @@ using AngularBevgobs.DAL;
 using AngularBevgobs.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using Serilog;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("ForumDbContextConnection") ?? throw new InvalidOperationException("Connection string 'ItemDbContextConnection' not found.");
@@ -15,9 +17,8 @@ builder.Services.AddControllersWithViews();
 // Insert NewtonsoftJson to avoid infinite loops
 builder.Services.AddControllers().AddNewtonsoftJson(options =>
 {
-    options.SerializerSettings.ReferenceLoopHandling =
-     Newtonsoft.Json.ReferenceLoopHandling.Ignore;
-
+    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+    options.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.Objects;
 });
 
 // Allows us to use DB Contexts

@@ -23,6 +23,26 @@ namespace AngularBevgobs.Controllers
 
         // CRUD
 
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            var forums = await _forumRepository.GetAll();
+            if (forums == null)
+            {
+                Console.WriteLine("[ForumController] Forum list not found while executing GetAll()");
+
+                _logger.LogError("[ForumController] Forum list not found while executing GetAll()");
+                return NotFound("Forum list not found");
+            }
+
+            Console.WriteLine("[ForumController] Data Retrieval OK while executing GetAll()");
+            foreach(var forum in forums)
+            {
+                Console.WriteLine($"Forum id: {forum.ForumId}, Forum Name: {forum.Name}");
+            }
+            return Ok(forums);
+        }
+
         // CREATE
         [HttpPost("create")]
         public async Task<IActionResult> Create([FromBody] Forum newForum)
@@ -63,17 +83,7 @@ namespace AngularBevgobs.Controllers
             return Ok(forum);
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetAll()
-        {
-            var forums = await _forumRepository.GetAll();
-            if (forums == null)
-            {
-                _logger.LogError("[ForumController] Forum list not found while executing GetAll()");
-                return NotFound("Forum list not found");
-            }
-            return Ok(forums);
-        }
+        
 
         // UPDATE
         [HttpPut("update/{id}")]
