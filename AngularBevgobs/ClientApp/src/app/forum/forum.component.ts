@@ -31,6 +31,9 @@ export class ForumComponent implements OnInit {
           console.log(`Forum ${index}:`, forum);
           console.log("Forum id: " + forum.ForumId + ", Forum name: " + forum.Name);
           if (forum.Subforums) {
+            forum.Subforums.forEach((subforum, index) => {
+              subforum.BackgroundColor = index % 2 === 0 ? 'background-dark' : 'background-light';
+            });
             console.log(", Subforums: " + forum.Subforums.length);
           } else {
             console.log(", Subforums: Not available");

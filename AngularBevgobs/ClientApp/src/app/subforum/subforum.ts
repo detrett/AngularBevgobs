@@ -5,7 +5,8 @@ export interface ISubforum {
   SubforumId: number;
   Name: string;
   Description: string;
-  ForumId: number;
-  ParentForum: IForum;
+  BackgroundColor: string;
+  ParentId: number;
+  CurrentPage: number;
   Threads: IThread[];
 }

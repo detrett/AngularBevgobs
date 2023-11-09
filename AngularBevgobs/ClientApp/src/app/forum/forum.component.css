@@ -64,3 +64,85 @@ ul {
   list-style-type: none;
   padding-inline-start: 0px;
 }
+
+/**************************************************************************************************/
+/** Media dependent attributes **/
+
+/* FROM XS TO M */
+@media only screen and (max-width: 767px) {
+  .border-md {
+    border-top: 1px solid #1D1D1D;
+  }
+
+  .centered-sm {
+    text-align: center;
+  }
+
+  .forum-title-container-sm {
+    margin-left: 25px;
+  }
+
+  .hidden-mobile {
+    display: none;
+  }
+
+  .icon-container {
+    align-items: flex-end;
+  }
+
+  .last-poster-icon {
+    padding-bottom: 10px;
+  }
+
+  .only-mobile {
+    display: flex;
+  }
+
+  #buttonPanel {
+    margin-bottom: 18px;
+  }
+
+  #userPanel {
+    padding: 18px 0px !important;
+    justify-content: space-evenly;
+    margin: 0 0 18px 0 !important;
+  }
+
+  #userWelcome {
+    display: none;
+  }
+}
+
+/* FROM S TO XL */
+@media only screen and (min-width: 576px) {
+  .banner {
+    padding: 0px 100px;
+  }
+}
+
+/* FROM M TO XL */
+@media only screen and (min-width: 768px) {
+  .border-md {
+    border-left: 1px solid #1D1D1D;
+  }
+
+  .col-2.icon-container {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}
+
+/* FROM M TO L*/
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+  #registerBtn {
+    width: 90px;
+  }
+
+  #signInBtn {
+    width: 90px;
+  }
+
+  #userWelcome {
+    display: none;
+  }
+}

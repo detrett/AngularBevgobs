@@ -10,7 +10,7 @@ import { SubforumService } from './subforum.service';
 })
 
 export class SubforumComponent implements OnInit {
-  /*@Input() subforum: ISubforum;*/
+  @Input() subforum?: ISubforum;
 
   constructor(
     private _router: Router,
@@ -18,6 +18,7 @@ export class SubforumComponent implements OnInit {
 
   ngOnInit(): void {
     console.log("Subforum Component: ngOnInit()")
+    console.log("Subforum Name: " + this.subforum?.Name);
   }
 }
 
