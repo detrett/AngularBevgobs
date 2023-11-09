@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { ForumComponent } from './forum/forum.component';
+import { SubforumComponent } from './subforum/subforum.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { ForumComponent } from './forum/forum.component';
     NavMenuComponent,
     HomeComponent,
     ForumComponent,
+    SubforumComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -22,7 +24,8 @@ import { ForumComponent } from './forum/forum.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'forums', component: ForumComponent}
+      { path: 'forums', component: ForumComponent},
+      { path: 'subforums', component: SubforumComponent}
     ])
   ],
   providers: [],

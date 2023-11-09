@@ -1,5 +1,6 @@
 ﻿using AngularBevgobs.DAL;
 using AngularBevgobs.Models;
+using AngularBevgobs.Models.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
@@ -40,7 +41,9 @@ namespace AngularBevgobs.Controllers
             {
                 Console.WriteLine($"Forum id: {forum.ForumId}, Forum Name: {forum.Name}");
             }
-            return Ok(forums);
+
+            var forumDTOs = forums.Select(f => MapToDTO(f));
+            return Ok(forumDTOs);
         }
 
         // CREATE
@@ -125,6 +128,48 @@ namespace AngularBevgobs.Controllers
             return Ok(response);
         }
 
+        // Method by ChatGPT
+        public static ForumDTO MapToDTO(Forum forum)
+        {
+            var forumDTO = new ForumDTO
+            {
+                ForumId = forum.ForumId,
+                Name = forum.Name,
+                Subforums = forum.Subforums?.Select(s => new SubforumDTO
+                {
+                    SubforumId = s.SubforumId,
+                    Name = s.Name,
+                    Description = s.Description,
+                    BackgroundColor = s.BackgroundColor,
+                    CurrentPage = s.CurrentPage,
+                    ParentId = forum.ForumId,
+                    Threads = s.Threads?.Select(t => new ThreadDTO
+                    {
+                        ThreadId = t.ThreadId,
+                        UserId = t.UserId,
+                        Name = t.Name,
+                        CreatedAt = t.CreatedAt,
+                        Description = t.Description,
+                        ParentId = s.SubforumId,
+                        IsLocked = t.IsLocked,
+                        IsAnnouncement = t.IsAnnouncement,
+                        IsPinned = t.IsPinned,
+                        IsFeatured = t.IsFeatured,
+                        Comments = t.Comments?.Select(c => new CommentDTO
+                        {
+                            CommentId = c.CommentId,
+                            ThreadId = c.ThreadId,
+                            UserId = c.UserId,
+                            Title = c.Title,
+                            Body = c.Body,
+                            CreatedAt = c.CreatedAt
+                        }).ToList()
+                    }).ToList()
+                }).ToList()
+            };
+
+            return forumDTO;
+        }
 
     }
 }

@@ -24,7 +24,18 @@ export class ForumComponent implements OnInit {
       .subscribe(data => {
         console.log('Data received: ', JSON.stringify(data));
         this.forums = data;
-        this.forums.forEach(forum => console.log("Forum id: " + forum.ForumId + ", Forum name: " + forum.Name));
+
+        // Log by ChatGPT
+        console.log("Forums: " + this.forums.length)
+        this.forums.forEach((forum, index) => {
+          console.log(`Forum ${index}:`, forum);
+          console.log("Forum id: " + forum.ForumId + ", Forum name: " + forum.Name);
+          if (forum.Subforums) {
+            console.log(", Subforums: " + forum.Subforums.length);
+          } else {
+            console.log(", Subforums: Not available");
+          }
+        });
       });
   }
 

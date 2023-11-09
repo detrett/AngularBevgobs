@@ -25,7 +25,9 @@
     <div class="collapse show" [id]="'collapseContent-' + forum.ForumId">
 
       <ul>
-        <li>Hi</li>
+        <li *ngFor="let subforum of forum.Subforums">
+          <!--<app-subforum [subforum]="subforum"></app-subforum>-->
+        </li>
       </ul>
 
     </div>
