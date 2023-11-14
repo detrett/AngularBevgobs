@@ -1,6 +1,361 @@
-<!--Subforum Title-->
-<div class="row">
-  <div class="col" id="title">
-    <h1 class="title-font">{{ subforum?.Name }}</h1>
+<!-- START OF HEADER -->
+<header>
+
+  <div class="box row">
+    <a [routerLink]="['/']" class="logo">
+
+      <!--Logo-->
+      <div>
+        <img src="assets/images/logo.png" alt="Logo" class="logo-img">
+      </div>
+
+      <!--Title-->
+      <div class="text-center">
+        <span class="logo-font">
+          Beverage
+          Goblins
+        </span>
+      </div>
+
+      <!--Logo-->
+      <div>
+        <img src="assets/images/logo.png" alt="Logo" class="logo-img flip">
+      </div>
+
+    </a>
   </div>
+
+</header>
+<!-- END OF HEADER -->
+<!-- MAIN CONTENT -->
+<div class="banner clearfix container-fluid">
+
+  <!-- START OF BANNER (Welcome + Log In/ Sign In + User Icon (After Log In) + Breadcrumbs) -->
+  <div class="background-light card flex-1 row" id="banner">
+
+    <!--Welcome message-->
+    <div class="col-md-6 banner-message">
+      <p class="header-font">
+        Welcome to the Beverage Goblins online community.
+        <br> A place to discuss all things related to drinks with other people that share your enthusiasm
+        for beverages.
+      </p>
+    </div>
+
+    <!--Member only - Member panel-->
+    <!--@if (User.Identity.IsAuthenticated)
+    {
+    <div class="m-1 col-md-5 member-only flex-1" id="userPanel">-->
+    <!--User picture-->
+    <!--<div class="user-picture-container-header">
+      <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Go to profile">
+        @{
+        if (currentUser.UserPhoto != null)
+        {
+        var base64Image = Convert.ToBase64String(currentUser.UserPhoto);
+        var source = String.Format("data:image/png;base64,{0}", base64Image);
+        <img src="@source" alt="Profile Picture" class="img-thumbnail">
+        }
+        else
+        {
+        <img src="~/images/defaultpp.png" alt="Profile Picture" class="img-thumbnail">
+        }
+        }
+      </a>
+    </div>-->
+    <!--User welcome-->
+    <!--<div class="m-auto text-center" id="userWelcome">
+      <span class="p-1">
+        <em>
+          Welcome,
+          <span class="userTitle">@User.Identity.Name</span>!
+        </em>
+      </span>
+    </div>
+
+    <div class="m-auto" id="banner-user-options">
+
+      <div class="p-2">-->
+    <!--Profile-->
+    <!--<div class="p-1">
+      <a title="Go to profile" class="lighter-link" asp-area="Identity" asp-page="/Account/Manage/Index">
+        <i class="fa-solid fa-user"></i>
+        My Profile
+      </a>
+    </div>-->
+    <!--Settings-->
+    <!--<div class="p-1">
+        <a title="Edit your profile" class="lighter-link" asp-area="Identity" asp-page="/Account/Manage/Index">
+          <i class="fa-solid fa-gear"></i>
+          Settings
+        </a>
+      </div>
+    </div>
+
+    <div class="p-2">-->
+    <!--Inbox-->
+    <!--<div class="p-1">
+      <a href="#" title="Go to inbox" class="lighter-link">
+        <i class="fa-solid fa-inbox"></i>
+        Inbox
+      </a>
+    </div>-->
+    <!--Sign Out-->
+    <!--<div class="p-1">
+            <a title="Sign Out" class="lighter-link" asp-area="Identity" asp-page="/Account/Logout">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              Sign Out
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>-->
+    <!--End of member panel-->
+    <!--}
+    else
+    {-->
+    <!-- Guest only -->
+    <div class="col-md-4 text-justify guest-only" id="buttonPanel">
+      <span class="">
+        <a [routerLink]="['/']" class="card-body std-pink-btn" id="registerBtn">Register</a>
+      </span>
+      <span class="">
+        <a [routerLink]="['/']" class="card-body std-purple-btn" id="signInBtn">Sign In</a>
+      </span>
+    </div>
+
+    <!--}-->
+    <!-- Breadcrumbs -->
+    <div class="background-dark card-footer justify-content-start">
+
+      <div class="col-md">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">Board Index</li>
+          </ol>
+        </nav>
+      </div>
+
+    </div>
+
+  </div>
+
+  <main role="main" class="pb-3">
+    <!--Subforum Title-->
+    <div class="row">
+      <div class="col" id="title">
+        <h1 class="title-font">{{ subforum?.Name }}</h1>
+      </div>
+    </div>
+
+    <!--Start of Main Subforums Container-->
+    <section class="">
+      <div class="subforum-container">
+
+        <!--Subforum Banner-->
+        <div class="border-round-top sub-banner row">
+
+          <!--PAGINATION-->
+          <nav aria-label="Page navigation" class="pagination-container col-10">
+            <ul class="pagination margin-bt-0">
+              <!--@{
+            var currentPage = 1;
+            var pageSize = 10;
+
+            double totalPages = 1;
+            // Find out how many pages we will need (10 topics per page)
+            if (Model.Threads.Count() > 0)
+            {
+            totalPages = Math.Ceiling((double)Model.Threads.Count() / 10);
+            Console.WriteLine(totalPages);
+            }
+            var lastPageIndex = 1;
+            // Add as many buttons as total pages are
+            for (var i = 1; i <= totalPages; i++)
+            {-->
+              <li class="mr-1 page-item">
+                <a class="page-link" href="#tab-i">i</a>
+              </li>
+              <!--lastPageIndex = i;
+
+            }-->
+              <li class="page-item">
+                <a class="page-link" role="button" href="#tab-lastPageIndex" aria-label="Last" data-bs-toggle="tooltip"
+                   title="Go to last page">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+              <!--}-->
+            </ul>
+          </nav>
+
+          <!--@{
+        if (User.Identity.IsAuthenticated)
+        {-->
+          <div class="col-2">
+            <button type="button" class="btn card-body new-thread-btn guest-disabled" data-bs-keyboard="false" data-bs-backdrop="static" data-bs-toggle="modal"
+                    data-bs-target="#threadModal">
+              <i class="fa-solid fa-pen-to-square"></i>
+              New Topic
+            </button>
+          </div>
+          <!--}
+        else
+        {-->
+          <!--<div class="col-2">
+          <a href="" class="btn card-body new-thread-btn guest-disabled disabled" role="button"
+             aria-disabled="true" data-bs-toggle="tooltip" title="Make a new thread">
+            <i class="fa-solid fa-pen-to-square"></i>
+            New Thread
+          </a>
+        </div>-->
+          <!--}
+        }-->
+        </div>
+
+        <!--End of Subforum Banner-->
+        <!--Subforum Content-->
+        <div>
+          <!--THIS PART WILL BE IMPLEMENTED BY THE FRAMEWORK USING THE DATABASE INSTEAD OF MANUALLY-->
+          <ul>
+            <!--LEGEND-->
+            <li>
+              <div class="row" id="subforum-header">
+                <div class="col-1 subforum-title-container hidden-mobile">
+                  <p>
+                    Status
+                  </p>
+                </div>
+                <div class="col-9 col-md-7 subforum-title-container">
+                  <p class="align-left">
+                    Title
+                  </p>
+                </div>
+                <div class="col-1 subforum-title-container hidden-mobile">
+                  <p>
+                    Replies
+                  </p>
+                </div>
+                <div class="col-3 subforum-title-container" id="lastPost">
+                  <p>
+                    Last Post
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <!--@{
+          // Order the threads by last comment date
+          var orderedThreads = Model.Threads.OrderByDescending(aTopic =>
+          aTopic.Comments.Any() ? aTopic.Comments.Max(comment => comment.CreatedAt) : DateTime.MinValue).ToList();
+
+          var count = 1;
+          // Load the threads, 10 threads per page-->
+            <div class="tab-content">
+              <!--@for (var i = 1; i <= totalPages; i++)
+            {-->
+              <div class="tab-pane" id="tab-i">
+                <!--@for (var j = count; j <= currentPage * pageSize; j++)
+              {
+              if (j <= orderedThreads.Count())
+              {
+              @await Html.PartialAsync("_ThreadList", orderedThreads[j - 1]);
+              count++;
+              }
+              else break;
+              }
+              @{
+              currentPage += 1;
+              }-->
+              </div>
+              <!--}-->
+            </div>
+            <!--}-->
+          </ul>
+        </div>
+        <!--End of Subforum Content-->
+      </div>
+    </section>
+
+    <!--Go back to thread list-->
+    <div class="pager-container topic-listing-link">
+      <a [routerLink]="['/']" class="">
+        <i class="fa-solid fa-chevron-left"></i> Go back to forum listing
+      </a>
+    </div>
+
+    <!-- New Thread Modal -->
+    <div class="modal fade" id="threadModal" tabindex="-1" aria-labelledby="threadModalLabel" aria-hidden="true" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 modal-font" id="threadModalLabel">Create a new topic</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <!--@{
+        var newThread = new GeverageBoblins.Models.Thread();
+        newThread.SubforumId = Model.SubforumId;
+        newThread.IsAnnouncement = false;
+        newThread.IsLocked = false;
+        newThread.IsFeatured = false;
+        newThread.IsPinned = false;
+        }
+        @await Html.PartialAsync("_NewThreadModal", newThread);-->
+
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!--Start of Footer-->
+  <div class="card row" id="footer">
+
+    <!--Breadcrumbs-->
+    <div class="background-dark card-header">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item active" aria-current="page">Board Index</li>
+        </ol>
+      </nav>
+    </div>
+
+    <!--Main content-->
+    <div class="background-light card-body flex-2">
+
+      <!--Legend-->
+      <div class="col-6 col-md-3">
+        <p>
+          <b>Legend :: </b><span class="adminTitle">Administrator</span>, <span class="modTitle">Moderators</span>, <span class="userTitle">Members</span>
+        </p>
+      </div>
+
+      <!--Newest Member-->
+      <div class="col-6 col-md-3">
+        <p><b>Newest Member:</b> <a href="#" class="userTitle user-link">bubbletrouble</a></p>
+      </div>
+
+      <!--Total Threads-->
+      <div class="col-4 col-md-2">
+        <p><b>Total Threads:</b> 256</p>
+      </div>
+
+      <!--Total Posts-->
+      <div class="col-4 col-md-2">
+        <p><b>Total Posts:</b> 2752</p>
+      </div>
+
+      <!--Total Users-->
+      <div class="col-4 col-md-2">
+        <p><b>Total Users:</b> 78</p>
+      </div>
+
+    </div>
+    <!--End of Main Content-->
+  </div>
+  <!--End of Footer-->
+
 </div>
+

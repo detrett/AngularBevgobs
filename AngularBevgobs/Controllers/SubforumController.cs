@@ -56,6 +56,7 @@ namespace AngularBevgobs.Controllers
                 _logger.LogError("[SubforumController] Subforum not found while executing Details()");
                 return BadRequest("Subforum not found.");
             }
+            Console.WriteLine("[SubforumController] Data Retrieval OK while executing Get(id)");
             var subforumDTO = MapToDTO(subforum);
             return Ok(subforumDTO);
         }

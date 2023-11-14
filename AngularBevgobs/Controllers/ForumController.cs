@@ -37,10 +37,6 @@ namespace AngularBevgobs.Controllers
             }
 
             Console.WriteLine("[ForumController] Data Retrieval OK while executing GetAll()");
-            foreach(var forum in forums)
-            {
-                Console.WriteLine($"Forum id: {forum.ForumId}, Forum Name: {forum.Name}");
-            }
 
             var forumDTOs = forums.Select(f => MapToDTO(f));
             return Ok(forumDTOs);

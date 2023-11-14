@@ -30,9 +30,9 @@ a {
   text-decoration: none;
 }
 
-  a:hover {
-    color: white;
-  }
+a:hover {
+  color: white;
+}
 
   a[aria-expanded=true] .fa-plus {
     display: none;
@@ -249,35 +249,34 @@ header > div {
   text-decoration: none;
   text-shadow: 0px 1px 0px #2d293c;
   width: 150px;
+}
 
-  &:hover  {
+.std-pink-btn:hover {
   background-color: #ba2b45;
   transform: translateY(1px);
   transition: transform 0.1s ease;
-  }
+}
 
-  &:active {
+.std-pink-btn:active {
   position: relative;
   top: 1px;
-  } 
-
 }
 
-.std-purple-btn {
-  background-color: #433b60;
-  border-radius: 5px;
-  border: 1px solid #2d293c;
-  box-shadow: var(--box--std-box-shadow);
-  display: inline-block;
-  cursor: pointer;
-  color: #ffffff;
-  font-family: Arial;
-  font-size: 14px;
-  padding: 5px 5px;
-  text-decoration: none;
-  text-shadow: 0px 1px 0px #2d293c;
-  width: 150px;
-}
+  .std-purple-btn {
+    background-color: #433b60;
+    border-radius: 5px;
+    border: 1px solid #2d293c;
+    box-shadow: var(--box--std-box-shadow);
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 14px;
+    padding: 5px 5px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #2d293c;
+    width: 150px;
+  }
 
 .std-purple-btn:hover {
   background-color: #2d293c;
