@@ -4,14 +4,14 @@
   <!--Bubble icon-->
   <div class="col-1 icon-container hidden-mobile">
     <!--(click)="goToSubforum(subforum.SubforumId)"-->
-    <a title="Go to Subforum">
+    <a title="Go to Subforum" [routerLink]="['/subforums']">
       <i class="fa-regular fa-message fa-2xl" style="color: #2d293c;"></i>
     </a>
   </div>
 
   <!--Forum title + description -->
   <div class="col-9 col-md-4 forum-title-container-sm">
-    <a class="forum-title-font std-link" title="Go to {{ subforum?.Name }}">{{ subforum?.Name }}</a>
+    <a class="forum-title-font std-link" [routerLink]="['/subforum', subforum?.SubforumId]" title="Go to {{ subforum?.Name }}">{{ subforum?.Name }}</a>
 
     <p class="margin-bt-12">
       {{ subforum?.Description }}
@@ -43,26 +43,7 @@
       <!-- Only for mobile viewing : date of last post -->
       <li class="only-mobile">
         <p class="date-font">
-          <!--@{
-          TimeSpan ts = DateTime.Now.Subtract(trueLastComment.CreatedAt);
-          var output = "";
-          if (ts.TotalMinutes < 2)
-          output = "1 minute ago";
-          else if (ts.TotalHours < 1)
-          output = $"{(int)ts.TotalMinutes} minutes ago";
-          else if (ts.TotalDays < 1)
-          if (ts.TotalHours >= 2)
-          output = $"{(int)ts.TotalHours} hours ago";
-          else output = "1 hour ago";
-          else if (ts.TotalDays < 2)
-          output = "yesterday";
-          else if (ts.TotalDays < 5)
-          output = $"on {trueLastComment.CreatedAt.DayOfWeek}";
-          else
-          output = $"on {trueLastComment.CreatedAt.ToString("M")}";
-
-          @output
-          }-->
+          {{ getFormattedDate() }}
         </p>
       </li>
     </ul>
@@ -70,65 +51,26 @@
 
   <div class="col-md-5 forum-title-container-sm hidden-mobile">
     <!--Last post thread title-->
-    <a class="thread-title-font-lg" title="Go to Thread">
-      <!--@{
-      // Find the thread with the matching ID
-      var matchingThread = Model.Threads.FirstOrDefault(thread => thread.ThreadId == trueLastComment.ThreadId);
-      if (matchingThread != null)
-      {
-      @matchingThread.Name
-      }
-      }-->
+    <a *ngIf="lastComment" class="thread-title-font-lg" title="Go to Thread">
+      <ng-container *ngFor="let thread of subforum?.Threads">
+        <ng-container *ngIf="thread.ThreadId === lastComment?.ThreadId">
+          {{ thread.Name }}
+        </ng-container>
+      </ng-container>
     </a>
 
     <!--Last post username and date-->
     <p class="std-subtitle-font">
       By
-      <!--@{
-      var user = trueLastComment.User;
-      if (user != null)
-      {
-      if (user.Rank == "Admin")
-      {-->
-      <a href="#" class="adminTitle" title="Go to User Profile">
-        <!--@user.UserName-->
-      </a>
-      <!--}-->
-      <!--else if (user.Rank == "Mod")
-      {-->
-      <!--<a href="#" class="modTitle" title="Go to User Profile">
-        @user.UserName
-      </a>
-      }
-      else
-      {
-      <a href="#" class="memberTitle" title="Go to User Profile">
-        @user.UserName
-      </a>
-      }
-      }-->
 
-      <!--The following block of code determines the best way to display the date since the last comment-->
-      <!--TimeSpan ts2 = DateTime.Now.Subtract(trueLastComment.CreatedAt);
-      var output2 = "";
+      <ng-container *ngIf="lastComment?.UserId">
+        <a href="#" title="Go to User Profile">
+          {{ lastComment?.UserId }}
+        </a>
+      </ng-container>
 
-      if (ts2.TotalHours < 1)
-      if (ts2.TotalMinutes < 2)
-      output2 = "1 minute ago";
-      else output2 = $"{(int)ts2.TotalMinutes} minutes ago";
-      else if (ts2.TotalDays < 1)
-      if (ts2.TotalHours >= 2)
-      output2 = $"{(int)ts2.TotalHours} hours ago";
-      else output2 = "1 hour ago";
-      else if (ts2.TotalDays < 2)
-      output2 = "yesterday";
-      else if (ts2.TotalDays < 5)
-      output2 = $"on {trueLastComment.CreatedAt.DayOfWeek}";
-      else
-      output2 = $"on {trueLastComment.CreatedAt.ToString("M")}";
-
-      @output2
-      }-->
+      {{ getFormattedDate() }}
+     
     </p>
   </div>
 </div>

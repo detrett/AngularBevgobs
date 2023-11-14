@@ -1,5 +1,6 @@
 ﻿using AngularBevgobs.DAL;
 using AngularBevgobs.Models;
+using AngularBevgobs.Models.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel;
 
@@ -55,8 +56,8 @@ namespace AngularBevgobs.Controllers
                 _logger.LogError("[SubforumController] Subforum not found while executing Details()");
                 return BadRequest("Subforum not found.");
             }
-
-            return Ok(subforum);
+            var subforumDTO = MapToDTO(subforum);
+            return Ok(subforumDTO);
         }
 
         // Inject updated data into the DB
@@ -99,5 +100,42 @@ namespace AngularBevgobs.Controllers
 
         }
 
+        public static SubforumDTO MapToDTO (Subforum subforum)
+        {
+            var subforumDTO = new SubforumDTO
+            {
+                SubforumId = subforum.SubforumId,
+                Name = subforum.Name,
+                Description = subforum.Description,
+                BackgroundColor = subforum.BackgroundColor,
+                CurrentPage = subforum.CurrentPage,
+                ParentId = subforum.ForumId,
+                Threads = subforum.Threads?.Select(t => new ThreadDTO
+                {
+                    ThreadId = t.ThreadId,
+                    UserId = t.UserId,
+                    Name = t.Name,
+                    CreatedAt = t.CreatedAt,
+                    Description = t.Description,
+                    ParentId = t.SubforumId,
+                    IsLocked = t.IsLocked,
+                    IsAnnouncement = t.IsAnnouncement,
+                    IsPinned = t.IsPinned,
+                    IsFeatured = t.IsFeatured,
+                    Comments = t.Comments?.Select(c => new CommentDTO
+                    {
+                        CommentId = c.CommentId,
+                        ThreadId = c.ThreadId,
+                        UserId = c.UserId,
+                        Title = c.Title,
+                        Body = c.Body,
+                        CreatedAt = c.CreatedAt,
+
+                    }).ToList()
+                }).ToList()
+            };
+
+            return subforumDTO;
+        }
     }
 }

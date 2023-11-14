@@ -11,7 +11,13 @@ export class SubforumService {
   private apiUrl = 'api/subforum';
   constructor(private _http: HttpClient) { }
 
-  getForums(): Observable<ISubforum[]> {
+  getSubforums(): Observable<ISubforum[]> {
+    console.log("Subforum Service: getSubforums()");
     return this._http.get<ISubforum[]>(this.apiUrl);
+  }
+
+  getSubforumById(id: number): Observable<ISubforum> {
+    console.log("Subforum Service: getSubforumById(), id: " + id);
+    return this._http.get<ISubforum>(this.apiUrl + `/${id}`)
   }
 }

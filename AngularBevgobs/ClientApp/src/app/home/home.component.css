@@ -42,6 +42,43 @@ a {
     display: none;
   }
 
+.adminTitle {
+  font-weight: 700;
+  color: #285de5;
+}
+
+a.adminTitle:hover {
+  color: #171717;
+  font-weight: 800;
+}
+
+.modTitle {
+  font-weight: 600;
+  color: #b00000;
+}
+
+a.modTitle:hover {
+  font-weight: 700;
+  color: #171717;
+}
+
+.memberTitle {
+  font-weight: 400;
+  color: #433B60;
+}
+
+a.memberTitle:hover {
+  font-weight: 600;
+  color: #171717;
+}
+
+.background-dark {
+  background-color: #ecebd9;
+}
+
+.background-light {
+  background-color: #FFFEEB;
+}
 
 .box {
   margin-top: 80px;
@@ -77,6 +114,23 @@ a {
 
 .flip {
   transform: scaleX(-1);
+}
+
+.breadcrumb {
+  margin-bottom: 0;
+}
+
+.breadcrumb-item:hover a {
+  color: #F83A5B;
+}
+
+.card-body {
+  padding-bottom: 2px;
+}
+
+#footer {
+  margin-top: 75px;
+  box-shadow: 0 0 4px 1px #FFFEEB, 0 0 6px 2px #f9a3b2;
 }
 
 header > div {
@@ -246,11 +300,84 @@ header > div {
     text-align: center;
 }
 
+/**************************************************************************************************/
+/** Media dependent attributes **/
 
-/* MEDIA */
+/* FROM XS TO M */
+@media only screen and (max-width: 767px) {
+  .border-md {
+    border-top: 1px solid #1D1D1D;
+  }
+
+  .centered-sm {
+    text-align: center;
+  }
+
+  .forum-title-container-sm {
+    margin-left: 25px;
+  }
+
+  .hidden-mobile {
+    display: none;
+  }
+
+  .icon-container {
+    align-items: flex-end;
+  }
+
+  .last-poster-icon {
+    padding-bottom: 10px;
+  }
+
+  .only-mobile {
+    display: flex;
+  }
+
+  #buttonPanel {
+    margin-bottom: 18px;
+  }
+
+  #userPanel {
+    padding: 18px 0px !important;
+    justify-content: space-evenly;
+    margin: 0 0 18px 0 !important;
+  }
+
+  #userWelcome {
+    display: none;
+  }
+}
+
 /* FROM S TO XL */
 @media only screen and (min-width: 576px) {
   .banner {
     padding: 0px 100px;
+  }
+}
+
+/* FROM M TO XL */
+@media only screen and (min-width: 768px) {
+  .border-md {
+    border-left: 1px solid #1D1D1D;
+  }
+
+  .col-2.icon-container {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}
+
+/* FROM M TO L*/
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+  #registerBtn {
+    width: 90px;
+  }
+
+  #signInBtn {
+    width: 90px;
+  }
+
+  #userWelcome {
+    display: none;
   }
 }

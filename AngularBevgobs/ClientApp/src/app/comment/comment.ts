@@ -6,8 +6,6 @@ export interface IComment {
   Title: string;
   Body: string;
   ThreadId: number;
-  ParentThread: IThread;
   UserId: number;
-  Author: IUser;
   CreatedAt: Date;
 }

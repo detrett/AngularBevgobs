@@ -11,9 +11,9 @@ namespace AngularBevgobs.Models.DTOs
         public string? Rank { get; set; }
         [JsonProperty(nameof(UserPhoto))]
         public byte[]? UserPhoto { get; set; }
-        [JsonProperty(nameof(Threads))]
-        public ICollection<ThreadDTO> Threads { get; set; } = new List<ThreadDTO>();
-        [JsonProperty(nameof(UserComments))]
-        public ICollection<CommentDTO> UserComments { get; set; } = new List<CommentDTO>();
+        //[JsonProperty(nameof(Threads))]
+        //public ICollection<ThreadDTO> Threads { get; set; } = new List<ThreadDTO>();
+        //[JsonProperty(nameof(UserComments))]
+        //public ICollection<CommentDTO> UserComments { get; set; } = new List<CommentDTO>();
     }
 }

@@ -162,7 +162,8 @@ namespace AngularBevgobs.Controllers
                             UserId = c.UserId,
                             Title = c.Title,
                             Body = c.Body,
-                            CreatedAt = c.CreatedAt
+                            CreatedAt = c.CreatedAt,
+
                         }).ToList()
                     }).ToList()
                 }).ToList()
