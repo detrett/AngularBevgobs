@@ -37,6 +37,13 @@
 
 
 
+  <ItemGroup>
+    <Folder Include="ClientApp\src\app\comment\" />
+    <Folder Include="ClientApp\src\app\shared\" />
+    <Folder Include="ClientApp\src\app\subforum\" />
+    <Folder Include="ClientApp\src\app\thread\" />
+  </ItemGroup>
+
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
     <!-- Ensure Node.js is installed -->
     <Exec Command="node --version" ContinueOnError="true">
