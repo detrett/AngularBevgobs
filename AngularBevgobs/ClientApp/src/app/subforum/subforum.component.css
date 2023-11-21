@@ -7,13 +7,20 @@ a {
     color: white;
   }
 
-.background-dark {
+.backgroundDark {
   background-color: #ecebd9;
 }
 
-.background-light {
+.backgroundLight {
   background-color: #FFFEEB;
 }
+
+.roundBottom {
+  border-bottom: 1px solid rgba(255, 0, 0, 0.125);
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+
 
 .date-font {
   margin: 5px;
@@ -41,6 +48,14 @@ icon-container {
   align-items: flex-end;
 }
 
+.icon-container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 5px;
+}
+
 .img-avatar {
   width: 100px;
   height: 100px;
@@ -65,6 +80,20 @@ icon-container {
   font-weight: 700;
 }
 
+ .user-link:hover, .lighter-link:hover, .std-link:hover {
+    color: #F83A5B;
+  }
+
+.thread-title-font-lg {
+  font-weight: 600;
+  font-size: 1.1em;
+  margin-bottom: 0px;
+}
+
+.thread-title-font-lg:hover {
+  color: #F83A5B;
+}
+
 ul {
   list-style-type: none;
   padding-inline-start: 0px;
@@ -82,6 +111,11 @@ ul {
   height: 60px;
   border-radius: 50%;
   border: 1px solid #2d293cb8;
+}
+
+.usericon-container i {
+  font-size: 48px;
+  color: #2d293cc2;
 }
 
 @media only screen and (max-width: 767px) {

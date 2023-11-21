@@ -12,6 +12,7 @@ import { SubforumService } from './subforum.service';
 
 export class SubforumComponent implements OnInit {
   @Input() subforum?: ISubforum;
+  @Input() isLast?: boolean = false;
   lastComment?: IComment;
 
   constructor(
@@ -57,6 +58,14 @@ export class SubforumComponent implements OnInit {
       if (days < 2) return 'yesterday';
       if (days < 5) return `on ${createdDate.getDay()}`;
       return `on ${createdDate.toLocaleDateString()}`;
+    }
+  }
+
+  setClasses() {
+    return {
+      backgroundDark: this.subforum?.BackgroundColor == "background-dark",
+      backgroundLight: this.subforum?.BackgroundColor == "background-light",
+      roundBottom: this.isLast
     }
   }
 

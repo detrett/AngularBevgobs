@@ -1,5 +1,6 @@
 ﻿using AngularBevgobs.DAL;
 using AngularBevgobs.Models;
+using AngularBevgobs.Models.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.ComponentModel.Design;
@@ -71,15 +72,16 @@ namespace AngularBevgobs.Controllers
         public async Task<IActionResult> Details(int id)
         {
             // Get Data
-            var item = await _threadRepository.GetThreadById(id);
+            var thread = await _threadRepository.GetThreadById(id);
 
-            if (item == null)
+            if (thread == null)
             {
                 _logger.LogError("[ThreadController] Thread not found while executing Details()");
                 return BadRequest("Thread not found.");
             }
-
-            return Ok(item);
+            Console.WriteLine("[ThreadController] Data Retrieval OK while executing Get(id)");
+            var threadDTO = MapToDTO(thread);
+            return Ok(threadDTO);
         }
 
         // UPDATE
@@ -123,5 +125,35 @@ namespace AngularBevgobs.Controllers
             return Ok(response);
 
         }
+
+        public static ThreadDTO MapToDTO(Thread t)
+        {
+            var threadDTO = new ThreadDTO
+            {
+                ThreadId = t.ThreadId,
+                UserId = t.UserId,
+                Name = t.Name,
+                CreatedAt = t.CreatedAt,
+                Description = t.Description,
+                ParentId = t.SubforumId,
+                IsLocked = t.IsLocked,
+                IsAnnouncement = t.IsAnnouncement,
+                IsPinned = t.IsPinned,
+                IsFeatured = t.IsFeatured,
+                Comments = t.Comments?.Select(c => new CommentDTO
+                {
+                    CommentId = c.CommentId,
+                    ThreadId = c.ThreadId,
+                    UserId = c.UserId,
+                    Title = c.Title,
+                    Body = c.Body,
+                    CreatedAt = c.CreatedAt,
+
+                }).ToList()
+            };
+
+            return threadDTO;
+        }
     }
 }
+

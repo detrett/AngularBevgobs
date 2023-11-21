@@ -24,9 +24,9 @@
 
     <div class="collapse show" [id]="'collapseContent-' + forum.ForumId">
 
-      <ul>
-        <li *ngFor="let subforum of forum.Subforums; let idx = index">
-          <app-subforum [subforum]="subforum"></app-subforum>
+      <ul class="mb-0">
+        <li *ngFor="let subforum of forum.Subforums; let isLast = last">
+          <app-subforum [subforum]="subforum" [isLast]="isLast"></app-subforum>
         </li>
       </ul>
 

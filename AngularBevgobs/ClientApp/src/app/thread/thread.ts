@@ -7,9 +7,7 @@ export interface IThread {
   Name: string;
   Description: string;
   UserId: number;
-  User: IUser;
-  SubforumId: number;
-  ParentSubforum: ISubforum;
+  ParentId: number;
   Comments: IComment[];
   CreatedAt: Date;
   IsLocked: boolean;

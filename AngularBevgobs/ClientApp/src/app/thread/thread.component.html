@@ -18,7 +18,7 @@
     <!--Title-->
     <div class="col-9 col-md-7 forum-title-container">
       <div>
-        <a>
+        <a [routerLink]="['/thread', thread?.ThreadId]" class="thread-title-font std-link" title="Go to thread">
           <span class="">{{thread?.Name}} &nbsp;</span>
         </a>
 

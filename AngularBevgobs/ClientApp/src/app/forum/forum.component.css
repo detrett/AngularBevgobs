@@ -44,8 +44,12 @@ a[aria-expanded=false] .fa-minus {
   text-shadow: -1px -1px 0 #fc375c36, 1px -1px 0 #433b6036, -1.5px 1.5px 0 #433b60, 1px 1px 0 #433b6061;
 }
 
-section > div.bg-gradient {
+div.bg-gradient > h2, div.bg-gradient > a {
   padding: 8px 12px;
+}
+
+.mb-0 {
+  margin-bottom: 0px;
 }
 
 #title {
