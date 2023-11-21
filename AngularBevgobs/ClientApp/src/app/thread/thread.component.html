@@ -1,0 +1,110 @@
+<!--THREAD-->
+<li>
+  <div class="background-light border-item-bottom row">
+    <!--Status-->
+    <div class="col-1 icon-container hidden-mobile">
+
+      <i *ngIf="thread?.IsLocked" class="fa-solid fa-lock" data-bs-toggle="tooltip" title="Locked Thread"></i>
+
+      <i *ngIf="thread?.IsAnnouncement" class="fa-solid fa-bullhorn" data-bs-toggle="tooltip" title="Announcement"></i>
+
+      <i *ngIf="thread?.IsPinned" class="fa-solid fa-thumbtack icon-border icon-mini" data-bs-toggle="tooltip"
+         title="Pinned Thread" style="color: #433b60;"></i>
+
+      <i *ngIf="thread?.IsFeatured" class="fa-solid fa-star gradient-text spin" data-bs-toggle="tooltip"
+         title="Featured Thread"></i>
+    </div>
+
+    <!--Title-->
+    <div class="col-9 col-md-7 forum-title-container">
+      <div>
+        <a>
+          <span class="">{{thread?.Name}} &nbsp;</span>
+        </a>
+
+        <a *ngIf="hasComments()" class="user-link hidden-mobile" title="Go to last comment">
+          <i class="fa-solid fa-forward-step"></i>
+        </a>
+
+      </div>
+      <p class="thread-subtitle-font">
+        By
+        <!--@{
+  if (Model.User != null)
+  {
+  if (Model.User.Rank == "Admin")
+  {
+  <a href="#" class="adminTitle" title="Go to User Profile">@Model.User.UserName</a>
+  }
+  else if (Model.User.Rank == "Mod")
+  {
+  <a href="#" class="modTitle" title="Go to User Profile">@Model.User.UserName</a>
+  }
+  else
+  {
+  <a href="#" class="memberTitle" title="Go to User Profile">@Model.User.UserName</a>
+  }
+  }-->
+        {{ getFormattedDate() }}
+      </p>
+    </div>
+
+    <!--Replies-->
+    <div class="col-1 icon-container hidden-mobile">
+      <ul>
+        <li class="centered">
+          <p>
+            {{ thread?.Comments?.length }}
+          </p>
+        </li>
+      </ul>
+    </div>
+
+    <!--Last Poster-->
+    <div class="col-3 last-poster-container">
+      <div class="row">
+        <!--Icon-->
+        <div class="col-6 col-md-3 last-poster-icon">
+          <a href="" class="" title="Go to profile">
+            <!--@{
+            if (Model.Comments.LastOrDefault().User.UserPhoto != null)
+            {
+            var base64Image = Convert.ToBase64String(Model.Comments.LastOrDefault().User.UserPhoto);
+            var source = String.Format("data:image/png;base64,{0}", base64Image);-->
+            <!--<div class="useravatar-container">
+              <img src="" alt="Profile Picture" class="img-avatar">
+            </div>-->
+
+            <div class="usericon-container">
+              <i class="fa-regular fa-circle-user fa-2xl"></i>
+            </div>
+
+
+          </a>
+        </div>
+        <div class="col-md-9 centered-sm">
+          <div>
+            <!--@if (Model.Comments != null && Model.Comments.Any() && Model.Comments.LastOrDefault().User != null)
+            {
+            if (Model.Comments.LastOrDefault().User.Rank == "Admin")
+            {
+            <a href="#" class="adminTitle" title="Go to User Profile">@Model.Comments.LastOrDefault().User.UserName</a>
+            }
+            else if (Model.Comments.LastOrDefault().User.Rank == "Mod")
+            {
+            <a href="#" class="modTitle" title="Go to User Profile">@Model.Comments.LastOrDefault().User.UserName</a>
+            }
+            else
+            {
+            <a href="#" class="memberTitle" title="Go to User Profile">@Model.Comments.LastOrDefault().User.UserName</a>
+            }
+            }-->
+          </div>
+          <div *ngIf="hasComments()">
+            {{ getFormattedDate() }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</li>

@@ -1,0 +1,291 @@
+a {
+  color: #171717;
+  text-decoration: none;
+}
+
+a {
+  color: #0d6efd;
+  text-decoration: underline;
+}
+
+.background-light {
+  background-color: #FFFEEB;
+}
+
+.border-item-bottom {
+  border-bottom: 1px solid #D8C690;
+}
+
+i {
+  color: #2d293c;
+}
+
+.icon-container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 5px;
+}
+
+.icon-mini {
+  font-size: var(--spx-3);
+}
+
+.img-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: solid #505050b0 1px;
+}
+
+.fa-lock:hover {
+  animation: shake-animation 0.1s linear;
+}
+
+@keyframes shake-animation {
+  0% {
+    transform: rotate(-15deg);
+  }
+
+  50% {
+    transform: rotate(15deg);
+  }
+
+  80%, 100% {
+    transform: rotate(0deg);
+  }
+}
+
+.fa-bullhorn:hover,
+.fa-thumbtack:hover,
+.fa-comment-dots:hover,
+.fa-star:hover,
+.fa-trash:hover,
+.fa-comment-slash:hover {
+  transform: scale(var(--fa-beat-scale, 1.25));
+}
+
+.fa-forward-step:hover {
+  animation: backandforth 0.5s normal forwards ease-in-out;
+  animation-iteration-count: infinite;
+  -moz-animation: backandforth 0.5s normal forwards ease-in-out;
+  -moz-animation-iteration-count: infinite;
+}
+
+@keyframes backandforth {
+  30% {
+    transform: translateX(2px);
+  }
+
+  50% {
+    transform: translateX(4px);
+  }
+
+  70% {
+    transform: translateX(0px);
+  }
+}
+
+@-moz-keyframes backandforth {
+  30% {
+    -moz-transform: translateX(2px);
+  }
+
+  50% {
+    -moz-transform: translateX(4px);
+  }
+
+  70% {
+    -moz-transform: translateX(0px);
+  }
+}
+
+.forum-title-container {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--spx-4);
+}
+
+.last-poster-container {
+  align-items: normal;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--spx-4);
+}
+
+.last-poster-icon {
+  margin: auto;
+}
+
+li.centered > i {
+  padding-bottom: 5px;
+}
+
+.spin:hover {
+  animation: spin 0.5s linear;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  20% {
+    transform: rotate(45deg);
+  }
+
+  40% {
+    transform: rotate(90deg);
+  }
+
+  60% {
+    transform: rotate(150deg);
+  }
+
+  80% {
+    transform: rotate(210deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.std-link {
+  color: #505050;
+  font-weight: 700;
+}
+
+.thread-subtitle-font {
+  margin-bottom: 12px;
+}
+
+ul {
+  list-style-type: none;
+  padding-inline-start: 0px;
+}
+
+  ul.pagination > li {
+    padding-right: 3px;
+  }
+
+  ul > li.centered {
+    text-align: center;
+    margin: 5px;
+  }
+
+.useravatar-container {
+  width: 60px;
+  height: 60px;
+  border-radius: 500px;
+  text-decoration: none;
+}
+
+.useravatar-container .img-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid #2d293cb8;
+  }
+
+.usericon-container i {
+  font-size: 48px;
+  color: #2d293cc2;
+}
+
+.user-link {
+  color: #505050;
+  font-weight: 600;
+}
+
+.user-link:hover {
+  color: #F83A5B;
+}
+
+
+
+/**************************************************************************************************/
+/** Media dependent attributes **/
+
+/* FROM XS TO M */
+@media only screen and (max-width: 767px) {
+  .border-md {
+    border-top: 1px solid #1D1D1D;
+  }
+
+  .centered-sm {
+    text-align: center;
+  }
+
+  .forum-title-container-sm {
+    margin-left: 25px;
+  }
+
+  .hidden-mobile {
+    display: none;
+  }
+
+  .icon-container {
+    align-items: flex-end;
+  }
+
+  .last-poster-icon {
+    padding-bottom: 10px;
+  }
+
+  .only-mobile {
+    display: flex;
+  }
+
+  #buttonPanel {
+    margin-bottom: 18px;
+  }
+
+  #userPanel {
+    padding: 18px 0px !important;
+    justify-content: space-evenly;
+    margin: 0 0 18px 0 !important;
+  }
+
+  #userWelcome {
+    display: none;
+  }
+}
+
+/* FROM S TO XL */
+@media only screen and (min-width: 576px) {
+  .banner {
+    padding: 0px 100px;
+  }
+}
+
+/* FROM M TO XL */
+@media only screen and (min-width: 768px) {
+  .border-md {
+    border-left: 1px solid #1D1D1D;
+  }
+
+  .col-2.icon-container {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}
+
+/* FROM M TO L*/
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+  #registerBtn {
+    width: 90px;
+  }
+
+  #signInBtn {
+    width: 90px;
+  }
+
+  #userWelcome {
+    display: none;
+  }
+}

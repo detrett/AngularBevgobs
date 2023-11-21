@@ -160,29 +160,12 @@
           <!--PAGINATION-->
           <nav aria-label="Page navigation" class="pagination-container col-10">
             <ul class="pagination margin-bt-0">
-              <!--@{
-            var currentPage = 1;
-            var pageSize = 10;
-
-            double totalPages = 1;
-            // Find out how many pages we will need (10 topics per page)
-            if (Model.Threads.Count() > 0)
-            {
-            totalPages = Math.Ceiling((double)Model.Threads.Count() / 10);
-            Console.WriteLine(totalPages);
-            }
-            var lastPageIndex = 1;
-            // Add as many buttons as total pages are
-            for (var i = 1; i <= totalPages; i++)
-            {-->
-              <li class="mr-1 page-item">
-                <a class="page-link" href="#tab-i">i</a>
+              <li class="mr-1 page-item" *ngFor="let pageNumber of pageNumbers" [class.active]="pageNumber === currentPage">
+                <a class="page-link" href="#tab-{{ pageNumber }}">{{ pageNumber }}</a>
               </li>
-              <!--lastPageIndex = i;
 
-            }-->
               <li class="page-item">
-                <a class="page-link" role="button" href="#tab-lastPageIndex" aria-label="Last" data-bs-toggle="tooltip"
+                <a class="page-link" role="button" href="#tab-{{ pageNumbers.length }}" aria-label="Last" data-bs-toggle="tooltip"
                    title="Go to last page">
                   <span aria-hidden="true">&raquo;</span>
                 </a>
@@ -192,8 +175,8 @@
           </nav>
 
           <!--@{
-        if (User.Identity.IsAuthenticated)
-        {-->
+          if (User.Identity.IsAuthenticated)
+          {-->
           <div class="col-2">
             <button type="button" class="btn card-body new-thread-btn guest-disabled" data-bs-keyboard="false" data-bs-backdrop="static" data-bs-toggle="modal"
                     data-bs-target="#threadModal">
@@ -202,17 +185,17 @@
             </button>
           </div>
           <!--}
-        else
-        {-->
+          else
+          {-->
           <!--<div class="col-2">
-          <a href="" class="btn card-body new-thread-btn guest-disabled disabled" role="button"
-             aria-disabled="true" data-bs-toggle="tooltip" title="Make a new thread">
-            <i class="fa-solid fa-pen-to-square"></i>
-            New Thread
-          </a>
-        </div>-->
+            <a href="" class="btn card-body new-thread-btn guest-disabled disabled" role="button"
+               aria-disabled="true" data-bs-toggle="tooltip" title="Make a new thread">
+              <i class="fa-solid fa-pen-to-square"></i>
+              New Thread
+            </a>
+          </div>-->
           <!--}
-        }-->
+          }-->
         </div>
 
         <!--End of Subforum Banner-->
@@ -246,31 +229,17 @@
               </div>
             </li>
 
-            <!--@{
-          // Order the threads by last comment date
-          var orderedThreads = Model.Threads.OrderByDescending(aTopic =>
-          aTopic.Comments.Any() ? aTopic.Comments.Max(comment => comment.CreatedAt) : DateTime.MinValue).ToList();
-
-          var count = 1;
-          // Load the threads, 10 threads per page-->
-            <div class="tab-content">
-              <!--@for (var i = 1; i <= totalPages; i++)
-            {-->
-              <div class="tab-pane" id="tab-i">
-                <!--@for (var j = count; j <= currentPage * pageSize; j++)
-              {
-              if (j <= orderedThreads.Count())
-              {
-              @await Html.PartialAsync("_ThreadList", orderedThreads[j - 1]);
-              count++;
-              }
-              else break;
-              }
-              @{
-              currentPage += 1;
-              }-->
+            <!--Load the threads, 10 threads per page-->
+            <div *ngIf="orderedThreads.length > 0">
+              <div class="tab-content">
+                <div *ngFor="let page of [].constructor(totalPages); let i = index" class="tab-pane" [ngClass]="{'active': i + 1 === currentPage}" id="tab-{{i + 1}}">
+                  <ng-container *ngFor="let thread of getThreadsForCurrentPage()">
+                    <!-- Replace with your thread display component or HTML -->
+                    <app-thread [thread]="thread"></app-thread>
+                  </ng-container>
+                </div>
               </div>
-              <!--}-->
+
             </div>
             <!--}-->
           </ul>
@@ -295,14 +264,14 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <!--@{
-        var newThread = new GeverageBoblins.Models.Thread();
-        newThread.SubforumId = Model.SubforumId;
-        newThread.IsAnnouncement = false;
-        newThread.IsLocked = false;
-        newThread.IsFeatured = false;
-        newThread.IsPinned = false;
-        }
-        @await Html.PartialAsync("_NewThreadModal", newThread);-->
+          var newThread = new GeverageBoblins.Models.Thread();
+          newThread.SubforumId = Model.SubforumId;
+          newThread.IsAnnouncement = false;
+          newThread.IsLocked = false;
+          newThread.IsFeatured = false;
+          newThread.IsPinned = false;
+          }
+          @await Html.PartialAsync("_NewThreadModal", newThread);-->
 
         </div>
       </div>

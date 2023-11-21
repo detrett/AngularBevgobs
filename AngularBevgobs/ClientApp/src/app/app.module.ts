@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { ForumComponent } from './forum/forum.component';
 import { SubforumComponent } from './subforum/subforum.component';
 import { SubforumContainerComponent } from './subforum/subforum-container.component';
+import { ThreadComponent } from './thread/thread.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { SubforumContainerComponent } from './subforum/subforum-container.compon
     ForumComponent,
     SubforumComponent,
     SubforumContainerComponent,
+    ThreadComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
