@@ -5,11 +5,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { NavMenuComponent } from './nav-menu/nav-menu.component';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './auth/login/login.component';
-import { RegistrationComponent } from './auth/registration/register.component';
+import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/auth/login/login.component';
+import { RegistrationComponent } from './components/auth/registration/register.component';
 import { AppRoutingModule } from './app-routing.module';
+import { SubforumComponent } from './components/subforum/subforum.component';
+import { ThreadComponent } from './components/thread/thread.component';
+import { CommentComponent } from './components/comment/comment.component';
+import { SharedComponent } from './components/shared/shared.component';
+import { UserComponent } from './components/user/user.component';
 
 
 @NgModule({
@@ -19,6 +24,11 @@ import { AppRoutingModule } from './app-routing.module';
     HomeComponent,
     LoginComponent,
     RegistrationComponent,
+    SubforumComponent,
+    ThreadComponent,
+    CommentComponent,
+    SharedComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

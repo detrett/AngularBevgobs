@@ -37,11 +37,9 @@
 
 
 
+
   <ItemGroup>
-    <Folder Include="ClientApp\src\app\comment\" />
-    <Folder Include="ClientApp\src\app\shared\" />
-    <Folder Include="ClientApp\src\app\subforum\" />
-    <Folder Include="ClientApp\src\app\thread\" />
+    <Folder Include="ClientApp\src\app\services\" />
   </ItemGroup>
 
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
