@@ -1,4 +1,5 @@
 ﻿import {Forum} from "./Forum";
+import {Thread} from "./Thread";
 
 export interface Subforum {
   subforumId: number;

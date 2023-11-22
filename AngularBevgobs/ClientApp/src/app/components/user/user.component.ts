@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from './user.service'; // Adjust the path as per your project structure
+import { UserService } from 'src/app/services/user.service'; // Adjust the path as per your project structure
 import { ApplicationUser } from 'src/Models/ApplicationUser';
 
 @Component({
