@@ -71,7 +71,7 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.Password.RequiredLength = 6; 
 });
 
-
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 // Adding the Forum Repository
 builder.Services.AddScoped<IForumRepository, ForumRepository>();
 // Adding the Subforum Repository
@@ -80,6 +80,7 @@ builder.Services.AddScoped<ISubforumRepository, SubforumRepository>();
 builder.Services.AddScoped<IThreadRepository, ThreadRepository>();
 
 builder.Services.AddScoped<ICommentRepository, CommentRepository>();
+
 
 
 var app = builder.Build();

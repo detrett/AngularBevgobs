@@ -106,6 +106,13 @@ namespace AngularBevgobs.Controllers
             return Ok(response);
 
         }
-
+        
+        [HttpGet("check-username")]
+        public async Task<IActionResult> CheckUsernameAvailability(string username)
+        {
+            bool exists = await _userRepository.DoesUsernameExist(username);
+            return Ok(!exists); 
+        }
+        
     }
 }

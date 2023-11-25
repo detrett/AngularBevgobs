@@ -41,6 +41,12 @@ namespace AngularBevgobs.DAL
             return true;
         }
 
+        public async Task<bool> DoesUsernameExist(string username)
+        {
+            return await _db.Users.AnyAsync(u => u.UserName == username);
+        }
+
+
         public async Task<IEnumerable<ApplicationUser>?> GetAll()
         {
             return await _db.Users.ToListAsync();
