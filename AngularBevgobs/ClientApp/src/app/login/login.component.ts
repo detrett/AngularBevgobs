@@ -19,34 +19,31 @@ export class LoginComponent {
   }
 
   onLogin() {
-    this.authService.login(this.loginData.email, this.loginData.password).subscribe(
-      (data) => {
+    this.authService.login(this.loginData.email, this.loginData.password).subscribe({
+      next: (data) => {
         if (data && data.token) {
-          console.log('Login successful', data);
-          localStorage.setItem('token', data.token);
+          this.authService.storeAuthToken(data.token);
           this.router.navigate(['/']);
         } else {
-          console.error('Login failed: Invalid response from the server');
+          this.errorMessage = 'Login failed: Invalid response from the server';
         }
       },
-      (error) => {
-        console.error('Login failed', error);
-
-        if (error.status === 400) {
-          const errorResponse = error.error;
-          if (errorResponse && errorResponse.message) {
-            console.error('Bad Request:', errorResponse.message);
-            this.errorMessage = errorResponse.message;
-          } else {
-            console.error('Bad Request: Invalid email or password');
-            this.errorMessage = 'An unexpected error occurred. Please try again later';
-          }
-        } else {
-          console.error('Invalid email or password.');
-          this.errorMessage = 'Invalid email or password';
-        }
+      error: (error) => {
+        this.handleError(error);
       }
-    );
+    });
+  }
+
+  private handleError(error: any) {
+    if (error.status === 400) {
+      const errorResponse = error.error;
+      if (errorResponse && errorResponse.message) {
+        this.errorMessage = errorResponse.message;
+      } else {
+        this.errorMessage = 'An unexpected error occurred. Please try again later';
+      }
+    } else {
+      this.errorMessage = 'Invalid email or password';
+    }
   }
 }
-
