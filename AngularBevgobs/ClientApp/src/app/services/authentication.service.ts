@@ -14,8 +14,12 @@ export class AuthService {
   login(email: string, password: string): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}/login`, { email, password }).pipe(
       tap(response => {
+        console.log('Login response:', response);
         if (response && response.userId) {
           localStorage.setItem('userId', response.userId.toString());
+          console.log('UserId stored in localStorage:', response.userId);
+        } else {
+          console.error('Login response does not contain userId');
         }
       })
     );

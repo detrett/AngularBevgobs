@@ -105,7 +105,6 @@ export class SubforumContainerComponent implements OnInit {
 
     this._route.paramMap.subscribe(params => {
       const id = params.get('id');
-
       if (id != null) {
         this.getSubforumData(+id);
       } else {
@@ -113,9 +112,7 @@ export class SubforumContainerComponent implements OnInit {
         this._router.navigate(['/']);
       }
     });
-  }
 
-  ngOnInit2() { //temp usage for testing
     const userId = localStorage.getItem('userId');
     if (userId) {
       this.authService.getUserDetails(+userId).subscribe({
@@ -131,6 +128,7 @@ export class SubforumContainerComponent implements OnInit {
       console.error('User ID not found in local storage');
     }
   }
+
 
   get isAuthenticated(): boolean {
     return this.authService.isAuthenticated();

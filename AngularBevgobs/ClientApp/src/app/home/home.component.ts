@@ -14,18 +14,22 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     const userId = localStorage.getItem('userId');
     if (userId) {
-      this.authService.getUserDetails(+userId).subscribe({
-        next: (user) => {
-          this.currentUser = user;
-          console.log('Current user:', this.currentUser);
-        },
-        error: (err) => {
-          console.error('Error fetching user details:', err);
-        }
-      });
+      this.fetchUserDetails(userId);
     } else {
       console.error('User ID not found in local storage');
     }
+  }
+
+  private fetchUserDetails(userId: string) {
+    this.authService.getUserDetails(+userId).subscribe({
+      next: (user) => {
+        this.currentUser = user;
+        console.log('Current user:', this.currentUser);
+      },
+      error: (err) => {
+        console.error('Error fetching user details:', err);
+      }
+    });
   }
 
   get isAuthenticated(): boolean {

@@ -7,15 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3b27334-fd99-4710-b89e-a7ba0bd921b1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.AngularBevgobs/.idea/dataSources/9e3c112a-7f54-42c6-a818-204b32d8176e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AngularBevgobs/.idea/dataSources/9e3c112a-7f54-42c6-a818-204b32d8176e.xml" afterDir="false" />
+    <list default="true" id="a3b27334-fd99-4710-b89e-a7ba0bd921b1" name="Changes" comment="done some *ngIf=&quot;!isAuthenticated&quot;  for forums">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AngularBevgobs/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AngularBevgobs/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.10/angular-webpack/b5532234d82417f7900e47ae247ecd2175ad7fe6/0.pack" beforeDir="false" afterPath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.10/angular-webpack/b5532234d82417f7900e47ae247ecd2175ad7fe6/0.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.10/angular-webpack/b5532234d82417f7900e47ae247ecd2175ad7fe6/1.pack" beforeDir="false" afterPath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.10/angular-webpack/b5532234d82417f7900e47ae247ecd2175ad7fe6/1.pack" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.10/angular-webpack/b5532234d82417f7900e47ae247ecd2175ad7fe6/10.pack" beforeDir="false" afterPath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.10/angular-webpack/b5532234d82417f7900e47ae247ecd2175ad7fe6/10.pack" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.10/angular-webpack/b5532234d82417f7900e47ae247ecd2175ad7fe6/11.pack" beforeDir="false" afterPath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.10/angular-webpack/b5532234d82417f7900e47ae247ecd2175ad7fe6/11.pack" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.10/angular-webpack/b5532234d82417f7900e47ae247ecd2175ad7fe6/12.pack" beforeDir="false" afterPath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.10/angular-webpack/b5532234d82417f7900e47ae247ecd2175ad7fe6/12.pack" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.10/angular-webpack/b5532234d82417f7900e47ae247ecd2175ad7fe6/13.pack" beforeDir="false" afterPath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.10/angular-webpack/b5532234d82417f7900e47ae247ecd2175ad7fe6/13.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.10/angular-webpack/b5532234d82417f7900e47ae247ecd2175ad7fe6/14.pack" beforeDir="false" afterPath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.10/angular-webpack/b5532234d82417f7900e47ae247ecd2175ad7fe6/14.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.10/angular-webpack/b5532234d82417f7900e47ae247ecd2175ad7fe6/15.pack" beforeDir="false" afterPath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.10/angular-webpack/b5532234d82417f7900e47ae247ecd2175ad7fe6/15.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.10/angular-webpack/b5532234d82417f7900e47ae247ecd2175ad7fe6/3.pack" beforeDir="false" afterPath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.10/angular-webpack/b5532234d82417f7900e47ae247ecd2175ad7fe6/3.pack" afterDir="false" />
@@ -23,8 +18,6 @@
       <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.10/angular-webpack/b5532234d82417f7900e47ae247ecd2175ad7fe6/5.pack" beforeDir="false" afterPath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.10/angular-webpack/b5532234d82417f7900e47ae247ecd2175ad7fe6/5.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.10/angular-webpack/b5532234d82417f7900e47ae247ecd2175ad7fe6/6.pack" beforeDir="false" afterPath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.10/angular-webpack/b5532234d82417f7900e47ae247ecd2175ad7fe6/6.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.10/angular-webpack/b5532234d82417f7900e47ae247ecd2175ad7fe6/7.pack" beforeDir="false" afterPath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.10/angular-webpack/b5532234d82417f7900e47ae247ecd2175ad7fe6/7.pack" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.10/angular-webpack/b5532234d82417f7900e47ae247ecd2175ad7fe6/8.pack" beforeDir="false" afterPath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.10/angular-webpack/b5532234d82417f7900e47ae247ecd2175ad7fe6/8.pack" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.10/angular-webpack/b5532234d82417f7900e47ae247ecd2175ad7fe6/9.pack" beforeDir="false" afterPath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.10/angular-webpack/b5532234d82417f7900e47ae247ecd2175ad7fe6/9.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.10/angular-webpack/b5532234d82417f7900e47ae247ecd2175ad7fe6/index.pack" beforeDir="false" afterPath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.10/angular-webpack/b5532234d82417f7900e47ae247ecd2175ad7fe6/index.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.10/angular-webpack/b5532234d82417f7900e47ae247ecd2175ad7fe6/index.pack.old" beforeDir="false" afterPath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.10/angular-webpack/b5532234d82417f7900e47ae247ecd2175ad7fe6/index.pack.old" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/src/app/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/AngularBevgobs/ClientApp/src/app/home/home.component.html" afterDir="false" />
@@ -33,9 +26,7 @@
       <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/src/app/services/authentication.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/AngularBevgobs/ClientApp/src/app/services/authentication.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/src/app/subforum/subforum-container.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/AngularBevgobs/ClientApp/src/app/subforum/subforum-container.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/src/app/subforum/subforum-container.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/AngularBevgobs/ClientApp/src/app/subforum/subforum-container.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ForumDatabase.db" beforeDir="false" afterPath="$PROJECT_DIR$/AngularBevgobs/ForumDatabase.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ForumDatabase.db-shm" beforeDir="false" afterPath="$PROJECT_DIR$/AngularBevgobs/ForumDatabase.db-shm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ForumDatabase.db-wal" beforeDir="false" afterPath="$PROJECT_DIR$/AngularBevgobs/ForumDatabase.db-wal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AngularBevgobs/Controllers/AuthenticateController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AngularBevgobs/Controllers/AuthenticateController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +103,7 @@
       <option name="presentableId" value="Default" />
       <updated>1700752016480</updated>
       <workItem from="1700752019429" duration="33032000" />
-      <workItem from="1700947461284" duration="5969000" />
+      <workItem from="1700947461284" duration="9626000" />
     </task>
     <task id="LOCAL-00001" summary="fixed authentication with JWT, login and registration works.">
       <option name="closed" value="true" />
@@ -138,7 +129,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700938550125</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="done some *ngIf=&quot;!isAuthenticated&quot;  for forums">
+      <option name="closed" value="true" />
+      <created>1700953527498</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1700953527498</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,6 +160,7 @@
     <MESSAGE value="fixed authentication with JWT, login and registration works." />
     <MESSAGE value="added warnings and validations to registration" />
     <MESSAGE value="Invalid login check" />
-    <option name="LAST_COMMIT_MESSAGE" value="Invalid login check" />
+    <MESSAGE value="done some *ngIf=&quot;!isAuthenticated&quot;  for forums" />
+    <option name="LAST_COMMIT_MESSAGE" value="done some *ngIf=&quot;!isAuthenticated&quot;  for forums" />
   </component>
 </project>

@@ -32,14 +32,17 @@
         <a title="Go to profile">
           <!-- If user photo exists, display it -->
           <img *ngIf="currentUser?.UserPhoto" [src]="'data:image/png;base64,' + currentUser.UserPhoto" alt="Profile Picture" class="img-thumbnail">
-          <img *ngIf="!currentUser?.UserPhoto" src="assets/images/defaultpp.png" alt="Profile Picture" class="img-thumbnail">
+          <!-- If user photo URL exists, display it -->
+          <img *ngIf="currentUser?.UserPhotoUrl" [src]="currentUser.UserPhotoUrl" alt="Profile Picture" class="img-thumbnail">
+          <!-- Display default profile picture if no user photo exists -->
+          <img *ngIf="!currentUser?.UserPhoto" src="assets/images/defaultuser.png" alt="Profile Picture" class="img-thumbnail">
         </a>
       </div>
       <!-- User welcome -->
       <div *ngIf="currentUser" class="m-auto text-center" id="userWelcome">
-        <span class="p-1">
-          <em>Welcome, <span class="userTitle">{{ currentUser.name }}</span>!</em>
-        </span>
+    <span class="p-1">
+        <em>Welcome, <span class="userTitle">{{ currentUser.userName }}</span>!</em>
+    </span>
       </div>
 
 

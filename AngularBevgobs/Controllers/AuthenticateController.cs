@@ -42,6 +42,7 @@ namespace AngularBevgobs.Controllers
                 {
                     new Claim(ClaimTypes.Name, user.UserName),
                     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                    new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())
                 };
 
                 foreach (var userRole in userRoles)
@@ -49,16 +50,18 @@ namespace AngularBevgobs.Controllers
                     authClaims.Add(new Claim(ClaimTypes.Role, userRole));
                 }
 
-               var token = GetToken(authClaims);
+                var token = GetToken(authClaims);
 
                 return Ok(new
                 {
                     token = new JwtSecurityTokenHandler().WriteToken(token),
-                    expiration = token.ValidTo
+                    expiration = token.ValidTo,
+                    userId = user.Id 
                 });
             }
             return Unauthorized();
         }
+
 
         [HttpPost]
         [Route("register")]

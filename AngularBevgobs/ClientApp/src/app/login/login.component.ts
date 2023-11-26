@@ -21,8 +21,14 @@ export class LoginComponent {
   onLogin() {
     this.authService.login(this.loginData.email, this.loginData.password).subscribe({
       next: (data) => {
+        console.log('Login response:', data);
         if (data && data.token) {
           this.authService.storeAuthToken(data.token);
+          if (data.userId) {
+            localStorage.setItem('userId', data.userId.toString());
+          } else {
+            console.error('Login response does not contain userId');
+          }
           this.router.navigate(['/']);
         } else {
           this.errorMessage = 'Login failed: Invalid response from the server';
@@ -33,6 +39,7 @@ export class LoginComponent {
       }
     });
   }
+
 
   private handleError(error: any) {
     if (error.status === 400) {
