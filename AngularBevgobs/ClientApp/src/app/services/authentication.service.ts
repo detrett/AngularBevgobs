@@ -54,4 +54,8 @@ export class AuthService {
     localStorage.removeItem('authToken');
     this.router.navigate(['/']);
   }
+
+  updateUserDetails(userId: number, updateData: any): Observable<any> {
+    return this.http.put<any>(`${this.userBaseUrl}/update/${userId}`, updateData);
+  }
 }

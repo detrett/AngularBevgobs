@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics.Metrics;
 using System.Reflection.Metadata;
 using System.Runtime.InteropServices;
+using Microsoft.AspNetCore.Identity;
+
 
 
 namespace AngularBevgobs.Controllers
@@ -17,11 +19,16 @@ namespace AngularBevgobs.Controllers
         // Injecting the Subforum's Repository
         private readonly IUserRepository _userRepository;
         private readonly ILogger<UserController> _logger;
+        private readonly IPasswordHasher<ApplicationUser> _passwordHasher;
 
-        public UserController(IUserRepository userRepository, ILogger<UserController> logger)
+        public UserController(
+            IUserRepository userRepository,
+            ILogger<UserController> logger,
+            IPasswordHasher<ApplicationUser> passwordHasher)
         {
             _userRepository = userRepository;
             _logger = logger;
+            _passwordHasher = passwordHasher;
         }
 
         // CRUD
@@ -70,26 +77,51 @@ namespace AngularBevgobs.Controllers
         // UPDATE
         // Inject updated data into the DB
         [HttpPut("update/{id}")]
-        public async Task<IActionResult> Update(ApplicationUser applicationUser)
+        public async Task<IActionResult> Update(int id, [FromBody] ApplicationUser updatedUser)
         {
-            if(applicationUser == null)
+            if (updatedUser == null)
             {
                 return BadRequest("Invalid user data.");
             }
-            bool returnOk = await _userRepository.Update(applicationUser);
-            
+            if (id != updatedUser.Id)
+            {
+                return BadRequest("Mismatched user ID.");
+            }
+
+            var existingUser = await _userRepository.GetUserById(id);
+            if (existingUser == null)
+            {
+                _logger.LogError("[UserController] User not found for updating");
+                return NotFound("User not found.");
+            }
+    
+            existingUser.UserName = updatedUser.UserName;
+            existingUser.Email = updatedUser.Email;
+
+            // Handle password update
+            if (!string.IsNullOrWhiteSpace(updatedUser.Password))
+            {
+                // Use a password hasher here to hash the new password
+                var hashedPassword = _passwordHasher.HashPassword(existingUser, updatedUser.Password);
+                existingUser.PasswordHash = hashedPassword;
+            }
+
+            bool returnOk = await _userRepository.Update(existingUser);
+
             if (returnOk)
             {
-                var response = new { success = true, message = "User " + applicationUser.Id + " updated successfully" };
+                var response = new { success = true, message = "User " + id + " updated successfully" };
                 return Ok(response);
             }
             else
             {
                 _logger.LogError("[UserController] User could not be updated");
-                var response = new { success = false, message = "User " + applicationUser.Id + " failed to update" };
+                var response = new { success = false, message = "User " + id + " failed to update" };
                 return Ok(response);
             }
         }
+
+
 
         // DELETE
         // Return a Forum object based on its id

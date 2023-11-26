@@ -50,20 +50,24 @@
 
       <div class="p-2">-->
     <!--Profile-->
-    <div class="p-1">
-      <a title="Go to profile" class="lighter-link" asp-area="Identity" asp-page="/Account/Manage/Index">
-        <i class="fa-solid fa-user"></i>
-        My Profile
-      </a>
-    </div>-->
+        <!-- Profile -->
+        <div class="p-1">
+          <a title="Go to profile" class="lighter-link" [routerLink]="['/user-settings']">
+            <i class="fa-solid fa-user"></i>
+            Profile
+          </a>
+        </div>
+        -->
     <!--Settings-->
-    <div class="p-1">
-        <a title="Edit your profile" class="lighter-link" asp-area="Identity" asp-page="/Account/Manage/Index">
-          <i class="fa-solid fa-gear"></i>
-          Settings
-        </a>
+        <!-- Settings -->
+        <div class="p-1">
+          <a title="Edit your profile" class="lighter-link" [routerLink]="['/user-settings']">
+            <i class="fa-solid fa-gear"></i>
+            Settings
+          </a>
+        </div>
+
       </div>
-    </div>
 
     <div class="p-2">-->
     <!--Inbox-->

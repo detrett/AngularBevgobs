@@ -14,6 +14,7 @@ import { ThreadComponent } from './thread/thread.component';
 import { ThreadContainerComponent } from './thread/thread-container.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import {UserSettingsComponent} from "./user-settings/user-settings.component";
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { RegisterComponent } from './register/register.component';
     ThreadContainerComponent,
     LoginComponent,
     RegisterComponent,
+    UserSettingsComponent,
   ],
     imports: [
         BrowserModule.withServerTransition({appId: 'ng-cli-universal'}),

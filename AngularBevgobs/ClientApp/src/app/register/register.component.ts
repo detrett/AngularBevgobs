@@ -58,16 +58,23 @@ export class RegisterComponent {
 
   onRegister() {
     if (this.registerForm.valid) {
-      this.authService.register(this.registerForm.value).subscribe(
-        data => {
-          console.log('Registration successful', data);
-          localStorage.setItem('token', data.token);
-          this.router.navigate(['/']);
+      const registerData = this.registerForm.value;
+      this.authService.register(registerData).subscribe({
+        next: (data) => {
+          this.authService.login(registerData.email, registerData.password).subscribe({
+            next: (loginData) => {
+              if (loginData && loginData.token) {
+                this.authService.storeAuthToken(loginData.token);
+                localStorage.setItem('userId', loginData.userId.toString());
+                this.router.navigate(['/']);
+              }
+            },
+            error: (loginError) => console.error('Login failed after registration', loginError)
+          });
         },
-        error => {
-          console.error('Registration failed', error);
-        }
-      );
+        error: (registerError) => console.error('Registration failed', registerError)
+      });
     }
   }
+
 }

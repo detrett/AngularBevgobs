@@ -6,6 +6,8 @@ import { SubforumContainerComponent } from './subforum/subforum-container.compon
 import { ThreadContainerComponent } from './thread/thread-container.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { UserSettingsComponent } from './user-settings/user-settings.component';
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -14,6 +16,7 @@ const routes: Routes = [
   { path: 'thread/:id', component: ThreadContainerComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'user-settings', component: UserSettingsComponent },
 ];
 
 @NgModule({
