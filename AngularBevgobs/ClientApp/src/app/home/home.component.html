@@ -1,18 +1,3 @@
-<!-- START OF HEADER -->
-<header>
-  <div class="box row">
-    <a [routerLink]="['/']" class="logo">
-      <!--Logo-->
-      <div><img src="assets/images/logo.png" alt="Logo" class="logo-img"></div>
-      <!--Title-->
-      <div class="text-center"><span class="logo-font">Beverage Goblins</span></div>
-      <!--Logo-->
-      <div><img src="assets/images/logo.png" alt="Logo" class="logo-img flip"></div>
-    </a>
-  </div>
-</header>
-<!-- END OF HEADER -->
-
 <!-- MAIN CONTENT -->
 <div class="banner clearfix container-fluid">
   <!-- START OF BANNER -->
@@ -40,51 +25,53 @@
       </div>
       <!-- User welcome -->
       <div *ngIf="currentUser" class="m-auto text-center" id="userWelcome">
-    <span class="p-1">
-        <em>Welcome, <span class="userTitle">{{ currentUser.userName }}</span>!</em>
-    </span>
+        <span class="p-1">
+          <em>Welcome, <span class="userTitle">{{ currentUser.userName }}</span>!</em>
+        </span>
       </div>
 
 
       <div class="m-auto" id="banner-user-options">
 
-      <div class="p-2">-->
-    <!--Profile-->
-        <!-- Profile -->
-        <div class="p-1">
-          <a title="Go to profile" class="lighter-link" [routerLink]="['/user-settings']">
-            <i class="fa-solid fa-user"></i>
-            Profile
-          </a>
-        </div>
-        -->
-    <!--Settings-->
-        <!-- Settings -->
-        <div class="p-1">
-          <a title="Edit your profile" class="lighter-link" [routerLink]="['/user-settings']">
-            <i class="fa-solid fa-gear"></i>
-            Settings
-          </a>
+        <div class="p-2">
+          -->
+          <!--Profile-->
+          <!-- Profile -->
+          <div class="p-1">
+            <a title="Go to profile" class="lighter-link" [routerLink]="['/user-settings']">
+              <i class="fa-solid fa-user"></i>
+              Profile
+            </a>
+          </div>
+          -->
+          <!--Settings-->
+          <!-- Settings -->
+          <div class="p-1">
+            <a title="Edit your profile" class="lighter-link" [routerLink]="['/user-settings']">
+              <i class="fa-solid fa-gear"></i>
+              Settings
+            </a>
+          </div>
+
         </div>
 
-      </div>
-
-    <div class="p-2">-->
-    <!--Inbox-->
-    <div class="p-1">
-      <a href="#" title="Go to inbox" class="lighter-link">
-        <i class="fa-solid fa-inbox"></i>
-        Inbox
-      </a>
-    </div>-->
-    <!--Sign Out-->
-      <div class="p-1">
-        <a title="Sign Out" class="lighter-link" (click)="logout()">
-          <i class="fa-solid fa-right-from-bracket"></i>
-          Sign Out
-        </a>
-      </div>
-    </div>
+        <div class="p-2">
+          -->
+          <!--Inbox-->
+          <div class="p-1">
+            <a href="#" title="Go to inbox" class="lighter-link">
+              <i class="fa-solid fa-inbox"></i>
+              Inbox
+            </a>
+          </div>-->
+          <!--Sign Out-->
+          <div class="p-1">
+            <a title="Sign Out" class="lighter-link" (click)="logout()">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              Sign Out
+            </a>
+          </div>
+        </div>
 
       </div>
 
@@ -118,50 +105,50 @@
   </main>
 
   <!--Start of Footer-->
-  <div class="card row" id="footer">
+  <!--<div class="card row" id="footer">-->
 
     <!--Breadcrumbs-->
-    <div class="background-dark card-header">
+    <!--<div class="background-dark card-header">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item active" aria-current="page">Board Index</li>
         </ol>
       </nav>
-    </div>
+    </div>-->
 
     <!--Main content-->
-    <div class="background-light card-body flex-2">
+    <!--<div class="background-light card-body flex-2">-->
 
       <!--Legend-->
-      <div class="col-6 col-md-3">
+      <!--<div class="col-6 col-md-3">
         <p>
           <b>Legend :: </b><span class="adminTitle">Administrator</span>, <span class="modTitle">Moderators</span>, <span class="userTitle">Members</span>
         </p>
-      </div>
+      </div>-->
 
       <!--Newest Member-->
-      <div class="col-6 col-md-3">
+      <!--<div class="col-6 col-md-3">
         <p><b>Newest Member: </b> <a href="#" class="userTitle user-link">bubbletrouble</a></p>
-      </div>
+      </div>-->
 
       <!--Total Threads-->
-      <div class="col-4 col-md-2">
+      <!--<div class="col-4 col-md-2">
         <p><b>Total Threads:</b> 256</p>
-      </div>
+      </div>-->
 
       <!--Total Posts-->
-      <div class="col-4 col-md-2">
+      <!--<div class="col-4 col-md-2">
         <p><b>Total Posts:</b> 2752</p>
-      </div>
+      </div>-->
 
       <!--Total Users-->
-      <div class="col-4 col-md-2">
+      <!--<div class="col-4 col-md-2">
         <p><b>Total Users:</b> 78</p>
       </div>
 
-    </div>
+    </div>-->
     <!--End of Main Content-->
-  </div>
+  <!--</div>-->
   <!--End of Footer-->
 </div>
 

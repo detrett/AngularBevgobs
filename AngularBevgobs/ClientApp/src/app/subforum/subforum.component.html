@@ -64,13 +64,18 @@
       By
 
       <ng-container *ngIf="lastComment?.UserId">
-        <a href="#" title="Go to User Profile">
+        <a href="#" title="Go to User Profile"
+           [ngClass]="{
+     'adminTitle': lastUser?.Rank === 'Admin',
+     'modTitle': lastUser?.Rank === 'Mod',
+     'memberTitle': lastUser?.Rank !== 'Admin' && lastUser?.Rank !== 'Mod'
+      }">
           {{ lastUser?.Username }}
         </a>
       </ng-container>
 
       {{ getFormattedDate() }}
-     
+
     </p>
   </div>
 </div>

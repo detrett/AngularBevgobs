@@ -7,6 +7,41 @@ a {
     color: white;
   }
 
+.adminTitle {
+  font-weight: 700;
+  color: #285de5;
+}
+
+a.adminTitle:hover {
+  color: #171717;
+  font-weight: 800;
+}
+
+a.adminTitle:hover {
+  color: #171717;
+  font-weight: 800;
+}
+
+.modTitle {
+  font-weight: 600;
+  color: #b00000;
+}
+
+a.modTitle:hover {
+  font-weight: 700;
+  color: #171717;
+}
+
+.memberTitle {
+  font-weight: 400;
+  color: #433B60;
+}
+
+a.memberTitle:hover {
+  font-weight: 600;
+  color: #171717;
+}
+
 .backgroundDark {
   background-color: #ecebd9;
 }

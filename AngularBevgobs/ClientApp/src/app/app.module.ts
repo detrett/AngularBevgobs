@@ -7,6 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 import { ForumComponent } from './forum/forum.component';
 import { SubforumComponent } from './subforum/subforum.component';
 import { SubforumContainerComponent } from './subforum/subforum-container.component';
@@ -22,6 +24,8 @@ import { UserSettingsComponent } from "./user-settings/user-settings.component";
     AppComponent,
     NavMenuComponent,
     HomeComponent,
+    HeaderComponent,
+    FooterComponent,
     ForumComponent,
     SubforumComponent,
     SubforumContainerComponent,
