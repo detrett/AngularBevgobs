@@ -7,19 +7,19 @@ import { AuthService } from 'src/app/services/authentication.service';
   templateUrl: './user-settings.component.html',
   styleUrls: ['./user-settings.component.css']
 })
+
 export class UserSettingsComponent implements OnInit {
-  // Initialize currentUser with default values to avoid null/undefined issues
   currentUser: any = {
     email: '',
     username: '',
     id: null,
-    // Add other properties if necessary
   };
   settingsForm!: FormGroup;
   loading = false;
   errorMessage: string = '';
   successMessage: string = '';
-  private selectedFile: File | undefined;
+  selectedFile: File | undefined;
+  imagePreviewUrl: string | null = null;
 
   constructor(
     private authService: AuthService,
@@ -67,40 +67,71 @@ export class UserSettingsComponent implements OnInit {
   onUpdateSettings() {
     if (this.settingsForm.valid) {
       this.loading = true;
-      let updatedUserData = this.settingsForm.value;
 
-      // Check if password is empty, if so, remove it from the update payload
-      if (!updatedUserData.password) {
-        delete updatedUserData.password;
+      const formData = new FormData();
+      formData.append('id', this.currentUser.id.toString());
+
+      // Append email and username only if they have values
+      if (this.settingsForm.value.email) {
+        formData.append('email', this.settingsForm.value.email);
+      }
+      if (this.settingsForm.value.username) {
+        formData.append('username', this.settingsForm.value.username);
       }
 
-      // Add the user ID to the update payload
-      updatedUserData = {
-        ...updatedUserData,
-        id: this.currentUser.id
-      };
+      // Append password only if it's not empty
+      if (this.settingsForm.value.password) {
+        formData.append('password', this.settingsForm.value.password);
+      }
 
-      this.authService.updateUserDetails(this.currentUser.id, updatedUserData).subscribe({
+      // Append the profile picture only if it's selected
+      if (this.selectedFile) {
+        formData.append('profilePicture', this.selectedFile, this.selectedFile.name);
+      }
+
+      this.authService.updateUserDetails(this.currentUser.id, formData).subscribe({
         next: (response) => {
-          console.log('User settings updated', response);
-          this.loading = false;
           this.successMessage = 'Update successful!';
-
-          this.currentUser = {
-            ...this.currentUser,
-            ...updatedUserData
-          };
+          this.fetchUpdatedUserDetails();
         },
         error: (err) => {
-          this.errorMessage = 'Error updating user settings';
+          this.errorMessage = 'Error updating user settings: ' + err.message;
           console.error('Error updating user settings:', err);
+          this.loading = false;
+        },
+        complete: () => {
           this.loading = false;
         }
       });
     }
   }
 
-  imagePreviewUrl: string | null = null;
+  private fetchUpdatedUserDetails() {
+    const userId = localStorage.getItem('userId');
+    if (userId) {
+      this.authService.getUserDetails(+userId).subscribe({
+        next: (user) => {
+          this.currentUser = user;
+          if (this.currentUser.UserPhoto) {
+            const blob = new Blob([new Uint8Array(this.currentUser.UserPhoto)], { type: 'image/png' });
+            const reader = new FileReader();
+            reader.readAsDataURL(blob);
+            reader.onloadend = () => {
+              this.currentUser.UserPhotoBase64 = reader.result as string;
+            };
+          }
+          this.updateFormValues(user);
+          this.loading = false;
+        },
+        error: (err) => {
+          console.error('Error fetching updated user details:', err);
+          this.loading = false;
+        }
+      });
+    }
+  }
+
+
 
   onProfilePictureChange(event: Event): void {
     const element = event.currentTarget as HTMLInputElement;
@@ -117,6 +148,14 @@ export class UserSettingsComponent implements OnInit {
       };
       fileReader.readAsDataURL(this.selectedFile);
     }
+  }
+
+  get isAuthenticated(): boolean {
+    return this.authService.isAuthenticated();
+  }
+
+  logout() {
+    this.authService.logout();
   }
 
 

@@ -75,54 +75,51 @@ namespace AngularBevgobs.Controllers
         }
 
         // UPDATE
-        // Inject updated data into the DB
-        [HttpPut("update/{id}")]
-        public async Task<IActionResult> Update(int id, [FromBody] ApplicationUser updatedUser)
+        [HttpPut("update/{id}"), DisableRequestSizeLimit]
+        public async Task<IActionResult> Update(int id, [FromForm] ApplicationUser updatedUser, [FromForm] IFormFile? profilePicture)
         {
-            if (updatedUser == null)
-            {
-                return BadRequest("Invalid user data.");
-            }
-            if (id != updatedUser.Id)
-            {
-                return BadRequest("Mismatched user ID.");
-            }
-
             var existingUser = await _userRepository.GetUserById(id);
             if (existingUser == null)
             {
-                _logger.LogError("[UserController] User not found for updating");
                 return NotFound("User not found.");
             }
-    
-            existingUser.UserName = updatedUser.UserName;
-            existingUser.Email = updatedUser.Email;
 
-            // Handle password update
-            if (!string.IsNullOrWhiteSpace(updatedUser.Password))
+            // Update fields only if they are provided
+            if (updatedUser.UserName != null)
             {
-                // Use a password hasher here to hash the new password
-                var hashedPassword = _passwordHasher.HashPassword(existingUser, updatedUser.Password);
-                existingUser.PasswordHash = hashedPassword;
+                existingUser.UserName = !string.IsNullOrWhiteSpace(updatedUser.UserName) ? updatedUser.UserName : existingUser.UserName;
+            }
+            if (updatedUser.Email != null)
+            {
+                existingUser.Email = !string.IsNullOrWhiteSpace(updatedUser.Email) ? updatedUser.Email : existingUser.Email;
+            }
+            if (updatedUser.Password != null)
+            {
+                existingUser.PasswordHash = !string.IsNullOrWhiteSpace(updatedUser.Password) ? _passwordHasher.HashPassword(existingUser, updatedUser.Password) : existingUser.PasswordHash;
+            }
+            if (profilePicture != null && profilePicture.Length > 0)
+            {
+                using (var memoryStream = new MemoryStream())
+                {
+                    await profilePicture.CopyToAsync(memoryStream);
+                    existingUser.UserPhoto = memoryStream.ToArray();
+                }
             }
 
             bool returnOk = await _userRepository.Update(existingUser);
 
             if (returnOk)
             {
-                var response = new { success = true, message = "User " + id + " updated successfully" };
-                return Ok(response);
+                return Ok(new { success = true, message = "User updated successfully" });
             }
             else
             {
-                _logger.LogError("[UserController] User could not be updated");
-                var response = new { success = false, message = "User " + id + " failed to update" };
-                return Ok(response);
+                return BadRequest("User update failed.");
             }
         }
 
 
-
+        
         // DELETE
         // Return a Forum object based on its id
         [HttpDelete("delete/{id}")]

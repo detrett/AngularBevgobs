@@ -1,4 +1,103 @@
-<div style="display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px;">
+<!-- START OF HEADER -->
+<header>
+  <div class="box row">
+    <a [routerLink]="['/']" class="logo">
+      <!--Logo-->
+      <div><img src="assets/images/logo.png" alt="Logo" class="logo-img"></div>
+      <!--Title-->
+      <div class="text-center"><span class="logo-font">Beverage Goblins</span></div>
+      <!--Logo-->
+      <div><img src="assets/images/logo.png" alt="Logo" class="logo-img flip"></div>
+    </a>
+  </div>
+</header>
+<!-- END OF HEADER -->
+
+<!-- MAIN CONTENT -->
+<div class="banner clearfix container-fluid">
+  <!-- START OF BANNER -->
+  <div class="background-light card flex-1 row" id="banner">
+    <!--Welcome message-->
+    <div class="col-md-6 banner-message">
+      <p class="header-font">
+        Welcome to the Beverage Goblins online community.<br>
+        A place to discuss all things related to drinks with other people that share your enthusiasm for beverages.
+      </p>
+    </div>
+
+    <!-- Guest only -->
+    <div *ngIf="!isAuthenticated" class="col-md-4 text-justify guest-only" id="buttonPanel">
+      <span class=""><a [routerLink]="['/register']" class="card-body std-pink-btn" id="registerBtn">Register</a></span>
+      <span class=""><a [routerLink]="['/login']" class="card-body std-purple-btn" id="signInBtn">Sign In</a></span>
+    </div>
+
+    <!-- Member only - Member panel -->
+    <div *ngIf="isAuthenticated" class="m-1 col-md-5 member-only flex-1" id="userPanel">
+      <!-- User picture -->
+      <div class="user-picture-container-header">
+        <a title="Go to profile">
+          <!-- Display user photo if it exists -->
+          <img *ngIf="currentUser?.UserPhoto" [src]="'data:image/png;base64,' + currentUser.UserPhoto" alt="Profile Picture" class="img-thumbnail">
+
+          <!-- Display user photo URL if it exists -->
+          <img *ngIf="!currentUser?.UserPhoto && currentUser?.UserPhotoUrl" [src]="currentUser.UserPhotoUrl" alt="Profile Picture" class="img-thumbnail">
+
+          <!-- Default profile picture if no user photo exists -->
+          <img *ngIf="!currentUser?.UserPhoto && !currentUser?.UserPhotoUrl" src="assets/images/defaultuser.png" alt="Profile Picture" class="img-thumbnail">
+        </a>
+      </div>
+
+      <!-- User welcome -->
+      <div *ngIf="currentUser" class="m-auto text-center" id="userWelcome">
+    <span class="p-1">
+        <em>Welcome, <span class="userTitle">{{ currentUser.userName }}</span>!</em>
+    </span>
+      </div>
+
+
+      <div class="m-auto" id="banner-user-options">
+
+        <div class="banner-user-options" style="display: flex; justify-content: space-around; align-items: center;">
+          <!--Back to Forums-->
+          <div class="p-1">
+            <a title="back to Forums" class="lighter-link" [routerLink]="['/']">
+              <i class="fa-solid fa-home"></i>
+              Back To Forums
+            </a>
+          </div>
+
+          <!--Sign Out-->
+          <div class="p-1">
+            <a title="Sign Out" class="lighter-link" (click)="logout()">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              Sign Out
+            </a>
+          </div>
+        </div>
+
+    </div>
+
+
+
+  </div>
+
+    <!-- Breadcrumbs -->
+    <div class="background-dark card-footer justify-content-start">
+      <div class="col-md">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">Board Index</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+</div>
+
+
+
+
+<div *ngIf="isAuthenticated" style="display: flex; justify-content: center; align-items: center; min-height: 15vh; padding: 20px;">
   <section class="settings-card" style="max-width: 2000px; margin: auto; width: 100%;">
     <div class="row d-flex justify-content-center col-12 mb-5">
       <div class="col-5 border-pink rounded m-20 background-light card pb-2">
@@ -37,14 +136,15 @@
             </label>
           </div>
 
-          <!-- Profile Picture Upload -->
-          <div class="mb-2">
+          <!-- Upload New Profile Picture -->
+          <div class="new-user-picture-upload">
             <input type="file" (change)="onProfilePictureChange($event)" name="profilePicture" accept="image/*">
             <!-- Image Preview -->
             <div *ngIf="imagePreviewUrl">
-              <img [src]="imagePreviewUrl" alt="Image Preview" style="max-width: 200px; max-height: 200px;">
+              <img [src]="imagePreviewUrl" alt="Profile Picture Preview" style="max-width: 200px; max-height: 200px; border-radius: 50%;">
             </div>
           </div>
+
 
 
           <div *ngIf="errorMessage" class="error-message">
@@ -63,4 +163,6 @@
       </div>
     </div>
   </section>
+</div>
+
 </div>

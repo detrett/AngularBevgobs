@@ -12,6 +12,8 @@ import { map, catchError, debounceTime } from 'rxjs/operators';
 })
 export class RegisterComponent {
   registerForm!: FormGroup;
+  errorMessage: string = '';
+
 
   constructor(
     private authService: AuthService,
@@ -72,9 +74,16 @@ export class RegisterComponent {
             error: (loginError) => console.error('Login failed after registration', loginError)
           });
         },
-        error: (registerError) => console.error('Registration failed', registerError)
+        error: (error) => {
+          if (error.error && error.error.message) {
+            this.errorMessage = error.error.message;
+          } else {
+            this.errorMessage = 'Registration failed. Please try again later.';
+          }
+        }
       });
     }
   }
+
 
 }
