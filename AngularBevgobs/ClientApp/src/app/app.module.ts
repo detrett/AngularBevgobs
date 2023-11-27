@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
@@ -12,6 +12,10 @@ import { SubforumComponent } from './subforum/subforum.component';
 import { SubforumContainerComponent } from './subforum/subforum-container.component';
 import { ThreadComponent } from './thread/thread.component';
 import { ThreadContainerComponent } from './thread/thread-container.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import {UserSettingsComponent} from "./user-settings/user-settings.component";
+
 
 @NgModule({
   declarations: [
@@ -23,18 +27,18 @@ import { ThreadContainerComponent } from './thread/thread-container.component';
     SubforumContainerComponent,
     ThreadComponent,
     ThreadContainerComponent,
+    LoginComponent,
+    RegisterComponent,
+    UserSettingsComponent,
   ],
-  imports: [
-    BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
-    HttpClientModule,
-    FormsModule,
-    RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'forums', component: ForumComponent},
-      { path: 'subforum/:id', component: SubforumContainerComponent},
-      { path: 'thread/:id', component: ThreadContainerComponent},
-    ])
-  ],
+    imports: [
+        BrowserModule.withServerTransition({appId: 'ng-cli-universal'}),
+        HttpClientModule,
+        FormsModule,
+        AppRoutingModule,
+        ReactiveFormsModule
+    ],
+
   providers: [],
   bootstrap: [AppComponent]
 })

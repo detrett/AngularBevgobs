@@ -1,0 +1,66 @@
+<div style="display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px;">
+  <section class="settings-card" style="max-width: 2000px; margin: auto; width: 100%;">
+    <div class="row d-flex justify-content-center col-12 mb-5">
+      <div class="col-5 border-pink rounded m-20 background-light card pb-2">
+        <form [formGroup]="settingsForm" (ngSubmit)="onUpdateSettings()">
+
+          <div class="d-flex justify-content-center">
+            <h1 class="h3 mb-3 mt-4 std-color">User Settings</h1>
+          </div>
+
+          <hr />
+
+          <div class="form-floating mb-2">
+            <input type="email" class="form-control custom-form-control"
+                   formControlName="email">
+            <label class="form-label custom-form-label">
+              <i class="fa-regular fa-envelope"></i>
+              <span>E-mail</span>
+            </label>
+          </div>
+
+          <div class="form-floating mb-2">
+            <input type="text" class="form-control custom-form-control"
+                   formControlName="username">
+            <label class="form-label custom-form-label">
+              <i class="fa-solid fa-user"></i>
+              <span>Username</span>
+            </label>
+          </div>
+
+          <div class="form-floating mb-2">
+            <input type="password" class="form-control custom-form-control"
+                   formControlName="password">
+            <label class="form-label custom-form-label">
+              <i class="fa-solid fa-lock"></i>
+              <span>Password</span>
+            </label>
+          </div>
+
+          <!-- Profile Picture Upload -->
+          <div class="mb-2">
+            <input type="file" (change)="onProfilePictureChange($event)" name="profilePicture" accept="image/*">
+            <!-- Image Preview -->
+            <div *ngIf="imagePreviewUrl">
+              <img [src]="imagePreviewUrl" alt="Image Preview" style="max-width: 200px; max-height: 200px;">
+            </div>
+          </div>
+
+
+          <div *ngIf="errorMessage" class="error-message">
+            {{ errorMessage }}
+          </div>
+
+          <div class="d-flex">
+            <button type="submit" class="mb-3 std-purple-btn m-auto" [disabled]="!settingsForm.valid">Update Settings</button>
+          </div>
+
+          <div *ngIf="successMessage" class="success-message">
+            {{ successMessage }}
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </section>
+</div>

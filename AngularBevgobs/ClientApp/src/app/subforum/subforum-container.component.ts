@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ISubforum } from './subforum';
 import { IThread } from '../thread/thread';
 import { SubforumService } from './subforum.service';
+import { AuthService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-subforum-container',
@@ -19,10 +20,13 @@ export class SubforumContainerComponent implements OnInit {
   lastPageIndex = 1;
   orderedThreads: IThread[] = [];
 
+  currentUser: any = null;
+
   constructor(
     private _route: ActivatedRoute,
-    private _router: Router,  
-    private _subforumService: SubforumService) { }
+    private _router: Router,
+    private _subforumService: SubforumService,
+    private authService: AuthService) {}
 
   calculatePages(): void {
     console.log("Subforum Container Component: calculatePages()");
@@ -101,7 +105,6 @@ export class SubforumContainerComponent implements OnInit {
 
     this._route.paramMap.subscribe(params => {
       const id = params.get('id');
-
       if (id != null) {
         this.getSubforumData(+id);
       } else {
@@ -109,6 +112,37 @@ export class SubforumContainerComponent implements OnInit {
         this._router.navigate(['/']);
       }
     });
+
+    const userId = localStorage.getItem('userId');
+    if (userId) {
+      this.authService.getUserDetails(+userId).subscribe({
+        next: (user) => {
+          this.currentUser = user;
+          console.log('Current user:', this.currentUser);
+        },
+        error: (err) => {
+          console.error('Error fetching user details:', err);
+        }
+      });
+    } else {
+      console.error('User ID not found in local storage');
+    }
+  }
+
+
+  get isAuthenticated(): boolean {
+    return this.authService.isAuthenticated();
+  }
+
+  logout() {
+    this.authService.logout();
   }
 
 }
+
+
+
+
+
+
+
