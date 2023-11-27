@@ -2,10 +2,10 @@ import { IComment } from "../comment/comment";
 import { IThread } from "../thread/thread";
 
 export interface IUser {
-  UserId: number;
+  CreatedAt: Date;
   Rank: string;
-  Password: string;
+  Username: string;
   UserPhoto: File;
   Threads: IThread[];
-  Comments: IComment[];
+  UserComments: IComment[];
 }

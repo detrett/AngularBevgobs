@@ -1,8 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ISubforum } from './subforum';
 import { IComment } from '../comment/comment';
+import { IUser } from '../user/user';
 import { Router } from '@angular/router';
 import { SubforumService } from './subforum.service';
+import { UserService } from '../user/user.service';
 
 @Component({
   selector: 'app-subforum',
@@ -14,10 +16,12 @@ export class SubforumComponent implements OnInit {
   @Input() subforum?: ISubforum;
   @Input() isLast?: boolean = false;
   lastComment?: IComment;
+  lastUser?: IUser;
 
   constructor(
     private _router: Router,
-    private _subforumService: SubforumService) { }
+    private _subforumService: SubforumService,
+    private _userService: UserService) { }
 
   findLastComment(): void {
     console.log("Subforum Component: findLastComment()");
@@ -34,6 +38,9 @@ export class SubforumComponent implements OnInit {
     });
 
     console.log("Last comment ID: " + this.lastComment?.CommentId);
+    if (this.lastComment?.UserId != null) {
+      this.getLastUser(this.lastComment?.UserId);
+    }
   }
 
   getFormattedDate(): string {
@@ -59,6 +66,16 @@ export class SubforumComponent implements OnInit {
       if (days < 5) return `on ${createdDate.getDay()}`;
       return `on ${createdDate.toLocaleDateString()}`;
     }
+  }
+
+  getLastUser(id: number): void {
+    console.log("Subforum Component: getLastUser()")
+
+    this._userService.getUserById(id)
+      .subscribe(data => {
+        console.log('Data received: ', JSON.stringify(data));
+        this.lastUser = data;
+      })
   }
 
   setClasses() {
