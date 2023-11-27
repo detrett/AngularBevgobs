@@ -185,8 +185,8 @@
             <div *ngIf="orderedThreads.length > 0">
               <div class="tab-content">
                 <div *ngFor="let page of [].constructor(totalPages); let i = index" class="tab-pane" [ngClass]="{'active': i + 1 === currentPage}" id="tab-{{i + 1}}">
-                  <ng-container *ngFor="let thread of getThreadsForCurrentPage()">
-                    <app-thread [thread]="thread"></app-thread>
+                  <ng-container *ngFor="let thread of getThreadsForCurrentPage(); let isLast = last">
+                    <app-thread [thread]="thread" [isLast]="isLast"></app-thread>
                   </ng-container>
                 </div>
               </div>

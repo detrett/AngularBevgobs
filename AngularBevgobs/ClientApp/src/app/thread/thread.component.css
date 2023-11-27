@@ -158,6 +158,12 @@ li.centered > i {
   padding-bottom: 5px;
 }
 
+.roundBottom {
+  border-bottom: 1px solid rgba(255, 0, 0, 0.125);
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+
 .spin:hover {
   animation: spin 0.5s linear;
 }

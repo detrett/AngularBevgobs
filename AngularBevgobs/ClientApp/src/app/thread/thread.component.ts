@@ -15,6 +15,7 @@ declare var bootstrap: any;
 
 export class ThreadComponent implements OnInit, AfterViewInit {
   @Input() thread?: IThread;
+  @Input() isLast?: boolean = false;
   lastComment?: IComment;
   lastUser?: IUser;
 
@@ -115,5 +116,11 @@ export class ThreadComponent implements OnInit, AfterViewInit {
     console.log("Thread Name: " + this.thread?.Name);
 
     this.findLastComment();
+  }
+
+  setClasses() {
+    return {
+      roundBottom: this.isLast
+    }
   }
 }
