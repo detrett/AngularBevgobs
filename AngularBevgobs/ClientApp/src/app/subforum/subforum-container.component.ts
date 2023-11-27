@@ -5,6 +5,8 @@ import { IThread } from '../thread/thread';
 import { SubforumService } from './subforum.service';
 import { AuthService } from 'src/app/services/authentication.service';
 
+declare var bootstrap: any;
+
 @Component({
   selector: 'app-subforum-container',
   templateUrl: './subforum-container.component.html',
@@ -26,7 +28,7 @@ export class SubforumContainerComponent implements OnInit {
     private _route: ActivatedRoute,
     private _router: Router,
     private _subforumService: SubforumService,
-    private authService: AuthService) {}
+    private authService: AuthService) { }
 
   calculatePages(): void {
     console.log("Subforum Container Component: calculatePages()");
@@ -102,6 +104,12 @@ export class SubforumContainerComponent implements OnInit {
 
   ngOnInit(): void {
     console.log("Subforum Container Component: ngOnInit()");
+
+    // Bootstrap tooltip initialization
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl)
+    })       
 
     this._route.paramMap.subscribe(params => {
       const id = params.get('id');

@@ -337,6 +337,15 @@ i.fa-pen-to-square, i.fa-chevron-left, i.fa-file-pen, i.fa-trash {
   border-radius: 0.25rem;
 }
 
+  .page-link:focus {
+    box-shadow: none !important;
+  }
+
+  .page-link:hover, .page-link.is-active {
+    background-color: #ffffff !important;
+    color: #343A40 !important;
+  }
+
 .pager-container {
   margin-left: 0px;
   padding: 0px;
@@ -484,6 +493,10 @@ i.fa-pen-to-square, i.fa-chevron-left, i.fa-file-pen, i.fa-trash {
 .topic-listing-link {
   transition: transform 0.1s ease;
 }
+
+  .topic-listing-link:hover {
+    transform: translateX(-10px);
+  }
 
 ul {
   list-style-type: none;

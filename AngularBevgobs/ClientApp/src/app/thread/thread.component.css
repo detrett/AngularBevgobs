@@ -1,11 +1,37 @@
+
 a {
   color: #171717;
   text-decoration: none;
 }
 
-a {
-  color: #0d6efd;
-  text-decoration: underline;
+.adminTitle {
+  font-weight: 700;
+  color: #285de5;
+}
+
+a.adminTitle:hover {
+  color: #171717;
+  font-weight: 800;
+}
+
+.modTitle {
+  font-weight: 600;
+  color: #b00000;
+}
+
+a.modTitle:hover {
+  font-weight: 700;
+  color: #171717;
+}
+
+.memberTitle {
+  font-weight: 400;
+  color: #433B60;
+}
+
+a.memberTitle:hover {
+  font-weight: 600;
+  color: #171717;
 }
 
 .background-light {
@@ -20,6 +46,13 @@ i {
   color: #2d293c;
 }
 
+.icon-border {
+  background-color: rgba(67, 59, 96, 0.25);
+  border-radius: var(--fa-border-radius, 50%);
+  border: var(--fa-border-width, .08em) var(--fa-border-style, solid) var(--fa-border-color, rgba(67, 59, 96, 0.5));
+  padding: var(--fa-border-padding, .2em .25em .15em);
+}
+
 .icon-container {
   align-items: center;
   display: flex;
@@ -29,7 +62,7 @@ i {
 }
 
 .icon-mini {
-  font-size: var(--spx-3);
+  font-size: 12px;
 }
 
 .img-avatar {
@@ -106,7 +139,7 @@ i {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: var(--spx-4);
+  padding: 12px;
 }
 
 .last-poster-container {
@@ -114,7 +147,7 @@ i {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: var(--spx-4);
+  padding: 12px;
 }
 
 .last-poster-icon {
@@ -159,6 +192,10 @@ li.centered > i {
   color: #505050;
   font-weight: 700;
 }
+
+  .std-link:hover {
+    color: #F83A5B;
+  }
 
 .thread-subtitle-font {
   margin-bottom: 12px;
