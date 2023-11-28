@@ -127,8 +127,8 @@
           </nav>
 
           <!--@{
-          if (User.Identity.IsAuthenticated)
-          {-->
+        if (User.Identity.IsAuthenticated)
+        {-->
           <div class="col-2">
             <button type="button" class="btn card-body new-thread-btn guest-disabled" data-bs-keyboard="false" data-bs-backdrop="static" data-bs-toggle="modal"
                     data-bs-target="#threadModal">
@@ -137,17 +137,17 @@
             </button>
           </div>
           <!--}
-          else
-          {-->
+        else
+        {-->
           <!--<div class="col-2">
-            <a href="" class="btn card-body new-thread-btn guest-disabled disabled" role="button"
-               aria-disabled="true" data-bs-toggle="tooltip" title="Make a new thread">
-              <i class="fa-solid fa-pen-to-square"></i>
-              New Thread
-            </a>
-          </div>-->
+          <a href="" class="btn card-body new-thread-btn guest-disabled disabled" role="button"
+             aria-disabled="true" data-bs-toggle="tooltip" title="Make a new thread">
+            <i class="fa-solid fa-pen-to-square"></i>
+            New Thread
+          </a>
+        </div>-->
           <!--}
-          }-->
+        }-->
         </div>
 
         <!--End of Subforum Banner-->
@@ -199,6 +199,8 @@
       </div>
     </section>
 
+    
+
     <!--Go back to thread list-->
     <div class="pager-container topic-listing-link">
       <a [routerLink]="['/']" class="">
@@ -214,16 +216,8 @@
             <h1 class="modal-title fs-5 modal-font" id="threadModalLabel">Create a new topic</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <!--@{
-          var newThread = new GeverageBoblins.Models.Thread();
-          newThread.SubforumId = Model.SubforumId;
-          newThread.IsAnnouncement = false;
-          newThread.IsLocked = false;
-          newThread.IsFeatured = false;
-          newThread.IsPinned = false;
-          }
-          @await Html.PartialAsync("_NewThreadModal", newThread);-->
 
+          <app-new-thread-form [subforumId]="subforum?.SubforumId"></app-new-thread-form>
         </div>
       </div>
     </div>

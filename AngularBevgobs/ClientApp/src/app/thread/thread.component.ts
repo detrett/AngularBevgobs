@@ -90,7 +90,7 @@ export class ThreadComponent implements OnInit, AfterViewInit {
       if (days < 1) return hours >= 2 ? `${hours} hours ago` : '1 hour ago';
       if (days < 2) return 'yesterday';
       if (days < 5) return `on ${createdDate.getDay()}`;
-      return `on ${createdDate.toLocaleDateString('en-US', { day: 'numeric', month: 'long' })}`;
+      return `on ${createdDate.toLocaleDateString('en-UK', { day: 'numeric', month: 'long' })}`;
     }
   }
 

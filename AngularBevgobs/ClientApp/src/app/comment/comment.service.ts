@@ -20,4 +20,9 @@ export class CommentService {
     console.log("Comment Service: getCommentById(), id: " + id);
     return this._http.get<IComment>(this.apiUrl + `/${id}`)
   }
+
+  createComment(newComment: IComment): Observable<any> {
+    const createUrl = 'api/comment/create';
+    return this._http.post<any>(createUrl, newComment);
+  }
 }

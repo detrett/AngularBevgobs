@@ -20,4 +20,9 @@ export class ThreadService {
     console.log("Thread Service: getThreadById(), id: " + id);
     return this._http.get<IThread>(this.apiUrl + `/${id}`)
   }
+
+  createThread(newThread: IThread): Observable<any> {
+    const createUrl = 'api/thread/create';
+    return this._http.post<any>(createUrl, newThread);
+  }
 }

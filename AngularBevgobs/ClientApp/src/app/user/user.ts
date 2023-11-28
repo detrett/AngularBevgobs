@@ -5,7 +5,7 @@ export interface IUser {
   CreatedAt: Date;
   Rank: string;
   Username: string;
-  UserPhoto: File;
+  UserPhoto: File | null;
   Threads: IThread[];
   UserComments: IComment[];
 }

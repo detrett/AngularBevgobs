@@ -7,7 +7,7 @@ export interface IThread {
   Name: string;
   Description: string;
   UserId: number;
-  ParentId: number;
+  SubforumId: number;
   Comments: IComment[];
   CreatedAt: Date;
   IsLocked: boolean;

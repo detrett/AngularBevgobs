@@ -107,7 +107,7 @@
 
     <!--Go back to thread list-->
     <div class="pager-container topic-listing-link mt-4">
-      <a [routerLink]="['/subforum', thread?.ParentId]">
+      <a [routerLink]="['/subforum', thread?.SubforumId]">
         <i class="fa-solid fa-chevron-left"></i> Go back to topic listing
       </a>
     </div>
@@ -140,38 +140,13 @@
           <app-comment [comment]="comment" class="padding-0"></app-comment>
         </ng-container>
 
-        <!--@{
-        foreach (var comment in Model.Comments)
-        {
-        @await Html.PartialAsync("_CommentList", comment);
-        }
-        }
-
-
-        @{
-        System.Diagnostics.Debug.Assert(User.Identity != null, "User.Identity != null");
-        if (User.Identity.IsAuthenticated)
-        {
-
-        var newComment = new Comment();
-        newComment.Thread = Model;
-        newComment.ThreadId = Model.ThreadId;
-        newComment.Title = Model.Name;
-
-        @await Html.PartialAsync("_CommentBox", newComment);
-
-        }
-        else
-        {-->
-        <!--guest teaser (guest only)-->
         <ng-container *ngIf="isAuthenticated">
-
+          <app-comment-box [threadId]="thread?.ThreadId"></app-comment-box>
         </ng-container>
+
         <ng-container *ngIf="!isAuthenticated">
           <section class="teaser-background card comment-container guest-only">
-
-            <!--@await Html.PartialAsync("_GuestTeaser")-->
-
+            <app-guest-teaser></app-guest-teaser>
           </section>
         </ng-container>
 
@@ -182,7 +157,7 @@
     <!--End of Thread Container-->
     <!--Go back to thread list-->
     <div class="pager-container topic-listing-link">
-      <a [routerLink]="['/subforum', thread?.ParentId]">
+      <a [routerLink]="['/subforum', thread?.SubforumId]">
         <i class="fa-solid fa-chevron-left"></i> Go back to topic listing
       </a>
     </div>

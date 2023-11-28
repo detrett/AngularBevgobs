@@ -223,11 +223,11 @@ a.memberTitle:hover {
 }
 
 .std-box-shadow {
-  box-shadow: var(--box--std-box-shadow);
+  box-shadow: 0px 5px 6px -2px rgba(0, 0, 0, 0.75);
 }
 
 .pink-box-shadow {
-  box-shadow: var(--box--pink-box-shadow-2);
+  box-shadow: 0px 10px 20px 2px #fc375c40;
 }
 
 .card-body {
@@ -241,13 +241,13 @@ a.memberTitle:hover {
 .comment-container {
   margin: 50px auto;
   width: 92%;
-  box-shadow: var(--box--std-box-shadow);
+  box-shadow: 0px 5px 6px -2px rgba(0, 0, 0, 0.75);
   border: 0px;
 }
 
 .comment-tab {
-  margin-top: var(--spx-3);
-  margin-inline-start: var(--spx-5);
+  margin-top: 12px;
+  margin-inline-start: 20px;
 }
 
 .comment-tab-list {
@@ -447,7 +447,7 @@ a.memberTitle:hover {
   background-color: #fc375c;
   border-radius: 5px;
   border: 1px solid #c12367;
-  box-shadow: var(--box--std-box-shadow);
+  box-shadow: 0px 5px 6px -2px rgba(0, 0, 0, 0.75);
   display: inline-block;
   cursor: pointer;
   color: #ffffff;
@@ -524,7 +524,7 @@ a.memberTitle:hover {
   background-color: #fc375c;
   border-radius: 5px;
   border: 1px solid #c12367;
-  box-shadow: var(--box--std-box-shadow);
+  box-shadow: 0px 5px 6px -2px rgba(0, 0, 0, 0.75);
   display: inline-block;
   cursor: pointer;
   color: #ffffff;
@@ -566,7 +566,7 @@ a.memberTitle:hover {
   background-color: #433b60;
   border-radius: 5px;
   border: 1px solid #2d293c;
-  box-shadow: var(--box--std-box-shadow);
+  box-shadow: 0px 5px 6px -2px rgba(0, 0, 0, 0.75);
   display: inline-block;
   cursor: pointer;
   color: #ffffff;
@@ -596,7 +596,7 @@ a.memberTitle:hover {
   background-color: #fc375c;
   border-radius: 5px;
   border: 1px solid #c12367;
-  box-shadow: var(--box--std-box-shadow);
+  box-shadow: 0px 5px 6px -2px rgba(0, 0, 0, 0.75);
   display: inline-block;
   cursor: pointer;
   color: #ffffff;
@@ -646,7 +646,7 @@ a.memberTitle:hover {
   background-color: #2d293c;
   border-radius: 5px;
   border: 1px solid #2d293c;
-  box-shadow: var(--box--std-box-shadow);
+  box-shadow: 0px 5px 6px -2px rgba(0, 0, 0, 0.75);
   display: inline-block;
   cursor: pointer;
   color: #ffffff;
@@ -670,7 +670,7 @@ a.memberTitle:hover {
   background-color: #433b60;
   border-radius: 5px;
   border: 1px solid #2d293c;
-  box-shadow: var(--box--std-box-shadow);
+  box-shadow: 0px 5px 6px -2px rgba(0, 0, 0, 0.75);
   display: inline-block;
   cursor: pointer;
   color: #ffffff;
@@ -696,7 +696,7 @@ a.memberTitle:hover {
 .std-rnbw-btn {
   border: 1px solid #2d293c;
   border-radius: 5px;
-  box-shadow: var(--box--std-box-shadow);
+  box-shadow: 0px 5px 6px -2px rgba(0, 0, 0, 0.75);
   display: inline-block;
   cursor: pointer;
   color: #ffffff;
@@ -734,7 +734,7 @@ a.memberTitle:hover {
   }
 
   .guest-teaser-inner-box:hover {
-    box-shadow: var(--box--lighter-box-shadow);
+    box-shadow: 0px 10px 20px 2px rgba(45, 55, 72, 0.25);
     transform: translateY(-4px);
     transition: transform 0.5s;
   }
@@ -1036,7 +1036,7 @@ a.memberTitle:hover {
   margin: 15px 50px;
   width: -webkit-fill-available;
   width: -moz-available;
-  box-shadow: var(--box--std-box-shadow);
+  box-shadow: 0px 5px 6px -2px rgba(0, 0, 0, 0.75);
 }
 
 .post-top {
@@ -1127,11 +1127,11 @@ input:focus {
 }
 
 .std-box-shadow {
-  box-shadow: var(--box--std-box-shadow);
+  box-shadow: 0px 5px 6px -2px rgba(0, 0, 0, 0.75);
 }
 
 .box-shadow-2 {
-  box-shadow: var(--box--light-box-shadow);
+  box-shadow: 0px 5px 10px 0px rgba(45, 55, 72, 0.1);
 }
 
 .sub-banner {

@@ -70,7 +70,7 @@ a.memberTitle:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: var(--spx-4);
+  padding: 16px;
 }
 
 .forum-title-font {

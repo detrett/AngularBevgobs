@@ -312,7 +312,7 @@ i.fa-pen-to-square, i.fa-chevron-left, i.fa-file-pen, i.fa-trash {
   background-color: #2d293c;
   border-radius: 5px;
   border: 1px solid #2d293c;
-  box-shadow: var(--box--std-box-shadow);
+  box-shadow: 0px 5px 6px -2px rgba(0, 0, 0, 0.75);
   display: inline-block;
   cursor: pointer;
   color: #ffffff;
@@ -370,7 +370,7 @@ i.fa-pen-to-square, i.fa-chevron-left, i.fa-file-pen, i.fa-trash {
   background-color: #fc375c;
   border-radius: 5px;
   border: 1px solid #c12367;
-  box-shadow: var(--box--std-box-shadow);
+  box-shadow: 0px 5px 6px -2px rgba(0, 0, 0, 0.75);
   display: inline-block;
   cursor: pointer;
   color: #ffffff;
@@ -397,7 +397,7 @@ i.fa-pen-to-square, i.fa-chevron-left, i.fa-file-pen, i.fa-trash {
   background-color: #433b60;
   border-radius: 5px;
   border: 1px solid #2d293c;
-  box-shadow: var(--box--std-box-shadow);
+  box-shadow: 0px 5px 6px -2px rgba(0, 0, 0, 0.75);
   display: inline-block;
   cursor: pointer;
   color: #ffffff;

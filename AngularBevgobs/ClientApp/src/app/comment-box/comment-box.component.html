@@ -1,0 +1,143 @@
+<!--Message Box (MEMBER ONLY)-->
+<div class="card comment-container member-only">
+  <div class="row m-0">
+    <!--TABS-->
+    <ul class="nav nav-tabs comment-tab-list" id="commentTab" role="tablist">
+      <!--WRITE-->
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active comment-tab" id="write-tab" data-bs-toggle="tab"
+                data-bs-target="#write-tab-pane" type="button" role="tab"
+                aria-controls="write-tab-pane" aria-selected="true">
+          Write
+        </button>
+      </li>
+      <!--PREVIEW-->
+      <li class="nav-item" role="presentation">
+        <button class="nav-link comment-tab" id="preview-tab" data-bs-toggle="tab"
+                data-bs-target="#preview-tab-pane" type="button" role="tab"
+                aria-controls="preview-tab-pane" aria-selected="true" (click)="commentPreview()">
+          Preview
+        </button>
+      </li>
+    </ul>
+  </div>
+  <!--TAB CONTENT-->
+  <div class="tab-content" id="commentTabContent">
+
+    <!--WRITE-->
+    <div class="tab-pane fade active show comment-box" id="write-tab-pane" role="tabpanel"
+         aria-labelledby="write-tab" tabindex="0">
+
+      <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
+        <textarea class="form-control" id="comment" cols="30" rows="7"
+                  placeholder="Write a comment" formControlName="Body"></textarea>
+        <div *ngIf="commentForm.get('Body')?.invalid && commentForm.get('Body')?.touched" class="text-danger m-2-5">
+          Comment is required.
+        </div>
+
+        <input type="hidden" formControlName="title">
+        <input type="hidden" formControlName="userId">
+        <input type="hidden" formControlName="threadId">
+
+        <div class="tab-pane-bttm">
+          <button id="comment-submit" type="submit" class="std-purple-btn" [disabled]="!commentForm.valid">Reply</button>
+        </div>
+
+      </form>
+
+    </div>
+
+    <!--PREVIEW-->
+    <div class="tab-pane fade preview-box" role="tabpanel" id="preview-tab-pane"
+         aria-labelledby="preview-tab" tabindex="0">
+
+      <article class="background-white card post-container" id="comment-preview">
+
+        <div class="row mlr-12">
+          <!--Side content (Author, image, info)-->
+          <div class="aside-post hidden-mobile col-md-2">
+
+            <h3 class="aside-user-style">{{currentUser?.Username}}</h3>
+
+            <ul>
+              <li>
+                <a href="#" class="aside-user-photo-container" title="Go to profile">
+                  <!-- If user photo exists, display it -->
+                  <img *ngIf="currentUser?.UserPhoto" [src]="'data:image/png;base64,' + currentUser?.UserPhoto" alt="Profile Picture" class="img-avatar">
+                  <!-- Display default profile picture if no user photo exists -->
+                  <i *ngIf="!currentUser?.UserPhoto" class="fa-regular fa-circle-user aside-user-photo"></i>
+                </a>
+              </li>
+
+              <li class="margin-bt-20">
+                <span class="aside-member-title">{{currentUser?.Rank}}</span>
+              </li>
+              <li class="aside-left-align">
+                <span class="aside-subtitle">Posts: {{currentUser?.UserComments?.length}}</span>
+
+              </li>
+              <li class="aside-left-align">
+                <ng-container *ngIf="currentUser?.CreatedAt != null">
+                  <span class="aside-subtitle">Joined: <time>{{authorJoinDate}}</time> </span>
+                </ng-container>
+              </li>
+            </ul>
+          </div>
+          <!--End of side content-->
+
+          <!--Main Content-->
+          <div class="col-12 col-md-10 post-top">
+            <!--Top of Post (Title, date, buttons)-->
+            <div>
+              <div class="dropdown-center">
+                <!--Ellipsis-->
+                <a href="#" role="button" data-bs-toggle="dropdown"
+                   aria-expanded="false" aria-disabled="true">
+                  <i class="fa-solid fa-ellipsis ellipsis"></i>
+                </a>
+
+              </div>
+              <!-- Only for mobile -->
+              <div class="only-mobile">
+
+                <div class="post-top-user-photo-automargin">
+                  <a href="#" class="post-top-user-photo-container" title="Go to profile">
+                    <!-- If user photo exists, display it -->
+                    <img *ngIf="currentUser?.UserPhoto" [src]="'data:image/png;base64,' + currentUser?.UserPhoto" alt="Profile Picture" class="img-avatar">
+                    <!-- Display default profile picture if no user photo exists -->
+                    <i *ngIf="!currentUser?.UserPhoto" class="fa-circle-user aside-user-photo"></i>
+                  </a>
+                </div>
+
+                <div>
+                  <h4 class="post-top-title">{{currentUser?.Username}}</h4>
+
+                  <a href="#" class="post-top-subtitle" title="Jump to comment">
+                    Posted <time>{{getFormattedDate()}}</time>
+                  </a>
+                </div>
+              </div>
+
+              <!-- For regular display -->
+              <a href="#" title="Jump to comment">
+                <h4 class="post-top-title hidden-mobile">Preview Comment</h4>
+              </a>
+              <a href="#" class="post-top-subtitle hidden-mobile" title="Jump to comment">
+                Posted <time>{{getFormattedDate()}}</time>
+              </a>
+            </div>
+            <!--Body of Post-->
+            <div class="post-body">
+                <p id="preview-content">
+                    {{ previewContent }}
+                </p>
+            </div>
+          </div>
+          <!--End of Main Content-->
+        </div>
+      </article>
+
+    </div>
+  </div>
+</div>
+<!--End of Message Box (MEMBER ONLY)-->

@@ -1,0 +1,28 @@
+<form [formGroup]="threadForm" (ngSubmit)="onSubmit()">
+  <div class="modal-body">
+    <div class="form-group">
+      <label class="modal-subtitle m-2-5" for="Name">Thread Title:</label>
+      <input type="text" id="Name" class="form-control" formControlName="Name">
+      <div *ngIf="threadForm.get('Name')?.invalid && threadForm.get('Name')?.touched" class="text-danger">
+        Title is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="modal-subtitle m-2-5" for="Description">Thread Body:</label>
+      <textarea id="Description" class="form-control" formControlName="Description" rows="15"></textarea>
+      <div *ngIf="threadForm.get('Description')?.invalid && threadForm.get('Description')?.touched" class="text-danger">
+        Description is required.
+      </div>
+    </div>
+
+    <input type="hidden" formControlName="UserId">
+    <input type="hidden" formControlName="ParentId">
+
+    <div class="d-flex">
+      <button id="thread-submit" type="submit" class="mb-3 login-purple-btn m-2-5">
+        Submit
+      </button>
+    </div>
+  </div>
+</form>

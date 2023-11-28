@@ -7,7 +7,7 @@
 
       <h3 class="aside-user-style mb-4">
         <!--Choosing class for color based on rank-->
-        <ng-container *ngIf="comment?.UserId">
+        <ng-container>
           <a href="#" title="Go to User Profile"
              [ngClass]="{
               'adminTitle': author?.Rank === 'Admin',
@@ -37,7 +37,9 @@
 
         </li>
         <li class="aside-left-align">
-          <span class="aside-subtitle">Joined: <time></time> </span>
+          <ng-container *ngIf="author?.CreatedAt != null">
+            <span class="aside-subtitle">Joined: <time>{{authorJoinDate}}</time> </span>
+          </ng-container>
         </li>
       </ul>
     </div>
@@ -53,10 +55,6 @@
             <i class="fa-solid fa-ellipsis ellipsis"></i>
           </a>
 
-          <!--@{
-          var url = Model.ThreadId + "#comment-" + Model.CommentId;
-          }-->
-
           <ul class="dropdown-menu">
             <li>
               <a href="#" class="dropdown-item" data-bs-toggle="modal"
@@ -66,17 +64,19 @@
               </a>
             </li>
             <li>
-              <ng-container *ngIf="isAuthenticated">
-                <ng-container *ngIf="isAuthorOrMod">
-                  <button class="dropdown-item" id="editBtn-@Model.CommentId" onclick="edit(@Model.CommentId)">
-                    <i class="fa-solid fa-pen padding-right-icon"></i>
-                    Edit
-                  </button>
-                  <a href="" class="dropdown-item" data-bs-toggle="modal"
-                     data-bs-target="#deleteModal-@Model.CommentId" data-bs-id="@Model.CommentId">
-                    <i class="fa-solid fa-eraser padding-right-icon"></i>
-                    Delete
-                  </a>
+              <ng-container *ngIf="userDataLoaded">
+                <ng-container *ngIf="isAuthenticated">
+                  <ng-container *ngIf="isAuthorOrMod">
+                    <button class="dropdown-item" id="editBtn-{{comment?.CommentId}}" onclick="edit()">
+                      <i class="fa-solid fa-pen padding-right-icon"></i>
+                      Edit
+                    </button>
+                    <a href="" class="dropdown-item" data-bs-toggle="modal"
+                       [attr.data-bs-target]="'#deleteModal-' + comment?.CommentId" [attr.data-bs-id]="comment?.CommentId">
+                      <i class="fa-solid fa-eraser padding-right-icon"></i>
+                      Delete
+                    </a>
+                  </ng-container>
                 </ng-container>
               </ng-container>
             </li>
@@ -115,12 +115,13 @@
         </div>
 
         <!-- For regular display -->
-        <a href="#comment{{comment?.CommentId}}-" title="Jump to comment">
-          <h4 class="post-top-title hidden-mobile">{{comment?.Title}}</h4>
+        <a [href]="'/thread/' + comment?.ThreadId + '#comment-' + comment?.CommentId" title="Jump to comment">
+          <h4 class="post-top-title hidden-mobile">{{commentTitle}}</h4>
         </a>
-        <a href="#comment-{{comment?.CommentId}}" class="post-top-subtitle hidden-mobile" title="Jump to comment">
-          Posted <time>{{getFormattedDate()}}</time>
-        </a>
+        <a [href]="'/thread/' + comment?.ThreadId + '#comment-' + comment?.CommentId" class="post-top-subtitle" title="Jump to comment">
+  Posted <time>{{getFormattedDate()}}</time>
+</a>
+
       </div>
 
       <!--Body of Post-->
