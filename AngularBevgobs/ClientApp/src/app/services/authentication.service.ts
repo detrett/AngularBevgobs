@@ -27,7 +27,12 @@ export class AuthService {
 
 
   register(registerData: any): Observable<any> {
-    return this.http.post(`${this.baseUrl}/register`, registerData);
+    return this.http.post(`${this.baseUrl}/register`, registerData).pipe(
+      tap(response => {
+      }, error => {
+        console.error('Registration error:', error);
+      })
+    );
   }
 
   checkUsernameAvailability(username: string): Observable<boolean> {
@@ -55,7 +60,8 @@ export class AuthService {
     this.router.navigate(['/']);
   }
 
-  updateUserDetails(userId: number, updateData: any): Observable<any> {
-    return this.http.put<any>(`${this.userBaseUrl}/update/${userId}`, updateData);
+  updateUserDetails(userId: number, formData: FormData): Observable<any> {
+    return this.http.put<any>(`${this.userBaseUrl}/update/${userId}`, formData);
   }
+
 }
