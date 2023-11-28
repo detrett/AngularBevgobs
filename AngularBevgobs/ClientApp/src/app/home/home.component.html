@@ -26,7 +26,7 @@
       <!-- User welcome -->
       <div *ngIf="currentUser" class="m-auto text-center" id="userWelcome">
         <span class="p-1">
-          <em>Welcome, <span class="userTitle">{{ currentUser.userName }}</span>!</em>
+          <em>Welcome, <span class="userTitle"><em>{{currentUser?.Username}}</em></span>!</em>
         </span>
       </div>
 

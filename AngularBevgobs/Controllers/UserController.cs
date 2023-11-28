@@ -81,47 +81,41 @@ namespace AngularBevgobs.Controllers
         [HttpPut("update/{id}")]
         public async Task<IActionResult> Update(int id, [FromBody] ApplicationUser updatedUser)
         {
-            if (updatedUser == null)
-            {
-                return BadRequest("Invalid user data.");
-            }
-            if (id != updatedUser.Id)
-            {
-                return BadRequest("Mismatched user ID.");
-            }
+            _logger.LogInformation($"Attempting to update user with ID: {id}");
 
             var existingUser = await _userRepository.GetUserById(id);
             if (existingUser == null)
             {
-                _logger.LogError("[UserController] User not found for updating");
+                _logger.LogError($"User not found for updating with id {id}");
                 return NotFound("User not found.");
             }
-    
-            existingUser.UserName = updatedUser.UserName;
-            existingUser.Email = updatedUser.Email;
 
-            // Handle password update
+            // Check if updated fields are provided and update accordingly
+            if (updatedUser.UserName != null)
+            {
+                existingUser.UserName = updatedUser.UserName;
+            }
+
+            if (updatedUser.Email != null)
+            {
+                existingUser.Email = updatedUser.Email;
+            }
+
             if (!string.IsNullOrWhiteSpace(updatedUser.Password))
             {
-                // Use a password hasher here to hash the new password
-                var hashedPassword = _passwordHasher.HashPassword(existingUser, updatedUser.Password);
-                existingUser.PasswordHash = hashedPassword;
+                existingUser.PasswordHash = _passwordHasher.HashPassword(existingUser, updatedUser.Password);
             }
 
-            bool returnOk = await _userRepository.Update(existingUser);
+            var result = await _userRepository.Update(existingUser);
+            if (!result)
+            {
+                _logger.LogError($"Failed to update user with id {id}");
+                return BadRequest("User update failed.");
+            }
 
-            if (returnOk)
-            {
-                var response = new { success = true, message = "User " + id + " updated successfully" };
-                return Ok(response);
-            }
-            else
-            {
-                _logger.LogError("[UserController] User could not be updated");
-                var response = new { success = false, message = "User " + id + " failed to update" };
-                return Ok(response);
-            }
+            return Ok(new { success = true, message = "User updated successfully" });
         }
+
 
 
 
