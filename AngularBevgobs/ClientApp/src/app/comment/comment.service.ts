@@ -25,4 +25,8 @@ export class CommentService {
     const createUrl = 'api/comment/create';
     return this._http.post<any>(createUrl, newComment);
   }
+
+  deleteComment(id: number): Observable<any> {
+    return this._http.delete<any>(this.apiUrl + `/delete/${id}`);
+  }
 }

@@ -105,6 +105,24 @@ export class CommentComponent implements OnInit, AfterViewInit {
     } else return this.thread?.Name;
   }
 
+  deleteComment(id: number | undefined) {
+    console.log("Comment Component: deleteComment()");
+
+    if (id != undefined) {
+      this._commentService.deleteComment(id)
+        .subscribe(
+          (response) => {
+            if (response.success) {
+              console.log(response.message);
+              window.location.reload();
+            }
+          },
+          (error) => {
+            console.error('Error deleting item:', error);
+          });
+    }
+  }
+
   ngOnInit(): void {
     console.log("Comment Component: ngOnInit()");
 

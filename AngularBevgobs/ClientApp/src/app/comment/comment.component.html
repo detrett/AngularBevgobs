@@ -189,9 +189,7 @@
 
 
         <div>
-          <form method="post">
-            <button type="submit" class="mb-3 std-pink-btn w-75">Delete</button>
-          </form>
+           <button type="submit" class="mb-3 std-pink-btn w-75" (click)="deleteComment(comment?.CommentId)">Delete</button>
         </div>
         <div>
           <button type="button" class="mb-4 std-purple-btn w-75" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
