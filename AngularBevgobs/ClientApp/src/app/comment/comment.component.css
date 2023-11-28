@@ -31,6 +31,11 @@ textarea {
   height: auto !important;
 }
 
+.mlr-12{
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
 .adminTitle {
   font-weight: 700;
   color: #285de5;

@@ -137,7 +137,7 @@
         </div>
 
         <ng-container *ngFor="let comment of thread?.Comments">
-          <app-comment [comment]="comment"></app-comment>
+          <app-comment [comment]="comment" class="padding-0"></app-comment>
         </ng-container>
 
         <!--@{
@@ -237,5 +237,3 @@
       </div>
     </div>-->
   </main>
-  <!--Back to top button-->
-  <a href="" id="back-to-top-button" data-bs-toggle="tooltip" title="Back to top"></a>
