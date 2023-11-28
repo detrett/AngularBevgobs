@@ -136,6 +136,10 @@
           </ng-container>
         </div>
 
+        <ng-container *ngFor="let comment of thread?.Comments">
+          <app-comment [comment]="comment"></app-comment>
+        </ng-container>
+
         <!--@{
         foreach (var comment in Model.Comments)
         {

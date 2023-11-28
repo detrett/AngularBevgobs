@@ -14,6 +14,7 @@ import { SubforumComponent } from './subforum/subforum.component';
 import { SubforumContainerComponent } from './subforum/subforum-container.component';
 import { ThreadComponent } from './thread/thread.component';
 import { ThreadContainerComponent } from './thread/thread-container.component';
+import { CommentComponent } from './comment/comment.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { UserSettingsComponent } from "./user-settings/user-settings.component";
@@ -31,6 +32,7 @@ import { UserSettingsComponent } from "./user-settings/user-settings.component";
     SubforumContainerComponent,
     ThreadComponent,
     ThreadContainerComponent,
+    CommentComponent,
     LoginComponent,
     RegisterComponent,
     UserSettingsComponent,

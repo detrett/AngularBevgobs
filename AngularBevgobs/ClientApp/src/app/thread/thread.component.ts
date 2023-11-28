@@ -21,7 +21,7 @@ export class ThreadComponent implements OnInit, AfterViewInit {
 
   constructor(
     private _router: Router,
-    private _subforumService: ThreadService,
+    private _threadService: ThreadService,
     private _userService: UserService) { }
 
   ngAfterViewInit(): void {
