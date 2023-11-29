@@ -8,12 +8,10 @@ import { AuthService } from 'src/app/services/authentication.service';
   styleUrls: ['./user-settings.component.css']
 })
 export class UserSettingsComponent implements OnInit {
-  // Initialize currentUser with default values to avoid null/undefined issues
   currentUser: any = {
     email: '',
     username: '',
     id: null,
-    // Add other properties if necessary
   };
   settingsForm!: FormGroup;
   loading = false;
@@ -36,7 +34,8 @@ export class UserSettingsComponent implements OnInit {
     if (userId) {
       this.authService.getUserDetails(+userId).subscribe({
         next: (user) => {
-          this.currentUser = user;
+          console.log('Loaded user:', user); // Add this line
+          this.currentUser = { ...user, id: +userId }; // Ensure correct assignment
           this.updateFormValues(user);
         },
         error: (err) => {
@@ -47,6 +46,8 @@ export class UserSettingsComponent implements OnInit {
       console.error('User ID not found in local storage');
     }
   }
+
+
 
   private initializeForm() {
     this.settingsForm = this.formBuilder.group({
@@ -60,45 +61,59 @@ export class UserSettingsComponent implements OnInit {
     this.settingsForm.patchValue({
       email: user.email,
       username: user.username
-      // Update other form controls here if needed
     });
   }
 
   onUpdateSettings() {
     if (this.settingsForm.valid) {
       this.loading = true;
-      let updatedUserData = this.settingsForm.value;
 
-      // Check if password is empty, if so, remove it from the update payload
-      if (!updatedUserData.password) {
-        delete updatedUserData.password;
-      }
+      if (this.currentUser && this.currentUser.id) {
 
-      // Add the user ID to the update payload
-      updatedUserData = {
-        ...updatedUserData,
-        id: this.currentUser.id
-      };
+        let formData = new FormData();
 
-      this.authService.updateUserDetails(this.currentUser.id, updatedUserData).subscribe({
-        next: (response) => {
-          console.log('User settings updated', response);
-          this.loading = false;
-          this.successMessage = 'Update successful!';
+        formData.append('id', this.currentUser.id.toString());
+        formData.append('email', this.settingsForm.value.email || this.currentUser.email);
+        formData.append('username', this.settingsForm.value.username || this.currentUser.username);
 
-          this.currentUser = {
-            ...this.currentUser,
-            ...updatedUserData
-          };
-        },
-        error: (err) => {
-          this.errorMessage = 'Error updating user settings';
-          console.error('Error updating user settings:', err);
-          this.loading = false;
+
+        if (this.settingsForm.value.password) {
+          formData.append('password', this.settingsForm.value.password);
         }
-      });
+
+        if (this.selectedFile) {
+          formData.append('profilePicture', this.selectedFile, this.selectedFile.name);
+        }
+
+        console.log('Updating user with ID:', this.currentUser.id);
+        console.log('Update data:', formData);
+
+        this.authService.updateUserDetails(this.currentUser.id, formData).subscribe({
+          next: (response) => {
+            this.loading = false;
+            this.successMessage = 'Update successful!';
+            // Update the currentUser object with the new data
+            this.currentUser = { ...this.currentUser, ...this.settingsForm.value };
+          },
+          error: (err) => {
+            this.errorMessage = 'Error updating user settings';
+            console.error('Error updating user settings:', err);
+            this.loading = false;
+          }
+        });
+      } else {
+        this.errorMessage = 'Error: User ID is undefined or null';
+        console.error('Error: User ID is undefined or null');
+        this.loading = false;
+      }
+    } else {
+      this.errorMessage = 'Error: Form is invalid';
+      console.error('Error: Form is invalid', this.settingsForm.errors);
     }
   }
+
+
+
 
   imagePreviewUrl: string | null = null;
 
@@ -108,7 +123,7 @@ export class UserSettingsComponent implements OnInit {
     if (fileList && fileList.length > 0) {
       this.selectedFile = fileList[0];
 
-      // Create a URL for the selected file
+      // Create a URL for the selected file for preview
       const fileReader = new FileReader();
       fileReader.onload = () => {
         if (fileReader.result) {
@@ -120,4 +135,11 @@ export class UserSettingsComponent implements OnInit {
   }
 
 
+  get isAuthenticated(): boolean {
+    return this.authService.isAuthenticated();
+  }
+
+  logout() {
+    this.authService.logout();
+  }
 }

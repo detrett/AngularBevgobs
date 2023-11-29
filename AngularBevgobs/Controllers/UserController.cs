@@ -79,49 +79,51 @@ namespace AngularBevgobs.Controllers
         // UPDATE
         // Inject updated data into the DB
         [HttpPut("update/{id}")]
-        public async Task<IActionResult> Update(int id, [FromBody] ApplicationUser updatedUser)
+        public async Task<IActionResult> Update(int id, [FromForm] UpdateUserDTO updatedUser)
         {
-            if (updatedUser == null)
-            {
-                return BadRequest("Invalid user data.");
-            }
-            if (id != updatedUser.Id)
-            {
-                return BadRequest("Mismatched user ID.");
-            }
+            _logger.LogInformation($"Attempting to update user with ID: {id}");
 
             var existingUser = await _userRepository.GetUserById(id);
             if (existingUser == null)
             {
-                _logger.LogError("[UserController] User not found for updating");
+                _logger.LogError($"User not found for updating with id {id}");
                 return NotFound("User not found.");
             }
-    
-            existingUser.UserName = updatedUser.UserName;
-            existingUser.Email = updatedUser.Email;
 
-            // Handle password update
+            // Check if updated fields are provided and update accordingly
+            if (!string.IsNullOrWhiteSpace(updatedUser.Username))
+            {
+                existingUser.UserName = updatedUser.Username;
+            }
+
+            if (!string.IsNullOrWhiteSpace(updatedUser.Email))
+            {
+                existingUser.Email = updatedUser.Email;
+            }
+
             if (!string.IsNullOrWhiteSpace(updatedUser.Password))
             {
-                // Use a password hasher here to hash the new password
-                var hashedPassword = _passwordHasher.HashPassword(existingUser, updatedUser.Password);
-                existingUser.PasswordHash = hashedPassword;
+                existingUser.PasswordHash = _passwordHasher.HashPassword(existingUser, updatedUser.Password);
             }
 
-            bool returnOk = await _userRepository.Update(existingUser);
+            if (updatedUser.ProfilePicture != null)
+            {
+                using var memoryStream = new MemoryStream();
+                await updatedUser.ProfilePicture.CopyToAsync(memoryStream);
+                existingUser.UserPhoto = memoryStream.ToArray();
+            }
 
-            if (returnOk)
+            var result = await _userRepository.Update(existingUser);
+            if (!result)
             {
-                var response = new { success = true, message = "User " + id + " updated successfully" };
-                return Ok(response);
+                _logger.LogError($"Failed to update user with id {id}");
+                return BadRequest("User update failed.");
             }
-            else
-            {
-                _logger.LogError("[UserController] User could not be updated");
-                var response = new { success = false, message = "User " + id + " failed to update" };
-                return Ok(response);
-            }
+
+            return Ok(new { success = true, message = "User updated successfully" });
         }
+
+
 
 
 
