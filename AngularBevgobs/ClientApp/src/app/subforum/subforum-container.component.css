@@ -498,6 +498,43 @@ i.fa-pen-to-square, i.fa-chevron-left, i.fa-file-pen, i.fa-trash {
     transform: translateX(-10px);
   }
 
+#userPanel {
+  background-color: #fff3f3;
+  border: 1px solid #ff9797;
+  border-radius: 0.35rem;
+}
+
+.flex-1 {
+  display: flex;
+  flex-direction: row;
+}
+
+.user-picture-container-header {
+  height: 80px;
+  width: 80px;
+  padding: 0px;
+  border: 2px solid #2d293c80;
+  border-radius: 0.35em;
+  margin: auto;
+
+  & img
+
+{
+  height: 100%;
+  width: 100%;
+}
+
+}
+
+#banner-user-options {
+  display: flex;
+}
+
+.lighter-link {
+  color: #505050;
+  font-weight: 600;
+}
+
 ul {
   list-style-type: none;
   padding-inline-start: 0px;
