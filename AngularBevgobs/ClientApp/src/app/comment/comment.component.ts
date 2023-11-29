@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { IComment } from '../comment/comment';
 import { IUser } from '../user/user';
 import { IThread } from '../thread/thread';
@@ -7,6 +7,7 @@ import { CommentService } from '../comment/comment.service';
 import { UserService } from '../user/user.service';
 import { ThreadService } from '../thread/thread.service';
 import { AuthService } from 'src/app/services/authentication.service';
+import { FormGroup, FormControl, Validators, FormBuilder, ReactiveFormsModule } from '@angular/forms';
 declare var bootstrap: any;
 
 @Component({
@@ -20,15 +21,31 @@ export class CommentComponent implements OnInit, AfterViewInit {
   userDataLoaded: boolean = false;
   author?: IUser;
   thread?: IThread;
+  isEditing: boolean = false;
+
+  previousComment: string = '';
+  editingContent: string = '';
 
   currentUser: any = null;
 
+  commentForm: FormGroup;
+
   constructor(
     private _router: Router,
+    private _formbuilder: FormBuilder,
     private _commentService: CommentService,
     private _userService: UserService,
     private _threadService: ThreadService,
-    private authService: AuthService) { }
+    private cdr: ChangeDetectorRef,
+    private authService: AuthService) {
+    this.commentForm = _formbuilder.group({
+      Title: [''],
+      Body: ['', Validators.required],
+      ThreadId: [''],
+      UserId: [''],
+      CreatedAt: [new Date()],
+    });
+  }
 
   ngAfterViewInit(): void {
     // Bootstrap tooltip initialization
@@ -46,7 +63,7 @@ export class CommentComponent implements OnInit, AfterViewInit {
         .subscribe(data => {
           console.log('Data received: ', JSON.stringify(data));
           this.author = data;
-          
+
         })
     }
 
@@ -94,7 +111,7 @@ export class CommentComponent implements OnInit, AfterViewInit {
       return "Undefined date"
     } else {
       const date = new Date(this.author?.CreatedAt);
-      return date.toLocaleDateString('en-UK', { day: 'numeric', month: 'short', year:'numeric' });
+      return date.toLocaleDateString('en-UK', { day: 'numeric', month: 'short', year: 'numeric' });
     }
   }
 
@@ -123,8 +140,68 @@ export class CommentComponent implements OnInit, AfterViewInit {
     }
   }
 
+  editComment(btn_id: number | undefined) {
+    console.log("Comment Component: editComment()");
+    if (this.comment?.Body != null && btn_id != undefined) {
+      this.previousComment = this.comment.Body;
+      this.editingContent = this.comment.Body; // Temporary variable for editing
+      this.isEditing = true;
+
+      setTimeout(() => {
+        const commentBody = document.getElementById(`comment-editable-${btn_id}-body`);
+        commentBody?.focus();
+      }, 0);
+    }
+  }
+
+  onSubmit() {
+    console.log("Comment Component: onSubmit()");
+    this.isEditing = false;
+    console.log(this.commentForm);
+    var newComment = this.commentForm.value;
+
+    if (this.comment?.CommentId != null) {
+      this._commentService.getCommentById(this.comment?.CommentId)
+        .subscribe(
+          (comment: any) => {
+            console.log('Retrieved comment: ', comment);
+            this.commentForm.patchValue({
+              Title: comment.Title,
+              Body: newComment.Body,
+              ThreadId: comment.ThreadId,
+              UserId: comment.UserId,
+              CreatedAt: comment.CreatedAt
+            });
+            newComment = this.commentForm.value;
+            this._commentService.updateComment(newComment.CommentId, newComment)
+              .subscribe(response => {
+                if (response.success) {
+                  console.log(response.message);
+                  window.location.reload();
+                }
+              })
+          },
+          (error: any) => {
+            console.error('Error loading item for edit:', error);
+          });
+    }
+  }
+
+  cancelEditing() {
+    console.log("Comment Component: cancelEditing()");
+    if (this.comment) {
+      this.comment.Body = this.previousComment; // Revert to the original value
+      this.isEditing = false;
+      this.cdr.detectChanges(); // Manually trigger change detection
+    }
+  }
+
   ngOnInit(): void {
     console.log("Comment Component: ngOnInit()");
+    if (this.comment?.Body != null) {
+      this.editingContent = this.comment?.Body;
+      this.cdr.detectChanges(); // Manually trigger change detection
+    }
 
     this.getAuthor();
     this.getThread();
@@ -144,7 +221,7 @@ export class CommentComponent implements OnInit, AfterViewInit {
     } else {
       console.error('User ID not found in local storage');
     }
-    
+
   }
 
   get isAuthenticated(): boolean {

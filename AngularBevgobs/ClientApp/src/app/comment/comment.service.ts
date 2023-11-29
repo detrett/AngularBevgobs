@@ -29,4 +29,10 @@ export class CommentService {
   deleteComment(id: number): Observable<any> {
     return this._http.delete<any>(this.apiUrl + `/delete/${id}`);
   }
+
+  updateComment(id: number, newComment: any): Observable<any> {
+    const url = `${this.apiUrl}/update/${id}`;
+    newComment.CommentId = id;
+    return this._http.put<any>(url, newComment);
+  }
 }

@@ -67,7 +67,7 @@
               <ng-container *ngIf="userDataLoaded">
                 <ng-container *ngIf="isAuthenticated">
                   <ng-container *ngIf="isAuthorOrMod">
-                    <button class="dropdown-item" id="editBtn-{{comment?.CommentId}}" onclick="edit()">
+                    <button class="dropdown-item" id="editBtn-{{comment?.CommentId}}" (click)="editComment(comment?.CommentId)">
                       <i class="fa-solid fa-pen padding-right-icon"></i>
                       Edit
                     </button>
@@ -125,22 +125,26 @@
       </div>
 
       <!--Body of Post-->
-      <form method="post" class="mb-3">
+      <form [formGroup]="commentForm" (ngSubmit)="onSubmit()" class="mb-3">
         <div class="post-body">
-          <p id="comment-{{comment?.CommentId}}-body" contenteditable="false" class="prevent-blur">
+          <p #commentBody id="comment-{{comment?.CommentId}}-body" [attr.contenteditable]="isEditing ? 'true' : 'false'" class="prevent-blur" *ngIf="!isEditing">
             {{comment?.Body}}
           </p>
-          <input id="comment-{{comment?.CommentId}}-input" type="hidden" value="" />
+          <textarea class="form-control mt-4" id="comment-editable-{{comment?.CommentId}}-body" cols="30" rows="4"
+                    placeholder="{{comment?.Body}}" formControlName="Body" *ngIf="isEditing"> </textarea>
+          <div *ngIf="commentForm.get('Body')?.invalid && commentForm.get('Body')?.touched" class="text-danger m-2-5">
+            Comment is required.
+          </div>
           <span class="text-danger m-2-5"></span>
         </div>
 
-        <!--<button type="submit" class="std-pink-btn mr-3 hidden" id="save-comment-{{comment?.CommentId}}">
+        <button *ngIf="isEditing" type="submit" class="std-pink-btn mr-3" id="save-comment-{{comment?.CommentId}}">
           Save changes
         </button>
 
-        <button type="button" class="std-purple-btn hidden" id="cancel-save-{{comment?.CommentId}}">
+        <button *ngIf="isEditing" class="std-purple-btn" id="cancel-save-{{comment?.CommentId}}" (click)="cancelEditing()">
           Cancel
-        </button>-->
+        </button>
       </form>
 
     </div>

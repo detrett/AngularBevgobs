@@ -9,3 +9,4 @@ export interface IComment {
   UserId: number;
   CreatedAt: Date;
 }
+
