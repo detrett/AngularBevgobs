@@ -7,7 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3b27334-fd99-4710-b89e-a7ba0bd921b1" name="Changes" comment="fixed CurrentUser">
+    <list default="true" id="a3b27334-fd99-4710-b89e-a7ba0bd921b1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AngularBevgobs/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AngularBevgobs/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/angular-webpack/9c626523941650c4e0c863e49d1c724bcb43f65c/0.pack" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/angular-webpack/9c626523941650c4e0c863e49d1c724bcb43f65c/1.pack" beforeDir="false" />
