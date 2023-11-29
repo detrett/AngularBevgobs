@@ -2,33 +2,35 @@
 <div class="banner clearfix container-fluid">
   <!-- START OF BANNER -->
   <div class="background-light card flex-1 row" id="banner">
+
     <!--Welcome message-->
     <div class="col-md-6 banner-message">
       <p class="header-font">
-        Welcome to the Beverage Goblins online community.<br>
-        A place to discuss all things related to drinks with other people that share your enthusiasm for beverages.
+        Welcome to the Beverage Goblins online community.
+        <br> A place to discuss all things related to drinks with other people that share your enthusiasm
+        for beverages.
       </p>
     </div>
 
+    <!--Member only - Member panel-->
     <!-- Member only - Member panel -->
     <div *ngIf="isAuthenticated" class="m-1 col-md-5 member-only flex-1" id="userPanel">
       <!-- User picture -->
       <div class="user-picture-container-header">
         <a title="Go to profile">
-          <!-- Display user photo if it exists -->
-          <img *ngIf="currentUser?.UserPhoto" [src]="'data:image/png;base64,' + currentUser.UserPhoto" alt="Profile Picture" class="round-img">
+          <!-- If user photo exists, display it -->
+          <img *ngIf="currentUser?.UserPhoto" [src]="'data:image/png;base64,' + currentUser.UserPhoto" alt="Profile Picture" class="img-thumbnail">
+          <!-- If user photo URL exists, display it -->
+          <img *ngIf="currentUser?.UserPhotoUrl" [src]="currentUser.UserPhotoUrl" alt="Profile Picture" class="img-thumbnail">
+          <!-- Display default profile picture if no user photo exists -->
+          <img *ngIf="!currentUser?.UserPhoto" src="assets/images/defaultuser.png" alt="Profile Picture" class="img-thumbnail">
 
-          <!-- Display user photo URL if it exists -->
-          <img *ngIf="!currentUser?.UserPhoto && currentUser?.UserPhotoUrl" [src]="currentUser.UserPhotoUrl" alt="Profile Picture" class="round-img">
-
-          <!-- Default profile picture if no user photo exists -->
-          <img *ngIf="!currentUser?.UserPhoto && !currentUser?.UserPhotoUrl" src="assets/images/defaultuser.png" alt="Profile Picture" class="round-img">
         </a>
       </div>
       <!-- User welcome -->
       <div *ngIf="currentUser" class="m-auto text-center" id="userWelcome">
         <span class="p-1">
-          <em>Welcome, <span class="userTitle"><em>{{currentUser?.Username}}</em></span>!</em>
+        <em>Welcome, <span class="userTitle"><em>{{currentUser?.Username}}</em></span>!</em>
         </span>
       </div>
 
@@ -36,36 +38,32 @@
       <div class="m-auto" id="banner-user-options">
 
         <div class="p-2">
-          -->
+
           <!--Profile-->
-          <!-- Profile -->
           <div class="p-1">
             <a title="Go to profile" class="lighter-link" [routerLink]="['/user-settings']">
               <i class="fa-solid fa-user"></i>
-              Profile
+              My Profile
             </a>
           </div>
-          -->
           <!--Settings-->
-          <!-- Settings -->
           <div class="p-1">
             <a title="Edit your profile" class="lighter-link" [routerLink]="['/user-settings']">
               <i class="fa-solid fa-gear"></i>
               Settings
             </a>
           </div>
-
         </div>
 
         <div class="p-2">
-          -->
+
           <!--Inbox-->
           <div class="p-1">
             <a href="#" title="Go to inbox" class="lighter-link">
               <i class="fa-solid fa-inbox"></i>
               Inbox
             </a>
-          </div>-->
+          </div>
           <!--Sign Out-->
           <div class="p-1">
             <a title="Sign Out" class="lighter-link" (click)="logout()">
@@ -78,19 +76,14 @@
       </div>
 
     </div>
-    <!--End of member panel-->
-    <!--}
-    else
-    {-->
     <!-- Guest only -->
     <div *ngIf="!isAuthenticated" class="col-md-4 text-justify guest-only" id="buttonPanel">
       <span class=""><a [routerLink]="['/register']" class="card-body std-pink-btn" id="registerBtn">Register</a></span>
       <span class=""><a [routerLink]="['/login']" class="card-body std-purple-btn" id="signInBtn">Sign In</a></span>
     </div>
 
-
-    <!-- Breadcrumbs -->
     <div class="background-dark card-footer justify-content-start">
+
       <div class="col-md">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
@@ -98,14 +91,17 @@
           </ol>
         </nav>
       </div>
+
     </div>
 
   </div>
 
+
   <main role="main" class="pb-3">
     <app-forums></app-forums>
   </main>
-
 </div>
+
+
 
 

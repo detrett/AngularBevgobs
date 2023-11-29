@@ -22,13 +22,13 @@
       <div class="user-picture-container-header">
         <a title="Go to profile">
           <!-- Display user photo if it exists -->
-          <img *ngIf="currentUser?.UserPhoto" [src]="'data:image/png;base64,' + currentUser.UserPhoto" alt="Profile Picture" class="round-img">
+          <img *ngIf="currentUser?.UserPhoto" [src]="'data:image/png;base64,' + currentUser.UserPhoto" alt="Profile Picture" class="img-thumbnail">
 
           <!-- Display user photo URL if it exists -->
-          <img *ngIf="!currentUser?.UserPhoto && currentUser?.UserPhotoUrl" [src]="currentUser.UserPhotoUrl" alt="Profile Picture" class="round-img">
+          <img *ngIf="!currentUser?.UserPhoto && currentUser?.UserPhotoUrl" [src]="currentUser.UserPhotoUrl" alt="Profile Picture" class="img-thumbnail">
 
           <!-- Default profile picture if no user photo exists -->
-          <img *ngIf="!currentUser?.UserPhoto && !currentUser?.UserPhotoUrl" src="assets/images/defaultuser.png" alt="Profile Picture" class="round-img">
+          <img *ngIf="!currentUser?.UserPhoto && !currentUser?.UserPhotoUrl" src="assets/images/defaultuser.png" alt="Profile Picture" class="img-thumbnail">
         </a>
       </div>
 
