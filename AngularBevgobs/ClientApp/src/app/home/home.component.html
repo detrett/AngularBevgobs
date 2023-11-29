@@ -15,12 +15,14 @@
       <!-- User picture -->
       <div class="user-picture-container-header">
         <a title="Go to profile">
-          <!-- If user photo exists, display it -->
-          <img *ngIf="currentUser?.UserPhoto" [src]="'data:image/png;base64,' + currentUser.UserPhoto" alt="Profile Picture" class="img-thumbnail">
-          <!-- If user photo URL exists, display it -->
-          <img *ngIf="currentUser?.UserPhotoUrl" [src]="currentUser.UserPhotoUrl" alt="Profile Picture" class="img-thumbnail">
-          <!-- Display default profile picture if no user photo exists -->
-          <img *ngIf="!currentUser?.UserPhoto" src="assets/images/defaultuser.png" alt="Profile Picture" class="img-thumbnail">
+          <!-- Display user photo if it exists -->
+          <img *ngIf="currentUser?.UserPhoto" [src]="'data:image/png;base64,' + currentUser.UserPhoto" alt="Profile Picture" class="round-img">
+
+          <!-- Display user photo URL if it exists -->
+          <img *ngIf="!currentUser?.UserPhoto && currentUser?.UserPhotoUrl" [src]="currentUser.UserPhotoUrl" alt="Profile Picture" class="round-img">
+
+          <!-- Default profile picture if no user photo exists -->
+          <img *ngIf="!currentUser?.UserPhoto && !currentUser?.UserPhotoUrl" src="assets/images/defaultuser.png" alt="Profile Picture" class="round-img">
         </a>
       </div>
       <!-- User welcome -->

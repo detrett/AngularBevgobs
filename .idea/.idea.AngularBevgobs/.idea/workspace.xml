@@ -7,650 +7,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3b27334-fd99-4710-b89e-a7ba0bd921b1" name="Changes" comment="">
+    <list default="true" id="a3b27334-fd99-4710-b89e-a7ba0bd921b1" name="Changes" comment="new branch">
+      <change afterPath="$PROJECT_DIR$/AngularBevgobs/Models/DTOs/UpdateUserDTO.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AngularBevgobs/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AngularBevgobs/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/angular-webpack/9c626523941650c4e0c863e49d1c724bcb43f65c/0.pack" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/angular-webpack/9c626523941650c4e0c863e49d1c724bcb43f65c/1.pack" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/angular-webpack/9c626523941650c4e0c863e49d1c724bcb43f65c/10.pack" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/angular-webpack/9c626523941650c4e0c863e49d1c724bcb43f65c/11.pack" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/angular-webpack/9c626523941650c4e0c863e49d1c724bcb43f65c/12.pack" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/angular-webpack/9c626523941650c4e0c863e49d1c724bcb43f65c/13.pack" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/angular-webpack/9c626523941650c4e0c863e49d1c724bcb43f65c/14.pack" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/angular-webpack/9c626523941650c4e0c863e49d1c724bcb43f65c/15.pack" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/angular-webpack/9c626523941650c4e0c863e49d1c724bcb43f65c/16.pack" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/angular-webpack/9c626523941650c4e0c863e49d1c724bcb43f65c/17.pack" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/angular-webpack/9c626523941650c4e0c863e49d1c724bcb43f65c/18.pack" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/angular-webpack/9c626523941650c4e0c863e49d1c724bcb43f65c/2.pack" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/angular-webpack/9c626523941650c4e0c863e49d1c724bcb43f65c/3.pack" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/angular-webpack/9c626523941650c4e0c863e49d1c724bcb43f65c/4.pack" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/angular-webpack/9c626523941650c4e0c863e49d1c724bcb43f65c/5.pack" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/angular-webpack/9c626523941650c4e0c863e49d1c724bcb43f65c/6.pack" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/angular-webpack/9c626523941650c4e0c863e49d1c724bcb43f65c/7.pack" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/angular-webpack/9c626523941650c4e0c863e49d1c724bcb43f65c/8.pack" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/angular-webpack/9c626523941650c4e0c863e49d1c724bcb43f65c/9.pack" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/angular-webpack/9c626523941650c4e0c863e49d1c724bcb43f65c/index.pack" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/angular-webpack/9c626523941650c4e0c863e49d1c724bcb43f65c/index.pack.old" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/004013e98d493aed9a923c375480473c8f2df1adf36bb8b36d59a66161fb2a65.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/009bba280a9df88dbac5149d62951da6cac87e6db8f5e37bbc642a60505cec62.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/01686922cbe43e0888118a49e64973d2116329513203683fe6b268c57defe9c2.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/026e729ac60acc3dd6f4fecbc6c67c0e60c8c9d263809917b1938dc87ab8a59b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/027210f0e6c61f6f50458e2f76ff787d27e5b8cc2ef51392b6b92f6489111821.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/027c9af3ada4120db59a2318db547e2f5f0b2d25972af5e333e406f3c38a09ca.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/02cd453e0201f291eba1b554cacd3e7ff5d356f58dd77ceda3664071c345756c.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/034794bf8415ef45653f8c1ef098cf49f718d3f2cebffa2467763b05535d89e2.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/0349758591f63cd6ba453e6c5adbbb1f9ce85371aefb3da27a69a1c95eed1ab7.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/03731fa37e87634d7bb191111c64c2947f5a9dde201ad7d31627b2888195e290.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/03acdc87b7ce404743579f2363fbf614f2385264f8bb638092311e1b926a7bc1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/043974bd5469b3971bd0b58a3d3ce890d78e80203f7e3c4efa1676998286aa68.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/04eb050a0ce8d97b562de6539ac64b404b6e6ffbcdaa607a4edc225f63bda51a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/05955bb11cefc70fcdb9b9e2ff9ec197bc7e59b764261cb178f9638edc04d413.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/05b36817dfb035af612591cca6d5e3cb2ae7b5dde997d840799a7e885a93a733.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/05e843a5458e78bf01c7480a082e5300b5e997949fbe535890cc2d5398acb03c.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/0655828ed6bad6d9add39c4c81d6ee0c014f9ce73fa7a41726617877f86ed193.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/0658eb321dd578657a80b7a829cdd81b4eaacdd4cf1a9898e86e880116b5badb.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/06766dc134e1558b2f07f0c9016fb008ce5b76d5cbfdac71a46d258e093d8583.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/06d48ff7fcf38e5149478dd4c1c5c94c39ea96dfe91a018ba0752cf5c435c91d.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/07c3e9980e9a64c7e9cc76d1769e6b0debb942a1ba7b8a3499b793a59be6e2f3.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/08295ce3e075219efdc7aeee6eaf01417620c2ec466b9341fd9dcf076347a3b0.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/08a239d0905c94a27eb4314f690b642e600846e324aa2328e15686c5bbea7960.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/08bf681235cd9dc9affcc475822594238605c6c7d376b1dbbba65f376fef6762.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/09f7b46e246ccd2e7ef2e56a331395a028dececf41e1e55119ed95cd2c844a3c.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/0a9c2f9027a8a6aa3db6c5175e387fc7dbe019225aed4abe81d2857c18f402ab.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/0af2e320abe137dc7274faaab7f71489b55d626ccb5b9bd94ef460ae53a97fc5.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/0b2c227aa0601b7d39ff8c552c8eb03ce031929ecf5d426e8fd0b6a3c2ac1463.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/0c8f5f8292d3a5fb0944bb2ab333c4ac06740bf7602af19626d3cdde2feb74b8.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/0d0bf3c37534a4637bc599f08bad11d3e19b636ed7f48ef0557b7292e5a7d3d4.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/0d147c69a3df8db5051011328f8456509e53206e7966e552a62597a9288e3887.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/0d22676611db7fd542f6173cdf18fae7cbe7854e73515544abd8f1ac73ca19e3.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/0d22fdcf9989f31db7406b37564a0fec551c450e58c479a35af96176ac5552d4.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/0d898a1ce0c304a16b04d39a9a26f252f992d0462fb90fba79c6da7cfb0bd28d.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/0dddacc5fb73e8c054727c0b8018965fc893c400fcc64d6ed2b2f9bc4407eca2.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/0e693994927e6468b00e459fd3e7c732ae546f98003877525307f8d322be0446.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/0ecbe2751a6997950a468d5df9f1e864d84085ff0e5e42a1ba2219811b296d25.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/0f7560dc63bde0951932edb72ee6eb3a4cda743540d1dc2b4ac58a77e8686d3e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/1063b24fb08aa1526a12c2479d89473cbe00fb5559b24cf40b415f753bdc0e98.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/10b9dd3fd8e17aa98e8de3aea60133add59b7a3e9e33a0679bd487a9e9c0565a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/10fb612a4e3566b3d751f37358e5e0500f9173fa8e412f97d197fbdb54108569.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/1132ed71f3c0633cf86bc4afcfcc292dda55a639faa9109b91666c1e39c177ed.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/118e01ab5640c9045c6cee9625613318beddfe82885f1e0e2fec9003ea056f62.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/11981e07dbbfb28a8f07242177be71c43831232f49faa31e10e06cb3530945dc.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/123c4c302daa0247c4547bf431cb88ca018a70349ff0fd708c5d7a553143c401.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/13542dba89cf86e0f4ea28f0fbaebfe6c4035b39e487b913478b5db976bdc5df.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/13ffa99afb90dc8d2182c0e8ae780bf5e3ef87790d5fc09fd9259d030bf00eb2.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/140f0f59fb48319c0ad612fbf223e3c8f0a9c6944b8489338222f308b206c6fc.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/1583637c2e96e4189a86b8ea3913735b6708ce900244ed7feb6addafb4cf454a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/15c6146154924c194c3febb305823a0965e3326bd9caff479baad8777b0ad6f3.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/163dac3eca20ad284983401ff80a5d113917b978049b67c0f13f13f6c4f0f393.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/165ae436a6460abeace988ad70880c259db728ec341841dd9acfac524899e770.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/17008b8f4b424bcfc99372877952b7cbe08df6a2dd39d2721dceb06a8ed14d35.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/179a004b8fe1a018bd9dd11488745b4702550699ad3ea077c96a8313dab730e4.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/1810abe64f7e6597a4b648be46bd5cf564d602cf7288d5de8e54ea192d241e53.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/18be8cc610abd14b99283e0108b89defd8988b785837f21dbf4a7199319eff5c.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/191f6eb1ebb11eae03c8b7860a2d81987a2f61670f4a0338e3846b1cafa8c2bc.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/1b26380e5eeb9c2999d0b6ea97705396b19811cc2fca13001558be9b89d65eef.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/1b2c76f67b691138dc3f2bb1f07a2b2452e70f45636564003a3e964c52d8cc0c.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/1b872e831853acf8b63b1132cd4db4f0f4fd2d2391e269923f5afb2ad6070325.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/1b8c9447dcdae7f95dca6991d00c4de556c61a7d6bd8fe6eaae5819ba60a128b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/1bc6b806f6f8d5eb57450ec9383d79b74f23b8ae6b30600e089067dfb3ceb4fa.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/1bfb42fdb94cb640881b75ba16c558a68237e874b30876b230881d5ac812a87a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/1c10d4b496fda242e2486be78f11f698b17027ac4aefa44a08471cdaff8fed98.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/1d67c27e8737cb30c78be410ef22ffae8627cfd652637a771fc126d1e3b3ef5a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/1da821b4c28531c7a7683a44292cf61ff0079e7e761128846117ebee405c64e4.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/1f09725c3f12eaa0886b1d8a61e07e43160425c7df55479bc20eed4c0e1f56f2.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/1f42680bb0c470e8e643b4b4808bbe48b4499941fd1d8085487ac98cf1915658.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/1ff24803f8ca9ebc649475910989d04594eddca8b966565d8b9f998341719fc2.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/20cd8f54484b755a071f53f14d9764e983d90d38f13b991e52f9b8bae6071ebf.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/216e6393a24d627a42490f6a67907b4fb9d501fd0cf1e38069fea8b7c05df048.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/219d1975f88bd44396599dfb581c6861225e66c4de3e874a7763c30485ab00df.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/22157590eb09bd1bf1b1f9c0a5813e0712be36a63d7ff0fb7987d0d6dedab628.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/222e995109c92b40813e7cf530aab9972248bb402e482d341ae696d0fdb106c6.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/22a4727e2395e8f48e286cf9110b947b5304fbf077ce198a41333f0641f08374.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/23baa26f1ede989ebf00ec848638e9f50a8edccdf20c96a97f9f39713833bf5a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/23c6516e17212bebd371e091810f527c0b05dc3614c4f1f63fa7c439c7b399bb.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/23faa38e38486e180a246adcf3421f03665798ff9ff8018e760b3eecf3900d04.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/247dc0089993714738c3270d4080f5fee0a8f4027d3fc574d1875d83971034b3.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/24c1ce4a1cad1632f4cac02924c08d6f9593e527f7864fcc1b2ea11ff387f29c.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/24f0a7b2485fd25466828aedda7e43628e98924860a73cc81c72c882a1cb031a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/25000d9152ad1f00e04781684dfc0427dc450f2c3936d6b6e221e385fcb5ce48.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/250a82712b5ac0891d5c9f73de94252edae425b53876db1ddfcc6ed77c42e352.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/251079142d726395ccc4993955fef3d7705cbd0e983a324bed88daec225de6e7.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/257d8faff2d4fb95b0933623d398cf193f75872dbda62639cff7e1240dc7af7d.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/25d88ead8ba726dba6e1634488e4356a16cdec4b832a2d3b65f4cc0a85984ba0.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/2625e18a12c05c3faca86b8345f6a330fef3276aa04acb848094f5cdb2fd59ab.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/26573259b2bb21035055b1e11e1db6f18bbba96d6851a81cac368ad758b85b37.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/26f582f1f741e6ec60e2036c0a8eec8114b4153d065b9adb3ac1571b3cb61aab.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/271e02e14ac4cc89e8d2e239b2b0e77aa3b00991ae7d26d10bfdb65b397ca169.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/275926f37c2753a1eddffb849adf130f22521986a37c8525f2c601b4168f4e15.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/27982d91cde0c692b7e62792c83139cea00279d86f15779677034f0e9762aa21.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/2852552357c29e3f0eb352d05d0c9c1199e1a473e176f6a6a2c6e5536048d439.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/28744b0c5d6854d3e27199146b29cab51074ed44d24ec121b32d2df26b26a7e5.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/295dc3d0362b062b8eddc76a9ae5e3595f24063ca631404b3e30f424abee6953.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/298fa10afbc544e0b40c398aab06cbd00cf98c65165e468fcdfea99e671037bb.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/29a63aee442b91299561ea57f7b4bd22756b0df5b7027723b74244c089d81d45.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/29c8ee93c964ebb1f45a32e804f0e6094b7223c5d9a77a59e18a720d51392693.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/2a8969ef4645da2fe86328d6ffa82844a5c8db6d870f4cf6a73de97d0dda9cf4.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/2ac7900b8811e8bfbabb5c912cfe1ca4502a4d83d89276fd9c5c44e1ccd4d872.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/2ac8b07c89e773e79dc32d5e1b8b6b5b1cd942c86af5d6edb5a5ba97a6eb0ef8.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/2aef4580dc197974d31268751de7e42a6e94fa4748f733af7322ed817ae80e6e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/2b4af23c150ae90ba24304e78a269050c368ed99b70a0a4408d151a9543f3c45.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/2b8f448018b9f524807c859a0d5f907f3c9f4a21ad38e7862071c4b3b9d2347e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/2cb1f457812127f57ad8bdd2ca4cd1da9184ffb0b15812eadf69a806fa51c8f2.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/2ccf1dc5d7b6c28dd02cb0b52b2fa83226179ef1412b9ad3810ebae30c95690a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/2d11e89607d8b8ed166137acedec6b3d717820548c982ac620e65ee72d0c97ce.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/2ef56470edc3296513989f1b24bf99eb9605ae3628487c484d7f77c7a2a9411a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/2f3e29c15b0d59dc86b63262a3d750c0347c727f2a445add2eb111ada4c5df3d.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/2f3f976cf508f877a6b9f9a749b84142c32a77e252cbb1a18c6f4e5c83b56893.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/2f66eaece6d3d8be15b85c6beff41f6c157a9da3e5ef46668d7c3a9271bf7760.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/301d08c9ab68490f50a1069a2864b4a6fd8e1076601e095e4afa332f84ce7a6a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/3032e73b3bed1bc2a83d9587b7c0e63a6db7fdda0e6355434cf25ecbf88660e6.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/31009b642b555035f8b6ed1da0a5b436b32fa9cef774c4558f8f2b68567a86b5.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/313d4d60c6d18609e9673ae7a027a85d1201ede86b33555d302e059a9da8143b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/34ee5a5b25f9983d09808cd15a561632bdf9167e1eb657a8b4fc839bd3f372eb.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/355203a59fa88f8bb48efb81bb66838ff2602da4c7439ea08b32a42a9dcb7c59.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/3582f0217e9272330f001bbe78c59ec5a6cfc75219317c0c996c5282b50abdc8.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/358c399076a6a0de205b7ebe11045d0a9053da0de1703992b64c38147efe2bff.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/35c740417a4d8ffa266a59ac70b902209b8cfa7d988d70f55d0034549c42b2d4.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/35e006e4d6a48dd2e4e83559dff9b5d7b7659aa05e5707b6753fba5d6655d925.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/35fd6b423a66446252a093235a1b10b314afdad896d305530130d7ce9ec0527e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/36324f9d1e42f80dd11596fe371a86766fd73e3053108a9600ecf814b0734e6e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/365746b3f96304d8c51d65a424ea8c1939ddac0b85bccb3e9a2b6de9bfbc889a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/365b1cf6a4cd2cb96871b313ea3fc4bf55db0bc1cd6fe16671c7bef822922f79.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/37292266eeecbd993725542ae1510f3594d17395ca3637cdfe7ce6555e9482ea.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/372bab7b88282a92d3e0216b16bc7af977011790adf060230f39727060ce1d1d.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/37f911b83309c76e9c659bef92fd39b3a5fffc6654da65959d9bdc4ec94d73f1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/383003058acd26c6f71e4ad8174c73f82d8c6984f2908ad5bde3e7489f4eb51e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/3838166e2742a0a750f25381dc7b7b3f4f40af6fdcc25bda353bff106de4c8a6.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/3861217d7389647a8e53dabeec935e2c59044826dc86d7b84edc6d14e2984377.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/3890f554c59eaee5f9773fc36425eddbd1ee7f300b4d3b62cfa1240d2c66d30c.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/38a0c5ee8f2c86b3bfa0f1fb6afb819135b9d3de502f215c5196995f5e27efbc.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/38b6ab8841e570131e13c19aa197fec1a080c86c8431435fd78a5ac242c8a5b6.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/3ada923db7ca3dad03e08edf568a67600146797753d04fefaac120831aab3987.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/3b01e6240f9315286a3377958a26e83dca34f6ba7864184700e2ec0c7ca81baf.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/3b0ec855637778f77f6d11f47c79649dd5e55d25e9044830ef6484edb9f39621.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/3b45baefa8afe13b8e0f0dc100cb700462f3179da09b8bdb211793b325f9c212.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/3c3e3469a75570b15ca6e07dcccc9c608f3319cff492733658de1b206a83a7f6.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/3c8b30d81de0999e2ef7c9fe85a20ab715cec2df911764c4b72a4a90ea37152b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/3e6aebd832cd2c1de62f291430cc217cff70f51b009b5601f735707885315f21.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/3ebfd2cb18aadc78d5628e23cc544c4fdd68e6028a3580ff77d42acbeb373624.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/402067ba23b16602a48aa42ab62541e073129ba564fc3adebb5b850fb11eecd6.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/40225134973804e779426b5b2cf410079d808327a464e0b82f2ffdcfd72965cb.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/404886df4fd454dcd1f5c781c04c4e1af92927380b48994917fe4d6d3007b1a2.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/4054d78750e9555f547b6eeb7c9d74b601d173a8922c74102574a44d884674de.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/40d8d226ac1b05c7bb18f0a0d1defd150fbd47134371162e228209c08653d999.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/412f4098c3e299cd705dea8ae06b34f8d14095b32ef4a3bb2e4f8c7c932dbfc0.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/413ef3a7ddd8a90df16a415df214c6b36e1dceff53cb4b6275827a1995456129.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/416e494c8b3d02f1566456d6fc2bdc434cd19b332c655af85222a202621ee811.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/425ecb8cc564df0209a1dd5fd5b9cdf217a4892b2f313f68987c95a6eaa53f17.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/42c291f15ef8e421444af5d56d0ca5dcd456883d3be4d726159efb0d11e92a20.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/4361696da13fb811585b651c4b6f06e16929a800a68a5cd5e399482c6adddebe.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/43ec5d6e6da869d03117e8ad05d06cde66a1f319cb335d0644139aa75923acb1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/442e266ca2228bc5746f3e8edd540d6623e9771c169ced71e8944f414da74e1f.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/44a761e2e484df50ec70bc0e4569a8e0bfc74aa2b70b929d09bad138fac32e3d.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/45e58202754d4befe03382ea8993681faf914256c2cbc18ef3684ddb35d52e94.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/460aaf52bf0feedb39b488d0b8e7927cdd515aec6065587b5cf35fbfe1972c20.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/460acabf7765139264e9586bb943aa4606601e8a67f3c896c38fa34fc8e01ce7.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/46afecd3a4ed0758435850872b09ad7ca7aec1d64faec80e99a48634beb3d3fe.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/472e905d4a5e9d73be7b482fde91232c86f4523d375fa94e29563ec506afc903.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/474ab6fa26f5b2974280887af9bc479f20e4ec7af36747856588e7a8b64fece9.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/47c69646d2555e464571b946c9f798fe7ac48fc1cd42540d8e7f8fdcd6c5bf2d.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/48553e1aaaca0d90491f36c50118849f4f8560e94ef7bed15e935b9bb5c9cdab.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/488a427f45716f31bab92d23072defec1f25a02dc77b599e67621c5ea10f54a3.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/48a2ee4bc38008e0d6b1e67760df80f2e370ecd48488eeaeca55015db808ad45.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/48cf66dc8db0858123648270e130604e91b2dff58a890bf0461bfcbabab3a244.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/4902d1dfc97087dacdd4188bf7382da0d75792c90b385a69b1d8c24711a10d0b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/4941b8087afcada46039c7ee44a3372f06b478fa660657e6d767256ef1937a3a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/49ad88b8dd2c8b90c5fc6e5cf685ee83485c9b1374d0240abb74ee57ee200fe7.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/49bacc4060097c844ca86f196866d320d68f880253e422791a14bacf5ad48b5d.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/49df623af3d35cb13bf5f01eec6c000142ea47ae6ef2d99870ec2c479fde5710.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/4a326bdb58e5f829d5ab0047bd5ccad72af809b0273acfee5af4956bb2aa943a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/4b73ba1b804caccd48146eb5525f6296d86dee2de68b135572fbff9def889a27.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/4ba2d0fd58ce8e9ec44d404af6d6d393479c1ec0baf5490bbd1309a4d5b9b273.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/4bcf46b5c6f0a8e7c03fa6c109c2c1ee50addeffed625fb48d668f616c96448d.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/4bd65d97b2fffe9ea1b0738defb2224ce414f1271ace297c7c0d116f2d07005c.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/4d2e5b039b1c866431ef0d3c9d0c3139986961474cb80ef455d5a0309369dad8.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/4d5ef7c69b873d48eadd4a6bf36ea8122dbd36a3a16315bc421097cea1172731.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/4e33d3dd457533519342b6ec2c2da8af205d580725bc256fded5d09b76ffc90d.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/4e5e0ceecb8394c804564c3629b6687e7bd95640f42f7c3f153f605c61280ef6.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/4ea556491a5a01a4aff094cd6e536afd3b1e27ff965a53c6e4725d37b92d1c80.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/4eb42da2374d98b13e820c6dccfbe03144404a7a3873c370850a3522ef6e5344.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/4eb46d94e7cf2c60bd5f7cef7fbfee996c0fab2fa8aa8b2bf6783a4cec8d3f46.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/4f368772aa9cc578eaea3854e9a49640b996a9a0eb822b888ae295c4332a5662.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/4fde6b368d691c2a3fa87fd2e4c4c21e538ea9660d7b32ceea912e133ef7356d.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/50a8a8d8abd2f0308b0d8a18874372128a383f70de5e3763b297f87a5da38d43.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/50e21a77490a0442186053ef765d1c3abd90ece65f7510d514bb5c1b2a38bf7c.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/50f7571f3b8c5f7581ba8480cc31ce2aa303fa1d1146b24924fecdf3a2956e38.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/50ffb28992f01aafb3f25e8fddbf057c3d40699519d12a6d42b4b7c6ca58d277.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/511bf435c006a20ad8929c59cffcbf5744783909737ee4f7384273dba6ff87c0.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/5138fc672a98cae335c4868bbbb28ea8d2e6ae27b32a36b6756e01bc5b6d1e48.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/517b26ceb60c89c5b5789cacd4b82a68ab5c782e5e558d19581c86b6c925e3aa.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/5183de228366c26e06e5b91208b9b1b4d93612f8af3a4e40afad1a6cd02a8eb5.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/51f1c624547e47bfe8acf41ad1dfd4f49b802be2376a129d3139cd62c274436e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/53460fb1053a8ad7461f5d4f3ac19cf56f5a77885743e28c7b2560e7e2904044.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/53c44e1a498d2b33d7c5fe7d1ff6fac9de571c6afa041b243071b5b3d9254b11.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/549e4a570573b5366c356d4a69e8461bb05467b86f5521f11ba622470e91f877.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/5559f4d1402529eca8fe16055b97d2198407305c960a21cbc2e333e1a316cef5.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/5690b456e8d2a96b3de29d67fcc3a7bb775f721f7f53e084408a3da175e3d9a5.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/57cae5d31061eb849bcfd2758c6fba874f1df21eb2fc5ccf942ab881d53ff6ab.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/5804ad7dc9746d984827902bf9e284737d0c4f874232e36b977236ae2b0eea38.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/58559d9d434a3d014a6659fe913ef931918d174368ff1b4adb8e6c3f2c24a47e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/5964a27750f1c1fba46adff1549d2b5735e1de86c34d8ebf7cbfe9d42b0ae74c.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/5aac9812d304c1e02328a688b2b7310c759cac8e9dd1273afcb46987c2385a76.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/5b2f243fb297031a2984f82db3d7ad32cc3fb1ef02fbf4f21fcb50e3db26b384.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/5b918d6efa5558d138668f4b654e82ec7155106b7d3e8dfdd5c51d8fd659d2cf.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/5c479934445b2459c3acd3e0b27c4d8d0f5cc4b95eb6810e64662daedc0dc0dd.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/5e27d917e656b149da10aad243b040aaf1ea7880a1da6e0b62f1c1a1800fae23.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/5e35da2efce26aed27e6788feee27dfbb5dbab6169903639cc5f7c55599d41f7.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/5e555c93918597d23b24f7bedea6306d8442bfa314f2962c9cf5f84faf3b7b1c.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/5ea0b98d750cd216533d17cc35e486ac81085794a41c68c78c0383ad63024359.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/5f5770ece1914f27a0688e07973af43bb0352e050211d547246448e4c9c818e7.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/5ff89c9a66d8cb0dc2a43ff5acf70592bc45ab9e90d797cfa128853f1d1605c6.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/60682ac1a4e19653899aeba7aae54273c6d82a1cc50ef5e55ee814e984dd558b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/617e91e7190db47ecdb58bb99d317f0e2beef606d83de0afb76184cddf3024dd.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/6182d7ec112991bdae95d64ab66eed0dde5cf5c4a8f517bc4d6744f17058ca23.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/61d495e846e9eef92454c32a1365c6dbc408cd61bb8b4ab4207725cc2f2dbdc3.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/621369accc1c980fc16b5aec2891cc136f1f714b86c3d953d748483abd8f7c02.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/62af4ad12572d62c98007d41707caea87663256e50b7acfadca78794b9cdd32f.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/62b5045e03ed4cb0be69e27030513dcc3980606b816caad92d5dd4860c83737b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/62f6a3c731c551b6875a8618d2879f786af86a29718b47b04e3d9df0f7f0f4a5.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/635b7eaefc44dde26ccf741dd078b64867528f329adc1524b446c7820c39cab3.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/63a9334d8cee1fa863b22d44bdf50a25fbfeb155d02cb15d29e8c9866b3afe2a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/63fe017b7814153603b1006e035b80407ca07946a7b6629488c2226196cc33e0.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/640928129b38b053d76381eed397abf32d464c47daffe607b19e08f1188cbc28.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/641cad0198271b362105bcbb95ba4cba31ada1df55c44c70b0117c0e98f7a8c1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/647d53b1590e05b6ff5e5cafbf8d8a59308b9d79084942a353bdfb20964d4f38.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/6590104f3877080317a1a3dfab01280645eb74dd5b698ed30bb3e2581b3bfb78.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/65c086c269a3bb4f93c71f87144551f340511f9ec5d816f51e4a28a53794ed98.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/6607be708afd1d16d780989c02e61b8d1fb67ea931230b42bc5851027fd65893.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/666254a7ec7ee640a63b5ea24942729f36eb90c8347ae06b434e6012bf497a0c.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/668dc981feb0962b4cf94a7237e218b33a9b4672a877420deb3e90ad3d390abe.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/6812158c157607418ce339e54f3bf9e547ea39ebd7271699ef28e575d233a2d0.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/68c10e846a1b884956b15fe9fa9693f7d302a8daa35aa0757a55af9fa705e28a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/68e148d2d8d34af4dc4c751f6fb8cb605be08ac13e97b60d9cc975f7f7a1cf71.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/68f89c29f31d51e2bbf119c3019d7f55f78fa714a6388a741920e7ef87f06cbd.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/694abc2b3fa0c95076f06d3eafde36e03911f34dc08202955f0bc4f5cdec58ae.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/69b9b59c2bb7d48d6ef231d5c469232bdf44bdcab2c1e20068048a5dc78c27d7.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/69c707b5fffc337f03c6392f287a388eafbeb627e72d5f2f31fb7e92f1c47fb4.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/69d488fb32130e363483684b40118f9579f4ac6cea20b3af5350a4a32e5d7812.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/69e9b6d55e5dcc73bd484bc96952cd9fad1e6b1faf88840fbe37b67ac53a70fd.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/6b8d78c3e7e07a904fb4ba1caa7638e9e186a34e4d3b04ded6b6b14aaa66f230.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/6c743f91414a9a4805a328cfd819f153951b8ab59152d0ce292744af16ba8773.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/6c9cd98fdadad1fcb0b5315189f651ead85f9957258433d446c2a34cd3f2e493.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/6ca2a91ddaf15c6deb2bdc516a38c895dc5e7899b67d58423d8a38e3121df4ec.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/6dc5bb940a72458cff7fddb500ce5f5d8f23566144388824ff23b718ba76c71a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/6df8a27c0e8deccddaef22b6b525ae4b341945200ffdc4d9f96a6227262dd10b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/6e3716cc067766352c617d289ffd7eced1e22ae6b23acf3db84b6ce894f3272c.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/6eb8d6ac2d425f41bc9633004cc55b09806144f7bfb9a6854cb89d591af12579.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/6ece50ccc425e4e466114d0261552d845e893ff138c28968539fec91aa2a243b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/7079fc5a9b7047eb3b92525bb64a38d83ee3ddc67b6249c92a48ac421f12223d.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/7089b076f7c507e31f5e9120d99db1a8e2fa6f5a88da4ad0b48221fc49dd8b60.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/7114c9469ef96f99a1c42fabd11c95d068b763a8fbb6b8728df807f4441a5917.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/722fd644b2acbe788cfe3050aece18d0f61eb6a1eb26163082396eb8b5d83774.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/72619d7493d7e9f3766c32be1e7eb9812a6e9a1d47d89a5c2db4924480694f69.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/7283aae9c1aa9426d18d6d7f3c92d7524a6e9b1b8cb43b9a66af2e40ffa3f0ac.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/72abfc87c396d9cfb197319365f99d88bb99c0c9d18b7f2b471e4ad3b2ee113d.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/72e4f0869c40e53d64ecc39f2fc07d4582e2940fc84aa8148671c9fd9ba6ef10.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/73a8d88efc91a37dd6d41d48120d82cc16ab3093de09127f7a00992951f7a9c4.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/7460f6ef52b7daa798e5d6df04e6d07bd97996e29648047c48d77239e1f3e4aa.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/74dfa65a655e640f9afc0166783223cf8564fa7d880ae2077fdbae9ceed724ab.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/75160ff022acc337136ca269394adc7af0a20a465db468bb658c13b627dcd3c2.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/75df07bf8900898e780ea40f980f75e6745f80fd70456124054cbf96503ff2f5.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/75fcc8a0e1be86b1520602933a525e155339d0a5fa9cb8730b54b1f625c2d94b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/76bb4c01d169b0c2ebe690b1a237a34982b8721e5fe0a5d7825acd42a3e09bba.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/76f1379f2c810e848b13350c29646a36153294a6369ee46bff6c96db101dc0cb.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/78513d1afa86e66c37839bd05c6552dd3e487c46bc801a56e0c2c65f238bbc46.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/792a41c87a142a873655776c55e692fd9daeeffa8cd948e0c60ea0be8326452b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/7971c44519e146e00b5cf830eae88ebfa4f59ef166188259d5fd7cf3b1551f10.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/799caa3dfd3312648ad1c5ae62cc06c1aa96009b1aabeff6f8ddd8a3f5edc1c5.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/7a6768f401cf52e461d34d5fdca829f5cac7120c2ad6d009b264cfd8aeb1843e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/7a6ff46f0985652ea39aa9338f06c9579d336b079d153a033d4eafe31cfa5a1e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/7a99acdcdf98a5e51417bd09c76433ba17a768228d314930417741012c6f8c40.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/7aa2b3ee72b7079fff8470c786cdbb7a33f924ebe30ee83e1b0d15c9564c6bee.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/7aa71d314bb327ff922699a9ee17a8f569a52171e1f2574bdc80740c0c192f5e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/7b15fe5cf57ee36f808effb2163fe1a2c5691ee5484a60b2aa7b223251ca96f3.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/7b1aa1ac725f5fd0afab45f99cb38f020954a8ee99ddb2cc4ca1211d137be13a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/7b576828817790ea1192c5cb98dcb261433783d86cda20b0d81c89299497f414.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/7bc8503bd6d1e896b71b21f733a486fc8427a0e31b42944cb742fe0b912bbe50.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/7c149d975f68aa73a95f67f0c160e77e4da845808fa00897bfa4437f6a276825.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/7c4d8eb99284a039ac475a348b6e1deaf56d1808b9d1b31fd240bd5e9e6f7409.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/7c7733f964f74e076b3a76cf0068a8e99ec3aab256eb569d613bdf6d606a46ae.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/7ccf72476feb95c5eb11e8210a2f6f613128e0df91f343b4367a4ca1bdd5a88b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/7d2039f202d60cb6cfd607816987cdee9d48e806cc2d1f0eed47a921619e8bc0.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/7d3f11c645a89ac000d7f3e16a37cd2e5a0640e34120a0805b6416c2a509e0bf.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/7d6123d023e9edb6799a663e8fb028de04019cfafbe86f6bbc22de8053f01ed0.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/7dfb22216bd9b377b680ddff86b961729ba3e5009da1007915efe60e1cd09a5b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/7e71bccb6b9f6ddce065fa55fcec11207486836b685e073c52e597c6b6575625.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/7ea6a7852ec1747a0b05410dd9cf6ef80eb6d6bfc05fa04700935ce20119af85.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/7ec832503b5b36231c765c887676fd6ca335babcd2a8cc17573d4c969f3f8e3c.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/7ee621b7a173b1147ffc7f7ade9d3f416d72076237c398c801febb7882e0c17c.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/7ee81930114db91f43e4746be60c1813a85845071e5ab15d7c227093bb89f16c.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/7ef46db3648d5e870f1f407f4c253856f4824ba271ede2a2241eebeed2ef9346.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/7f322d1dc177e417618b9181ecf881f2b90a92b622119fc90da22ae1919d8b0e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/7f4e0a998106f2136a0b76b126c141b4b97f5c2e81ef41cac4d267dc31180c50.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/7fa72e4e1fd6ba2877bacbe3a373ecfdd3f58261c848a9eea2a2916abd7d576e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/7fa77d8accb7082ae2fc836c504031f25ad772ae49b5a8af799154f29deb8f56.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/803d4562d8ff5b0d2dbbddea85bc7b93e97e0eb4a6ffd0fd6a0ffeb8be072255.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/807b9122dbd570cfe324577d0992168c4f9362148ba1a2823225a7630b45fa8d.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/80c480281d9fec2a38040d04f1604c7fdd2b47cde33388a268ea93fb3dcd6a2c.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/815b8d4aedb1d48a1e2669e475707278d2f733e8bae166ec375ee362eb221067.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/81671e8b69b6eaf70173a3e3bb14e44ba0481f7baf5ba0e27406f03cf6c09a54.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/829d89ab15d0534b916ab858456a587c8f14464efc3945e118278e6aaa0ee6b5.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/83c5c541becf30551a88d25c54f8ad0b3ef4388f6e08beb3b689e50e9b105340.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/84175598baff25452d7fb5a27784aade13654ca6f600761d755a90d83c1a9a02.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/84bb707f73bb122705af5ad24334b8b51419fa0e6d80ee1b312a8c4b0d4b2220.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/853934971233173fa1e80d9545bba05504dbd32b621ebe27b179d51ad35ff531.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/854d0cea38c74edc75cf28a2653ef81bbeb27c3b3722b4523ac1a7eeab466570.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/856fb83d1e3aa3aa89967fa462898a3c63daa3bd2c259763a597d6c0278069d9.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/859a1cc94bfe9ffc330f8852d173b07f93239fda817c12b8220b7a0bda3834d4.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/862a1db46d4d2959ae76d139d6903ad1e7d9df55f98d49f1dabdb663e2048f10.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/86316f2f7489640d80106c8a15c03316e7fdf52ef100c781a04013c3961c48d2.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/8779dbe19723cd145311ba678f960636062d9624783703f3baa95ada80d8b5fa.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/87bd49d50eee84d4556765547349a8c3d2d447aca55d49bc31bcd0a23bbfa3ce.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/886cac88c24254d6e9210541997ebc5c74f9cb4434f51aa999a644b8d05411e1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/8876e80e5af3bc9aad686c0b167ef0303b0f08188a96a61548115a9da43435ce.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/8893e9c5e78ab3df59757c96826906ee05b23188816e57b5a882b0338389985b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/88c8271c64038ac84edb98ed5fbc0ccb2ecbf8cce59b08d761f989c31a58859d.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/88cc362bca0cb9180c43fa6c4f6e41c2abf40f216ad2bdb1bc78bfd9fde45d30.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/891b1f0df76cca924b7ece189079a99713b53588b0e99e065ad6e04e7c00f48c.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/89930649533903af9ef5818bb42535a94506a932b2714f779c8f7da1896a173f.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/89e82ca78a73ec88028cfe9239e464495c427031354208ab151d69e433e4c0bf.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/8ac084027edb5ec039e29436bb98f058c933c8b8b0abcb23549953e4ec841e77.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/8ac3bbb90a5e4a85f5a3ca0dd041f6a4f37c66107c3b5829d8db55f4cc1875c9.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/8b4039710ceb45030e666af8eb17fa37e6268da4fba21949ccf6bfcd4aa0a1ae.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/8b61b9a0d0134c7d500c07d1b72675142d35dfb18f6077e783412c69b5096f89.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/8b7e0ea5f828b6deb85892775ec644a7fcccae2ada350989a239acc3e9e57e69.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/8bd5430f95c42e2aa002d872b873e593072b51fa14fe661dcecc2ae464e61c36.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/8be35ab6c6f3d0491e82b8627ae56766d45c7fbbc910e92c6dbf7ab49cf405c1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/8bfa91271d63854d4cbbc7c54f3f78adfb345fb12f4fa558214a0c5198c84ecc.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/8c421c15b16ed8bf744812fd709801749c4dc457f21c6d5d410e4cc2e18b2004.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/8c6acaed130cbe3696835fa23525ed8fa1d987490cfe216e997f8787c0c56d1d.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/8c8801b29360e074451010af841aa7d93ff2e5f0e04b32f98521feb3e0174993.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/8d2f918418ba32d36372a4b5b2715d5f8208c34bfdc5101b36cc2c70109d3f5b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/8dca1a460c514fe529aa9f2b6c4d3c6becc62a119aa56d05e5263929411081a0.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/8dd44938c90148a5b1c9bb99a422a9cf990f314c7cfed3be6a5e5166c41954ac.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/8ddef2e5f40fad0e10a88e22815af0b5363c7ab1f1ff908615cafc1bd76d9c4a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/8de2b4659137c1c8cadb26846f275f4bf4f3149a3a83e516f4e40804dd0a0a9b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/8e4059dc0a06f6d3695db6d1f4b1a84b733bf9f43c01574993e6eff1cd45706a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/8f20acd6c3937d0bde0edc3dc6038c5beceb347561d893d14ea65fc82d3f8ce7.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/8fb07d8d7b23811514fc3b44c7bbedbf2dbfd834be008b868e3196893135aae6.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/8fd1c522201949d4cd584f5c5542dec81d9ee52c06bbd27b1992e17f6b3d087e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/900ac72c5865e91d556aca92b5b80d9ecf791a8b2e521462d1cb1e39f1454690.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/91c70f0ff69cd55f2668d474f88e66e39c0c61b9fdcb380a12411d2794f768fd.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/91ce864e7d87dd437aecbaac6e3582016d7edb804c22292bde1b05ed0ca015fe.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/91e04b1e84a78c054b7b00e9e9a914e9ed4423db905a0bfcbd7cdd68e255f041.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/91e30309870382e2a26be44c538de41ad88b1c4339d4483469fc45f6a8d6db77.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/924d7563e4675fa6897166df1cec14a95426a213887eeb236d52a1da19e1e07e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/933f61b3aad2bcb961089922701a3ef0df99957ac84cc8edadbe2e83e2596782.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/93926bb853c42f0ae3495e280e0543f8396dc435abefaa3e6a5d7ea6fe18a343.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/9528f7766e2d0ee7bef067a5bcc53101737c5b7868b818446987cd7ce446a79b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/969125c3720574afd4256e28f761e5bf9755f8bdcd936e0820ce083c74b97819.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/9757b5f3467cd1b6c3b8bd103cec74efe552837d9cc6613c73cb76c6e753c45e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/97f4f82ae0a865b10a4adfc7a05d2e8e892053fc59ec50f07a3da79e7f234f56.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/9838705199a2db6289e1adbd7a2953862bd254929f56b321edb9dcd1a2b82298.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/98575efcf0c503ddcbe757352d0dc627704a3ef1e6d93e4de9060d257d2424b0.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/985c4e7b2220a49c63b44cd37fe089800a22f4fd631e23890bd5cc5860ec83d9.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/9874faffec53694eb2961861f338e24d1afb13c51176f5d75ca8ec815ec8df57.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/98ed313e0874e20cb57c25c32c556b5b72942b9a962112f127dabc9e4daf3788.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/99afd0667041676417570151f1c77d0f6b70e47d5a7d3360954b609578fbdb85.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/9a0352faa11eedfc3704d98b053667ddc6c7b7a63097a9ac0e1dd813a0602839.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/9a38b4057a69f79fa8e759df2ded8bb632b78748a06be78ecea50860c7c9b62d.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/9a72cd79497020cdb3f62b75993b186787d99e0982c7e39f232056527b707d3c.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/9b2a89610fc6c1ee45eb5908612c78b06c0717dcae6430d29b2f92d73993ab95.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/9c071e62572de468881f988f9dec26a90e0d02cc73c5b91fbc661a1e18fb7f5c.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/9cca1c79b52574ce68d1cb23ac4b0da94ded9603ac50f702b674bed4b9236929.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/9d3e2f05c79b2aeec36911d0adce31576a1bb00e5650161a18870a682fd0c50b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/9d424ba595c77b11388102d795a89f30456c9040319cfdc21628d10c7fe2a9c8.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/9d94dba0da4b4e357346af76f17bc543a2e5cec637741cc8760150a2d6be1c4d.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/9e0256626a2531286cd85f8951015c63cabc6eacb8e0c1d402d9a0fb245d42cf.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/9e14fb453ddecad710339029459dff39b2eae5feef67e91abd35b6f4e1634eaa.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/9eda14658efd8a1fea3f11cabe0a58b0e1168bd9474b043e6684909b9127c8c0.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/9f51a1a3beb11a3373690fe682dd58d0f7c0a6d8ef5e2e4001fe890217d1449c.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/a013a10399a1f56d035d30684011ab181f7fda7e775861d9ab20871840214d5a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/a0570639b2e72ed805a4721aec5ca9fec46a24b1266f70a94d2d7dcdbf07e06d.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/a09a97a727457bca7bd9822aa2f6b0643f02f555cc019503bc3b517fc8c60ff4.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/a0f9dcd69a114577800737e40b8c7a307e0b544d4fa028fa810292883bd7b216.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/a11b5eacc3a1e041761dcd1c90c1bf68c4898333e360acbf3a9902805e24eef0.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/a16a6b3d96d47a85bc8d87ee972b1001f6ca29f782396167b24c66dd1608cd12.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/a20312f2520773ad7061f83f3c91dd6ce6c2a5dc3bfa4ef534d00307665efdf6.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/a22e228a988ede9da907abc1a8f48e8a0fd934b74d96593165f563715e067549.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/a2b797b7b5d8bc650094955b1a88ca2e5bf76990ce5f2e0dfd3c8104e6539275.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/a35365872f162972cd1890b79ab4123379616e053fb4109420b793a132303dce.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/a42602a9fd946a164f8e04cab2539428110e16cc248b197904045fddf27d1d37.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/a42f2704db234b62522417b5a95e48ca6bda7f59e0c71934a626202b5c63ac46.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/a66927bad87f9e1e71daee3ff5f0b378b1fa54fab361aae9930696cfd4d0d76d.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/a67fb7af708dc3745fa0b7f3e54501313845b24112c1cd00380550d19d54b926.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/a6c5940aad7ff439ac42986137f05ec15e1f3f6a1b76661583995d04c7b691a9.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/a6dc9b0e9641e18a0190132a686f3f19eac4681d3ebdbd65d1d6ab53fee7bf02.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/a79c6824da1cf4638b36eae17c5867361694a242454a59bfee57bee3fbd7580b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/a80333a7251bf2db2cefb66683aff54294f8b7d2c2e56026a2f3f386a7a1308b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/a856e10eba62b777e7a039dd7bd51fa06e5e990e6fa136360fe50ee001902680.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/a8678132026014a26b7ab91c9ce886619c92671826e68859cdf6b034aa312783.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/a86d9d1d0d46693988fc9d15ec193337f410ee12b29e677305b12681de50d378.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/a90df024e8d0a2fa102f355ec5057366f1ee5d3e33edc9520b8f7ea54c99c402.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/a90fa923cd23dddd225efca77c5aba3e4876782eef4aba8f0e90c323499c5576.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/a91db66b6fb29abd058a4158904218e6ac51de15022a63461f80513c1cae1234.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/aaf2b329d4e7cd1790d38c0cff85844ee044c94ba32f4cd4f091ba69fbd9bfbe.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/ab37bc815f51586121fcdb894d49c00e7a186af5b17fda6c440d86fd08736ad6.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/aba1ec78bbf589c9fe588c0509e78f2c0f760502c961fba430fac5bf5a1fd9ff.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/abf6cfd3c3ceef91afc92ace01d1a07f61fa8a606bfe5b2224ea01de26f0958f.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/abfedbcc9fd9da5510fc3081c999bdb1182a02fd3fdfd6f07a4ed9c83d30c056.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/ad0a5e125be419c42d062937a0f0cdc9b5ea1ddbc1292fa2cd5d12f6ea869515.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/ae5259a1c06355dd982341ef179b6834f1fe2adfb7d10f97157e208906b60179.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/aeacf4ae8546221df7afdc81235f19e0cd103ede4268c2666cacfa944b871c7f.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/aec1631cbd5fddd724e89b0053bfce46820e3debc4e5b2e3bdc45ced2a3e0332.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/af800fc152c90225df97e97191d476b5c2b02732f2a494984cd5775235587f58.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/af8d309b1b9331351cb4315cd7a3d5a702ebb537baf749cd6b13679f80c0291e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/afbbf7c777684b2302a9fc5349ff40124530e7d675d6c6c80bae6bb449466b79.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/b06c99d9eb5e5e62c77b5ad63d70bb7f6adca99a2415d0c18102e54995f80327.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/b0d6467866ed05a7776bd7029e2001e38b45487a9cc0768ca3326995453830cc.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/b0f9507e6efac74e21a0b299fbea3355d321af7c42bfa0bc18ceb5a7fc135eba.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/b1277cdf1bf530eb4c9c4435bb803cfb4315a06a0ce15b8edcd67a7e98ebf8bd.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/b12daac4635f96e6d6ca79bce5df695a5be5058ae26e80dcf6df39264e4d0cc9.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/b1950d2f64eedd04e60b554b31e52ab2db3165db5efa9325482feadc9babcc45.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/b1e1cb8e2c363cbb20d675350d13adcb3e8e3eb3e282c4083d1579445a006dd1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/b2211ff4621c6bf9a7093b0f3c1ebb0e1909353f05f6ae59847ae7fd76fb5180.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/b25d203bbef17c54126c0b676167f7ae6eb86ebdedab56d090e86efa3dab2703.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/b2893cd67d5950bb64c15281fece5d806acb4a28de4fc90f73c08a643b845bab.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/b2a889803c6ba337b513c0266a62f33d709cc4aafe56f4a7b8f54276668cab76.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/b33bd78febbec68fe135b6cc3fe7c13775932412c06e0243eca681da860ecc8f.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/b37ade11f0da6b16065263e741f39910d838a095dc4ee80fa5e7f76cb118da06.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/b3b94f42fcbff9c5effba0188476721e454b9fb340ea6486dcd023b40bb2c066.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/b4a47e9e30bc97e79387a154e6a6719b74f49a8537d87b82a183c10cb89f2fc6.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/b50c330ddb13a95e91508085ffdcb63af412aae94bdd62633bb5bc0afd0491db.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/b536211cdc08e4dd427e4c31ae6d7e5635f6b2bfbc6a565f172b7b9720bfb578.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/b59cb0e61ca99a730e1308daf05cd37d7cc364bb6386be869889cef5d28d1fcf.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/b5e5db9fb57bcfff38e3e341bac0464a45cee977d0c4f9375092dbdec83cebae.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/b614ea678ed169962dfabcd1095f6a35fc54abd8d0172547b62b4d1945b20250.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/b676d70049946bc70f35596b20a62ff45b2fe722a056578eccdb99a092774555.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/b6bfd2d3e61db0ea67d6403154b7f025735c2bd1ea1dd3a6df4072d693471f2d.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/b7455133bc5ed9615a06880e5ad054368eb8b1650a1bc043a1c295f4cc43d2b3.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/b78c7413406b837f7b75956a2a5c508aff4e30eca6e9f0849944ab5346dae6b5.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/b78e85184f69f9a028aedfa9a446a3ffdc43ab8fa5646643070cfb897e6bb532.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/b79ef251afcf2d9584e05b7a78f2799b1a7b067aa75155b97d428f4de9688828.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/b7c76f95b63f9f2cad40e26492805df49d4dca0acde21f73508f006e2d433d77.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/b9b01b9132359f29af6b8668be79cdce77ae13891e63b0d03a7091e0d108f8ba.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/b9b178e45227968a125b4eb5a8cb0d64966bf1be68ff7a8e16a25ac859ca4f08.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/b9e60960cd1427c1389d654593cbd42e43a254441b4032c650526fa3e5b6e502.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/b9f7142424b9a3e5d804d377d8a33ff1dda61578e44025901a450edb99796ba7.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/bab87947547d1f367f6962b222041219e8d2633591b1c60ecff5e2c7decf57d5.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/bad4d455154fb06792547b0b56d5fb16645d0be8c1fe6d9dee5e00d325ad95b1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/bb053070f89e3f6538a4e5bf57b9aa8da57c5b5ff8abbd5be9a8a3f073cebba5.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/bbaf4c7014f6e2c883f9e6892215536d8978455ea66a048a9bdc1ded91d10d47.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/bbd83aa8824f4e1e679b0e62108245106dbb7033a2258bde2c57276760997cb3.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/bc13f69d9742108eb7593cc0fc673d89cfa1a172c0fae32fc28c15c122973b96.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/bc39824baaeed0d90267d813d79605088402fca7b9148532a242b05b61255295.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/bda6385f9e75e740539c54df13e7ad474e7daccf8733c97a056d1ef12ab7263e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/bdaadea0708a70902f29f66e9f747ebcbe61323c908ac4ccd72dd395b23ac24a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/be1cc987b8c2932fd1711afc241a25132098062464ff4e5f5f3fa50dba43c2aa.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/be97d2600dc6a6ffa2ae49aede4a06201078f39f58d6828053e417170bad96c0.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/bf710f0a974ffef9f5f2f5218537f15671b3e46c715b85206ecd78aee5acead0.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/bfb52b4bbb17527bad77e796054884e4d14eb0198f17fc620baf532d03ab0663.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/bfc58a42add8f01833f02227c4de6da6470e90fd55dafe0dfff95d408fad2edb.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/c03d2df3dd95d284c61ed08093afa8668b19abccc3c4df38350107eee7d54308.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/c1736821a6fb801d16270618c4d6eeadf3d56be17de7656a4f90833eac572e3b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/c19daa27c3827c1af0e1c3270a3968a8456fe0873fcf089e0a612ef2b410ad14.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/c1e44eac15995e8947efc9aea870a4b3a0da7f78767ef4469813286dffe6428e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/c1f1b0a1fe4266226c1a26221075b12c46f7ef4e614d23bdf776a6855a616389.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/c26c8188a305ba890d23f8abf19ad0645af13cd8590058da48964920e408f04e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/c3111d1c034414b6234db7548b93d024adbab188bee1b68336d25f31d52097c6.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/c357d7f6e56741a3d419e20f8d665a9c2e6f8558a369dfe1e77f4ee3c13184cc.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/c3b19f02b4f7d1fb5edd182282cd3efd67e2545b431747383e03bdc54526faaa.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/c3c2d654648ae8f005a447de428761b7ed712ac6f6bfaec2882f51a73ec6ed96.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/c499e62430c7f1c53061a7b6eb834da64058a41fa8ea13e44fd285d9c4de0461.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/c4c3822198864811c266ab239caa64aabd5a3f23877d49ad5597cd2a73b9373c.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/c64e29349630bf12acc8f7675fbe68c7513506345f2bdfebab338f760a14cd19.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/c65d914e36855072e4a70cf9d4f04e7370e6f33de749da29300080475eee34bc.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/c767b9dc9d48ba899f56d03e56cb8ad21460a07839c5b7693f56dddca395814b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/c7b9373a629a8b3b0a6c3a3408f7cfd9020f275db49fa831184b263d669a1b15.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/c7d9529ab740a20c9d266bf7f183140c7d9fa5d32ffe81d658ea7ae79a3afa8f.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/c8e7df664e411c0983f18dcda2ccb0a104e90f2568aee4355a75f6b5d7410295.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/c940d2047ec3887d570c0e7e72c50205b352a9ebfc2d5f020234504da48dc08d.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/c99886833ee76cea6edd9201862ef109f1368a0c8486b97980aa27392b9a6d04.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/ca9f9d7e70b56b97e46960e70a511cee0dd744a46e02abad07d6a8f191e8a949.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/caa14d204460e030a299e436388d2adaa43cd7b9b00cfa02e626c1d434a5f52d.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/cd282e8d1b0d9613f8df8972947bf012afe8c03662fbbd8587f1825e30dbbd2e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/cd6cd6b327285b7108b443958f4c071ce0e81d5a72951f64da226f95cd64ad2b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/ce46eb345041d51480e588d84be93edc8bcfd816da8527a116af540d29aaa142.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/cf9621abe4a4396bb7c8ec5cfdbe2607c17b5efdc50087e4f49b14e23713d05f.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/d0aafac2be0c33a89277fb0bb6062ce258bab83433cdf09ebd2c12f518b1f4ad.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/d1483d1a9b770b060edfb9094ba12a9707457a863d4aac9e077ededb8653aab7.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/d196bd292eb349455c87fedf5b1c99143e7c0da6e77014353bf72a9c4ea56bb1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/d1bcc95c9e25e019781cd7bf1a67e24d6a79ff9415718ef265278784d8c2364e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/d1c058ed754af6e16db8886720ac92903d60881eb069e5a4c31b5ce539035fd2.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/d1e77ad05f576a150616d657e5b211bdcd583d0a1eb682bf6862e8fe3d13e657.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/d23ec97d3bd2d35c8df37ecb941c2b3806de04eeda26fe81de92eb73b1afd146.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/d2d6a0115db544ecd763b9337739ec956a9d10d00f4434a0533ca28ae5e8dad0.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/d3c854871b86d147ee0741ca2fdf8d0507cd141308dc8a48280942204b6a42e4.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/d3fba1d504e67ab7b79320f4cd12d335bc1e41a55105bb5b6c93a7ce96e18070.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/d40bf2410c45f0973168b59a145e0842a956b7a0500555719ecfff7b80e55284.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/d48c3cb180fdb81951628c01127b9268c8c4530b6a9d835e6e972b3bcba986b1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/d4e7fd2e680d9a6cb4806e9ebeead16084619456dbd68126011ba965dddd2468.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/d4e832865fe2d2ab772997fd8ac4c0949614ea34c73036fa24ce6885c49c63b5.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/d4f102f56adf6c183384a3be9f83cee41c12f6a5f87243d8dd0156e81be79e1f.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/d557134735e7040653382d7ec64bc3d2892345501e73f1677465a42796698923.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/d563adadba3e5bf55a1c69272d0a0f1de3b0aa3c44c19d478394a5c860fd034a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/d5c813ec92603a1340c01c7489b015fab8c2706415c142474afce8693f1effbe.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/d5dff1dcb15b672a5b1d37e74f592300d5d8bad733b5e41387a700b6a2560d7a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/d6a5111fa88498b609699814de4cbfaf75173d2e16ecc6b169cd8c75a637b266.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/d6ef4ce81a33677a849c0d293ceba42f74eabca2992a076ec129bd5a04c78705.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/d7ec3e476a7f8e8ba070cc9a98ba823ec9eac1b50a2d5f502369bf8fea032567.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/d82237e8733ff5b61f9f4fd249bdd7c01416db49ccddc2d5e7d78bc4c1c08170.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/d8337682195b9fcde7855b792ac454fab455dc56d471914398e37b7e7606c583.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/d83c1866283e6e9bcaee704a8ca43b0119b8fc5d0f45d2c4f86d6517ed45c64f.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/d840cd462e00879d05885122839ffa7324f1ccf9565ec01917541192a7a11a79.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/d8974e0106c67c060a927a81e7d17887b9456f2f379931af37ef74edaffff9ce.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/d9e8a649277313373bd6f4327ca02577f2eaf37ca9a6f41946bcef446bd0dca0.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/da789eaa9b5748282200c49ac468caa40d955956eeca621c86b6b06468bda4b3.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/da858017225d41fb2605a6577ab8ce3c4a5c9207a855baee8c99f25759599c99.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/da95c9f1096c586388880f80eeee3015311ef2cc94f870ec8b93494a292ec7c7.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/dab44b946e2db1b8657f86b81371545683d6afed707ede6438c97c832379e209.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/daf4d48bf7b2d877096405ac80f5f6c312fffb0c673418d439f0c6cdcb0f38d0.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/db18276ce89914089b8f8cc6d8065f955f66793af508a14d20286239fcd5142d.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/db7477830e553c1582be9d450866fff3461f51da900df4bea904b03fa653e928.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/db75e0f31d4d54a3da1d97a320b5845a3ca6fa54a8f9936fac61d29d0a393c8c.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/dc11c9d75a681ffc916a44d144f478be5a541221b7db842a054f526d9078b047.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/dc40feda12b8110ebbdb6b68f9d6423cdb3b3b676f6568d07e84429930cd1c99.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/dc499c7d6b162c15d705dab2e6d70ea16dccc324ea2599e5b66afe37b2bb1228.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/dc6253ebea57234779bd5f7e16e3cea74cdc7bafbece60628b0d687cecdb488c.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/dd67b284676e3c8ecee72754c5f507d0353ac341f989338de8019d35ae14e5c8.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/de3c08db37b26f3c8aeebcd0db132a90d7ba708204ccf37cbe8af12a2032c100.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/de507f13b3f5fcd5535684e23247a9c8aaa79777daf7d39d47d82c8640c41bd6.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/ded5d0085c9e7812d6c77d9a7d90585f02a140f4fc94550999197023ab110785.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/df3530fd0b199bf79ee1750738c849ec9e7d65f22351ae2fd2fadc6237b1621b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/dfa8408449f6537af4023a67691fc63f89702f443bd2c86b50dda0c35ac5c672.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/dfad8c18da47e5e254f10a67e559a0f7ac2d37dbf3d0862cc1aeb746452e401e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/dfcd7c26d2430204c51233af5832e98ab64340390418490263355adfb55e4c40.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/dff84df9e78c352490a3d8facf70caac3351e62dc96cf35f0839059a4a26bb95.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/e02051a0b7fbef733d4c72860d5255c516c5ce31fc84ce086249907d241a9527.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/e06d7409c218d5679130e7f1bb02a00480e65d95b39d829050b434f42a771489.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/e0a5a4b6e9112a5952675b3d1022a1881c505f661758154885300ed603e19d37.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/e0cc3346f54e0fb0506fdf2dbeaf46191332c17719bbe81685b85844ea727daa.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/e0f4c7c0b0f67514736eadde1ef39b543f8aab5dadc481138921478287b09d67.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/e12621ad058c033aec3bbffb4ff9cbb3a6d01170b1e431beebf185d78c386cda.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/e185e8f2e0332d747a6ff4e8bfbf4b69d5e378cb8f5c91d8314f459b0d9e6b7c.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/e1fe78fea3154559148c929b15523442e516b4355a0c3dce8460d2da9e64a19a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/e22f3b419d0b35838743c25c13c62200b384478c24bbc21b8eca514a23787ae1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/e2338e98d634069cc2e8c7d626ab15b0cdfb7c3bdd61d8cbab9a13b18767eb7c.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/e2416a0ec7f17ebab6911421d26237f1299571273b6d84026d6a98dfd14c2daf.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/e28763f3dbcb8ba6f22537066feae97ca3b009f88051f1e7f03d9744b15157f3.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/e2b059a80458e2b1442c4c8900effd01915e7d1c24766007664bfb76624c2570.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/e2d216b9269671b2798a76c62565bb9f63705887411e30f0c1277627b37191c4.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/e30d515508e6e02c2062e0388af9b08a0e1f35383a2d6514df2616db19b95513.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/e31d597251bbfb1032d915d585a9288ee81f89c9007297a77be53737c90238cd.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/e3250d2730f08948fdfcecd77e8e76c020a616bccf898823b5dd3245ba4c65e7.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/e390b3f6004bb230fcfe09861b1f07f9f69fcd5e86919a41249f2d47be1f5f49.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/e47453be431e6655094ed335548523bb2653e639d898f290af2166b90a95a460.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/e4ab9c32ef97d855f941689ede6a86bdd5d5fb0abe0eb95d462deab502ce44f3.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/e4b3236bdbe23876b7a8e8a41189c8eeec54e88dce15cfe0bf3a5f2344fabcc4.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/e589aa6a5ab9545199435a455be8af6b2294c5f42f8c3df9a77e6559d30b1115.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/e5f2dec4c8f5273c69de799e03fde0d3470f7d0af826736ee2ecff7b767f07d0.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/e66c4bc8eb1b8df1cd447b8ca7c9ba88e77924bf10261733812854e5b0b2d014.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/e7554ccb8efb24de12052c33f3d9a0239836c47d278b0d2d60969fd765a63ecb.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/e7bd4c73fc6439c1700f0dbcf1b164bdc079dc9763ceeea28726778b4a49ebb0.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/e80072a206a94db731de6dd07b3932d3012e131e3d8f2d2bc2d55caebb312142.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/e89974f20f765861133eac06bec4dabdcdcbb4f3803d943ac1c681762f7dd31f.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/e91ef198f8cc99ddc498ddd170b49ac2b63e9bb8bdebb424b12822baa2aa3d28.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/e977c864c57d5302f5487dda6cdc94b5c5cb8c5957d667ec11c3170ae8366839.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/e9f922bb5830aa02dbfc34c60b0c4837694765dd73c6f061c623db0d2fd6b6a5.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/ea108e6bfde304eee9a21f0ddad0e4c7b03c1783515771965b0d42b487e3eb22.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/ea5ab5fe2fed5bc77a56bca743ef40e08db111c3104aa88f53cdefeadfbd6571.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/ea5c92ae7e2d06004148412af31e980f04a5295e401b81ddf76e8e8a6bbfa4b9.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/ea9b565c85e6437d5778ebfb07938cabfdabca4a24c826fad9001ce35911d3f2.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/eab5e45d4e2c8505d62f569ef5af52ce177be151cb856aee6e2966c976c4d1ec.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/eac0482d8a61c765fc1f94ce4a7b5bc8d13de90c2c515475d7903399be27fd74.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/eae1a4c21c347fe322a6ef0851641e8d0e12060d950ddec0dea59d6c242ceb7e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/eb843b593eef2b44fbd614941e805bcf02fa5f08929788a752e5b19ead4aebc9.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/ec0560eef761ff01b1f7c2f6a98fce2901f32f12cc4b9c5cc4de618f3849be61.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/ec91d750b1154d99fa3f0324a02aae4237ca8d639f2a8c3b4d794ae2f1faeff8.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/ed438ec48096093b4c6db1ff020db59f732d6451547183a68c6e584f55be4b2c.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/ed46354bd56af24baf86a1891df8a3fe9924f3a90d06c331cad1fa9c9f1f74a6.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/ed8889f2b40caf048e2f12fddf2aa453ff4d51b1c1b1480071f3e1177b9173ee.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/ed9ce0866311c72fe5a78e3ecb807fd471d622398d9e3ba2f10753711d83a973.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/ee8c86a3bb2508cefd643577b577b38724e4bba3ef2c786400c8fa277d7e8a17.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/eec4f8ed127bae5cc3d7befab9e0cbf6a9517a521b34fef392179b2d39ca4ed3.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/eee36484bb70c7e9899e5643c5d8cbc2039d05643dfa2ab8d41b606594ac083b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/eee80d0334ae55c63baae4b9794ac2c839bdcfda04d23157ab4fb7f5ddccf14d.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/ef0e88f1b139a0da3176c8cf5dd6eb033356feed315fbd5eb7a2ed89cc7117e8.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/ef2f43aca7a392f669e3627e16c3db81a3cdaa4dab774c4ba20558b536e12a7e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/f01c8740e6b262648fa5a0ea20c3ed2498a67c8d18e143c59646b19ddf66a9b5.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/f0e372a7b8dfcd90b584df6bbd3fb6eb623a8a19d090355812933e78ec2441cd.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/f11a23db36af937a74a7840325358dd5bb1419dbf20381e78a6360c1cf831966.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/f123e1516ba7266135bec90d6c9099c8271bc490e02273ace9ca4acc40733117.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/f26c6c0c573491f9ffc1ed7a9b743540a08c98493fb6891c8baf88fc7d27623e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/f32b4fe84cd7ff2ad8d94731a21511b14f72e129c8647a1d87e109afde4f42b2.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/f3758fc3dce0392daad76d8f80421e24b19fe07f02f31aac540a92fbcb6bb81d.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/f44136e4b3f7cfb40e99b60a62b92caf9f33d15cd0ed50d65843355dfdbe4394.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/f471d4535b178ddbdaf5598d91afd8f110c5bbd151ca11f30dd91c34424e7529.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/f4b08dee06a11d2dd1f01d522cbd7c48823fb5c8f94fad61846d848cbd281d25.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/f4bc65c92f913036b1410206b03c8ab4f33b6d55da056f96692104bfbe8aff69.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/f4c391edc64694c2a84afd56d790ca3268d0136de4edd27e9b2c0e03c2f35f03.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/f4ec7fbfaac7ea6fe2a5892414d47c720820f63affa4cb0a4ab5f203b03cabc3.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/f4f4389af5c3d5f0963e8cb36b7b358344adb21d4de5fc6b85215d01c23561a1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/f50f8811ccae6b21e632ddbc2f5dbc510cff0304223f97248aa80b0d936da274.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/f514b0e3b20ca2682f36f945e0694ca94eebaefe7a3e2068f208cf8a483589a8.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/f520652d1090fe816d9563305966d65f4424f3d1e39a0732126dc3128ca69470.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/f54cf77d01188f88b3dc5b83191f999004db9a65568c58fd8277e59e04d5a5e0.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/f67786a862897b2784afae24890a1a95c168cdfc5296fa3cfab5e964f1fe3f4c.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/f6b117e38c793fe09b67139702ea1b246db96d2e55d3ec3393612e0ac1371bff.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/f72f512a311e62de8a1aeef2e3307338a6d55fd36064fa91ec552392739c1e79.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/f76d642e66672c2cbff947a6dd6b1a5737d86a6f26f28b7e8d0a805159ce56e4.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/f7833594ac24b94e1ad836e7683ad498b299a9b914189e32fb044309e274b8f1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/f7f414af5311a2a27d9f03bed770d77e95d6888bca00aede522ffbed2109bb00.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/f89a793797c621002f3c8809edcbcfd37f2a93795b77383298737fd684363b31.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/f8d75721cf9fb267e5afee6b1be53b57ee07d050dab2b71aa2c2a113c0088c25.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/f9364ce56d2a0e4a0d64bfb28fdc6e856c49db4df1cef1c5fca90a8bf461cd80.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/f9718738033dd04fc8f71bfbe2fb35af29e29b2e045a46f887e484444013ad0b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/f9ac86eb5bb08abce30703ed9043e8b2a22807fd799f5ba94dcefc89bf5d6efd.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/fa26dbf02bed20a5389916ebf5b9797a53ffa400f9170ec090e686d764aa4d6a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/fbc22da2d50db2b8d5a5c5abe50a81e550713ee5fe355c5ff9289d9575fbafc8.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/fbf388db0fd48f8384887a743e5b1b844ae484203af7c90c8722ac0f5a126543.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/fd019aaad5e46955f42389e4b083eaf6e12b2457f2d9306401ea8f5424199dd1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/fd7448aa64f6162455e3cd66401485cbf6e70c67dbfd22e28b34c68908b8df10.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/fd89e056b1a45e215387b2083d844d51067da4fa60444a2fa4680bea475980c2.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/fe7aece485b20a9ffcb2b061379e11b2c91dee43f753602d19a112e13c5237b3.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/ffa7db9f039c743ac8758e6b6129d8230536ddea77ad57e1b488845fe01fb672.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/ffad524984f5791f1889423526684b3e387f6fc00ea707092b08c84b6e4f3da0.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/.angular/cache/15.2.7/babel-webpack/fff4871db4717d94548a2353eb70148957afbe171fd96751f6ead5c00bb74403.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/src/app/home/home.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/AngularBevgobs/ClientApp/src/app/home/home.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/src/app/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/AngularBevgobs/ClientApp/src/app/home/home.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/src/app/user-settings/user-settings.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/AngularBevgobs/ClientApp/src/app/user-settings/user-settings.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/src/app/user-settings/user-settings.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/AngularBevgobs/ClientApp/src/app/user-settings/user-settings.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AngularBevgobs/ClientApp/src/app/user-settings/user-settings.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/AngularBevgobs/ClientApp/src/app/user-settings/user-settings.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AngularBevgobs/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AngularBevgobs/Controllers/UserController.cs" afterDir="false" />
@@ -665,7 +27,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="HtmlBranch(DTO).v3" />
+        <entry key="$PROJECT_DIR$" value="LoginBranch" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -684,28 +46,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;LoginBranch&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/brageeilertsen/RiderProjects/AngularBevgobs1/AngularBevgobs/ClientApp/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "LoginBranchv2",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "ts.external.directory.path": "/Users/brageeilertsen/RiderProjects/AngularBevgobs1/AngularBevgobs/ClientApp/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;/Users/brageeilertsen/Library/Application Support/JetBrains/Rider2023.2/resharper-host/DecompilerCache&quot;,
-      &quot;/Users/brageeilertsen/Library/Application Support/JetBrains/Rider2023.2/resharper-host/SourcesCache&quot;,
-      &quot;/Users/brageeilertsen/.local/share/Symbols/src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "/Users/brageeilertsen/Library/Application Support/JetBrains/Rider2023.2/resharper-host/DecompilerCache",
+      "/Users/brageeilertsen/Library/Application Support/JetBrains/Rider2023.2/resharper-host/SourcesCache",
+      "/Users/brageeilertsen/.local/share/Symbols/src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="AngularBevgobs" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/AngularBevgobs/AngularBevgobs.csproj" />
@@ -734,6 +96,7 @@
       <workItem from="1700752019429" duration="33032000" />
       <workItem from="1700947461284" duration="18837000" />
       <workItem from="1701205985695" duration="8088000" />
+      <workItem from="1701216268940" duration="4706000" />
     </task>
     <task id="LOCAL-00001" summary="fixed authentication with JWT, login and registration works.">
       <option name="closed" value="true" />
@@ -775,7 +138,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701016052678</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="new branch">
+      <option name="closed" value="true" />
+      <created>1701216468572</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1701216468572</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -800,6 +171,7 @@
     <MESSAGE value="Invalid login check" />
     <MESSAGE value="done some *ngIf=&quot;!isAuthenticated&quot;  for forums" />
     <MESSAGE value="fixed CurrentUser" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed CurrentUser" />
+    <MESSAGE value="new branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="new branch" />
   </component>
 </project>

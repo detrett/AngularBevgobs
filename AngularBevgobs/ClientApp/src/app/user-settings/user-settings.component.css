@@ -402,3 +402,13 @@ header > div {
   text-align: center;
   font-size: 1.2em;
 }
+
+.round-img {
+  width: 200px;   /* Adjust the size as needed */
+  height: 200px;  /* Make sure width and height are equal */
+  border-radius: 50%; /* This creates the round shape */
+  object-fit: cover; /* Keeps the aspect ratio of the image */
+  /* Add any additional styling such as border or box-shadow if needed */
+}
+
+

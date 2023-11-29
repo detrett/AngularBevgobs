@@ -68,30 +68,32 @@ export class UserSettingsComponent implements OnInit {
     if (this.settingsForm.valid) {
       this.loading = true;
 
-      // Ensure currentUser.id is defined and not null
       if (this.currentUser && this.currentUser.id) {
-        // Prepare the updated user data
-        let updatedUserData = {
-          id: this.currentUser.id,
-          email: this.settingsForm.value.email || this.currentUser.email,
-          username: this.settingsForm.value.username || this.currentUser.username,
-          password: this.settingsForm.value.password
-        };
 
-        // Remove the password from the payload if it's empty
-        if (!updatedUserData.password) {
-          delete updatedUserData.password;
+        let formData = new FormData();
+
+        formData.append('id', this.currentUser.id.toString());
+        formData.append('email', this.settingsForm.value.email || this.currentUser.email);
+        formData.append('username', this.settingsForm.value.username || this.currentUser.username);
+
+
+        if (this.settingsForm.value.password) {
+          formData.append('password', this.settingsForm.value.password);
+        }
+
+        if (this.selectedFile) {
+          formData.append('profilePicture', this.selectedFile, this.selectedFile.name);
         }
 
         console.log('Updating user with ID:', this.currentUser.id);
-        console.log('Update data:', updatedUserData);
+        console.log('Update data:', formData);
 
-        this.authService.updateUserDetails(this.currentUser.id, updatedUserData).subscribe({
+        this.authService.updateUserDetails(this.currentUser.id, formData).subscribe({
           next: (response) => {
             this.loading = false;
             this.successMessage = 'Update successful!';
             // Update the currentUser object with the new data
-            this.currentUser = { ...this.currentUser, ...updatedUserData };
+            this.currentUser = { ...this.currentUser, ...this.settingsForm.value };
           },
           error: (err) => {
             this.errorMessage = 'Error updating user settings';
@@ -112,6 +114,7 @@ export class UserSettingsComponent implements OnInit {
 
 
 
+
   imagePreviewUrl: string | null = null;
 
   onProfilePictureChange(event: Event): void {
@@ -119,6 +122,8 @@ export class UserSettingsComponent implements OnInit {
     let fileList: FileList | null = element.files;
     if (fileList && fileList.length > 0) {
       this.selectedFile = fileList[0];
+
+      // Create a URL for the selected file for preview
       const fileReader = new FileReader();
       fileReader.onload = () => {
         if (fileReader.result) {
@@ -128,6 +133,7 @@ export class UserSettingsComponent implements OnInit {
       fileReader.readAsDataURL(this.selectedFile);
     }
   }
+
 
   get isAuthenticated(): boolean {
     return this.authService.isAuthenticated();

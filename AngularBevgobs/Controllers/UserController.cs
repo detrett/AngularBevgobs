@@ -79,7 +79,7 @@ namespace AngularBevgobs.Controllers
         // UPDATE
         // Inject updated data into the DB
         [HttpPut("update/{id}")]
-        public async Task<IActionResult> Update(int id, [FromBody] ApplicationUser updatedUser)
+        public async Task<IActionResult> Update(int id, [FromForm] UpdateUserDTO updatedUser)
         {
             _logger.LogInformation($"Attempting to update user with ID: {id}");
 
@@ -91,12 +91,12 @@ namespace AngularBevgobs.Controllers
             }
 
             // Check if updated fields are provided and update accordingly
-            if (updatedUser.UserName != null)
+            if (!string.IsNullOrWhiteSpace(updatedUser.Username))
             {
-                existingUser.UserName = updatedUser.UserName;
+                existingUser.UserName = updatedUser.Username;
             }
 
-            if (updatedUser.Email != null)
+            if (!string.IsNullOrWhiteSpace(updatedUser.Email))
             {
                 existingUser.Email = updatedUser.Email;
             }
@@ -104,6 +104,13 @@ namespace AngularBevgobs.Controllers
             if (!string.IsNullOrWhiteSpace(updatedUser.Password))
             {
                 existingUser.PasswordHash = _passwordHasher.HashPassword(existingUser, updatedUser.Password);
+            }
+
+            if (updatedUser.ProfilePicture != null)
+            {
+                using var memoryStream = new MemoryStream();
+                await updatedUser.ProfilePicture.CopyToAsync(memoryStream);
+                existingUser.UserPhoto = memoryStream.ToArray();
             }
 
             var result = await _userRepository.Update(existingUser);
@@ -115,6 +122,7 @@ namespace AngularBevgobs.Controllers
 
             return Ok(new { success = true, message = "User updated successfully" });
         }
+
 
 
 
