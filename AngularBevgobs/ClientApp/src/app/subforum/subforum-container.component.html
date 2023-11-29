@@ -14,48 +14,54 @@
     </div>
 
     <!--Member only - Member panel-->
-    <!-- Member only - Member panel -->
     <div *ngIf="isAuthenticated" class="m-1 col-md-5 member-only flex-1" id="userPanel">
       <!-- User picture -->
       <div class="user-picture-container-header">
         <a title="Go to profile">
-          <!-- If user photo exists, display it -->
-          <img *ngIf="currentUser?.UserPhoto" [src]="'data:image/png;base64,' + currentUser.UserPhoto" alt="Profile Picture" class="img-thumbnail">
-          <!-- If user photo URL exists, display it -->
-          <img *ngIf="currentUser?.UserPhotoUrl" [src]="currentUser.UserPhotoUrl" alt="Profile Picture" class="img-thumbnail">
-          <!-- Display default profile picture if no user photo exists -->
-          <img *ngIf="!currentUser?.UserPhoto" src="assets/images/defaultuser.png" alt="Profile Picture" class="img-thumbnail">
+          <!-- Display user photo if it exists -->
+          <img *ngIf="currentUser?.UserPhoto" [src]="'data:image/png;base64,' + currentUser.UserPhoto" alt="Profile Picture" class="round-img">
 
+          <!-- Display user photo URL if it exists -->
+          <img *ngIf="!currentUser?.UserPhoto && currentUser?.UserPhotoUrl" [src]="currentUser.UserPhotoUrl" alt="Profile Picture" class="round-img">
+
+          <!-- Default profile picture if no user photo exists -->
+          <img *ngIf="!currentUser?.UserPhoto && !currentUser?.UserPhotoUrl" src="assets/images/defaultuser.png" alt="Profile Picture" class="round-img">
         </a>
       </div>
       <!-- User welcome -->
       <div *ngIf="currentUser" class="m-auto text-center" id="userWelcome">
         <span class="p-1">
-          <em>Welcome, <span class="userTitle">{{ currentUser.userName }}</span>!</em>
+          <em>Welcome, <span class="userTitle"><em>{{currentUser?.Username}}</em></span>!</em>
         </span>
       </div>
 
 
       <div class="m-auto" id="banner-user-options">
 
-        <div class="p-2">-->
+        <div class="p-2">
+          -->
           <!--Profile-->
+          <!-- Profile -->
           <div class="p-1">
-            <a title="Go to profile" class="lighter-link" asp-area="Identity" asp-page="/Account/Manage/Index">
+            <a title="Go to profile" class="lighter-link" [routerLink]="['/user-settings']">
               <i class="fa-solid fa-user"></i>
-              My Profile
+              Profile
             </a>
-          </div>-->
+          </div>
+          -->
           <!--Settings-->
+          <!-- Settings -->
           <div class="p-1">
-            <a title="Edit your profile" class="lighter-link" asp-area="Identity" asp-page="/Account/Manage/Index">
+            <a title="Edit your profile" class="lighter-link" [routerLink]="['/user-settings']">
               <i class="fa-solid fa-gear"></i>
               Settings
             </a>
           </div>
+
         </div>
 
-        <div class="p-2">-->
+        <div class="p-2">
+          -->
           <!--Inbox-->
           <div class="p-1">
             <a href="#" title="Go to inbox" class="lighter-link">
@@ -199,7 +205,7 @@
       </div>
     </section>
 
-    
+
 
     <!--Go back to thread list-->
     <div class="pager-container topic-listing-link">

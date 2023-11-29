@@ -11,15 +11,19 @@
       <h6 class="card-header">Create an account</h6>
       <p class="card-body">Sign up for a new account now!</p>
 
-      <a class="card-body std-rnbw-btn">Sign up now</a>
+      <!-- Sign up link -->
+      <a [routerLink]="['/register']" class="card-body std-rnbw-btn">Sign up now</a>
     </div>
+
     <div class="box-shadow-2 col-5 guest-teaser-inner-box border-round-bottom" id="signinbox">
       <h6 class="card-header">Sign in</h6>
       <p class="card-body">Already have an account? Sign in here!</p>
 
-      <a class="card-body std-purple-btn">Sign in here</a>
+      <!-- Sign in link -->
+      <a [routerLink]="['/login']" class="card-body std-purple-btn">Sign in here</a>
     </div>
   </div>
+
 
 </div>
 <!--end of guest teaser (guest only)-->
