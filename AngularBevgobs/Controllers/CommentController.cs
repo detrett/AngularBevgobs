@@ -1,5 +1,6 @@
 ﻿using AngularBevgobs.DAL;
 using AngularBevgobs.Models;
+using AngularBevgobs.Models.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using System.Xml.Linq;
 
@@ -77,8 +78,9 @@ namespace AngularBevgobs.Controllers
                 _logger.LogError("[CommentController] Comment not found in Details()");
                 return BadRequest("Comment not found.");
             }
-
-            return Ok(comment);
+            Console.WriteLine("[CommentController] Data Retrieval OK while executing Get(id)");
+            var commentDTO = MapToDTO(comment);
+            return Ok(commentDTO);
         }
 
         // UPDATE
@@ -124,6 +126,22 @@ namespace AngularBevgobs.Controllers
             var response = new { success = true, message = $"Comment {id.ToString()} deleted succesfully" };
             return Ok(response);
 
+        }
+
+        public static CommentDTO MapToDTO(Comment c)
+        {
+            var commentDTO = new CommentDTO
+            {
+
+                CommentId = c.CommentId,
+                ThreadId = c.ThreadId,
+                UserId = c.UserId,
+                Title = c.Title,
+                Body = c.Body,
+                CreatedAt = c.CreatedAt,
+            };
+
+            return commentDTO;
         }
     }
 }

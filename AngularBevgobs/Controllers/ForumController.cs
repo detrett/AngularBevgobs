@@ -1,5 +1,6 @@
 ﻿using AngularBevgobs.DAL;
 using AngularBevgobs.Models;
+using AngularBevgobs.Models.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
@@ -22,6 +23,24 @@ namespace AngularBevgobs.Controllers
         }
 
         // CRUD
+
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            var forums = await _forumRepository.GetAll();
+            if (forums == null)
+            {
+                Console.WriteLine("[ForumController] Forum list not found while executing GetAll()");
+
+                _logger.LogError("[ForumController] Forum list not found while executing GetAll()");
+                return NotFound("Forum list not found");
+            }
+
+            Console.WriteLine("[ForumController] Data Retrieval OK while executing GetAll()");
+
+            var forumDTOs = forums.Select(f => MapToDTO(f));
+            return Ok(forumDTOs);
+        }
 
         // CREATE
         [HttpPost("create")]
@@ -63,17 +82,7 @@ namespace AngularBevgobs.Controllers
             return Ok(forum);
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetAll()
-        {
-            var forums = await _forumRepository.GetAll();
-            if (forums == null)
-            {
-                _logger.LogError("[ForumController] Forum list not found while executing GetAll()");
-                return NotFound("Forum list not found");
-            }
-            return Ok(forums);
-        }
+        
 
         // UPDATE
         [HttpPut("update/{id}")]
@@ -115,6 +124,49 @@ namespace AngularBevgobs.Controllers
             return Ok(response);
         }
 
+        // Method by ChatGPT
+        public static ForumDTO MapToDTO(Forum forum)
+        {
+            var forumDTO = new ForumDTO
+            {
+                ForumId = forum.ForumId,
+                Name = forum.Name,
+                Subforums = forum.Subforums?.Select(s => new SubforumDTO
+                {
+                    SubforumId = s.SubforumId,
+                    Name = s.Name,
+                    Description = s.Description,
+                    BackgroundColor = s.BackgroundColor,
+                    CurrentPage = s.CurrentPage,
+                    ParentId = forum.ForumId,
+                    Threads = s.Threads?.Select(t => new ThreadDTO
+                    {
+                        ThreadId = t.ThreadId,
+                        UserId = t.UserId,
+                        Name = t.Name,
+                        CreatedAt = t.CreatedAt,
+                        Description = t.Description,
+                        ParentId = s.SubforumId,
+                        IsLocked = t.IsLocked,
+                        IsAnnouncement = t.IsAnnouncement,
+                        IsPinned = t.IsPinned,
+                        IsFeatured = t.IsFeatured,
+                        Comments = t.Comments?.Select(c => new CommentDTO
+                        {
+                            CommentId = c.CommentId,
+                            ThreadId = c.ThreadId,
+                            UserId = c.UserId,
+                            Title = c.Title,
+                            Body = c.Body,
+                            CreatedAt = c.CreatedAt,
+
+                        }).ToList()
+                    }).ToList()
+                }).ToList()
+            };
+
+            return forumDTO;
+        }
 
     }
 }

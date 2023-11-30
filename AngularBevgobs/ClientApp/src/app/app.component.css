@@ -1,3 +1,4 @@
+
 a {
   color: #171717;
   text-decoration: none;
@@ -18,3 +19,45 @@ a {
 body {
   background-color: #2d293c;
 }
+
+#back-to-top-button {
+  bottom: 32px;
+  display: inline-block;
+  height: 45px;
+  position: fixed;
+  right: 32px;
+  text-align: center;
+  transition: background-color .3s, opacity .5s, visibility .5s;
+  text-shadow: -1px -1px 0 #00ffff80, 2px -2px 0 #F83A5B80, -2px 2px 0 #00ffff80, 1px 1px 0 #F83A5B80;
+  width: 45px;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+
+  #back-to-top-button::after {
+    background-color: #171717;
+    border-radius: 20px;
+    color: #E5D9B6;
+    content: "\f0aa";
+    font-family: FontAwesome;
+    font-size: 3em;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 50px;
+  }
+
+  #back-to-top-button:active {
+    bottom: 31px;
+    color: #D8C690;
+  }
+
+  #back-to-top-button:hover::after {
+    color: #e4c0bb;
+    transition: color .25s;
+  }
+
+  #back-to-top-button.show {
+    opacity: 1;
+    visibility: visible;
+  }

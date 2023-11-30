@@ -9,5 +9,6 @@ namespace AngularBevgobs.DAL
         Task<bool> Create(ApplicationUser applicationUser);
         Task<bool> Update(ApplicationUser applicationUser);
         Task<bool> Delete(int id);
+        Task<bool> DoesUsernameExist(string username);
     }
 }

@@ -1,0 +1,234 @@
+<!-- MAIN CONTENT -->
+<div class="banner clearfix container-fluid">
+
+  <!-- START OF BANNER (Welcome + Log In/ Sign In + User Icon (After Log In) + Breadcrumbs) -->
+  <div class="background-light card flex-1 row" id="banner">
+
+    <!--Welcome message-->
+    <div class="col-md-6 banner-message">
+      <p class="header-font">
+        Welcome to the Beverage Goblins online community.
+        <br> A place to discuss all things related to drinks with other people that share your enthusiasm
+        for beverages.
+      </p>
+    </div>
+
+    <!--Member only - Member panel-->
+    <div *ngIf="isAuthenticated" class="m-1 col-md-5 member-only flex-1" id="userPanel">
+      <!-- User picture -->
+      <div class="user-picture-container-header">
+        <a title="Go to profile">
+          <!-- Display user photo if it exists -->
+          <img *ngIf="currentUser?.UserPhoto" [src]="'data:image/png;base64,' + currentUser.UserPhoto" alt="Profile Picture" class="round-img">
+
+          <!-- Display user photo URL if it exists -->
+          <img *ngIf="!currentUser?.UserPhoto && currentUser?.UserPhotoUrl" [src]="currentUser.UserPhotoUrl" alt="Profile Picture" class="round-img">
+
+          <!-- Default profile picture if no user photo exists -->
+          <img *ngIf="!currentUser?.UserPhoto && !currentUser?.UserPhotoUrl" src="assets/images/defaultuser.png" alt="Profile Picture" class="round-img">
+        </a>
+      </div>
+      <!-- User welcome -->
+      <div *ngIf="currentUser" class="m-auto text-center" id="userWelcome">
+        <span class="p-1">
+          <em>Welcome, <span class="userTitle"><em>{{currentUser?.Username}}</em></span>!</em>
+        </span>
+      </div>
+
+
+      <div class="m-auto" id="banner-user-options">
+
+        <div class="p-2">
+          
+          <!--Profile-->
+          <!-- Profile -->
+          <div class="p-1">
+            <a title="Go to profile" class="lighter-link" [routerLink]="['/user-settings']">
+              <i class="fa-solid fa-user"></i>
+              My Profile
+            </a>
+          </div>
+          
+          <!--Settings-->
+          <!-- Settings -->
+          <div class="p-1">
+            <a title="Edit your profile" class="lighter-link" [routerLink]="['/user-settings']">
+              <i class="fa-solid fa-gear"></i>
+              Settings
+            </a>
+          </div>
+
+        </div>
+
+        <div class="p-2">
+          
+          <!--Inbox-->
+          <div class="p-1">
+            <a href="#" title="Go to inbox" class="lighter-link">
+              <i class="fa-solid fa-inbox"></i>
+              Inbox
+            </a>
+          </div>
+          <!--Sign Out-->
+          <div class="p-1">
+            <a title="Sign Out" class="lighter-link" (click)="logout()">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              Sign Out
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <!-- Guest only -->
+    <div *ngIf="!isAuthenticated" class="col-md-4 text-justify guest-only" id="buttonPanel">
+      <span class=""><a [routerLink]="['/register']" class="card-body std-pink-btn" id="registerBtn">Register</a></span>
+      <span class=""><a [routerLink]="['/login']" class="card-body std-purple-btn" id="signInBtn">Sign In</a></span>
+    </div>
+
+    <div class="background-dark card-footer justify-content-start">
+
+      <div class="col-md">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">Board Index</li>
+          </ol>
+        </nav>
+      </div>
+
+    </div>
+
+  </div>
+
+  <main role="main" class="pb-3">
+    <!--Subforum Title-->
+    <div class="row">
+      <div class="col" id="title">
+        <h1 class="title-font">{{ subforum?.Name }}</h1>
+      </div>
+    </div>
+
+    <!--Start of Main Subforums Container-->
+    <section class="">
+      <div class="subforum-container">
+
+        <!--Subforum Banner-->
+        <div class="border-round-top sub-banner row">
+
+          <!--PAGINATION-->
+          <nav aria-label="Page navigation" class="pagination-container col-10">
+            <ul class="pagination margin-bt-0">
+              <li class="mr-1 page-item" *ngFor="let pageNumber of pageNumbers" [class.active]="pageNumber === currentPage">
+                <a class="page-link" href="#tab-{{ pageNumber }}">{{ pageNumber }}</a>
+              </li>
+
+              <li class="page-item">
+                <a class="page-link" role="button" href="#tab-{{ pageNumbers.length }}" aria-label="Last" data-bs-toggle="tooltip"
+                   title="Go to last page">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+          <!--@{
+        if (User.Identity.IsAuthenticated)
+        {-->
+          <div class="col-2">
+            <button type="button" class="btn card-body new-thread-btn guest-disabled" data-bs-keyboard="false" data-bs-backdrop="static" data-bs-toggle="modal"
+                    data-bs-target="#threadModal">
+              <i class="fa-solid fa-pen-to-square"></i>
+              New Topic
+            </button>
+          </div>
+          <!--}
+        else
+        {-->
+          <!--<div class="col-2">
+          <a href="" class="btn card-body new-thread-btn guest-disabled disabled" role="button"
+             aria-disabled="true" data-bs-toggle="tooltip" title="Make a new thread">
+            <i class="fa-solid fa-pen-to-square"></i>
+            New Thread
+          </a>
+        </div>-->
+          <!--}
+        }-->
+        </div>
+
+        <!--End of Subforum Banner-->
+        <!--Subforum Content-->
+        <div>
+          <!--THIS PART WILL BE IMPLEMENTED BY THE FRAMEWORK USING THE DATABASE INSTEAD OF MANUALLY-->
+          <ul>
+            <!--LEGEND-->
+            <li>
+              <div class="row" id="subforum-header">
+                <div class="col-1 subforum-title-container hidden-mobile">
+                  <p>
+                    Status
+                  </p>
+                </div>
+                <div class="col-9 col-md-7 subforum-title-container">
+                  <p class="align-left">
+                    Title
+                  </p>
+                </div>
+                <div class="col-1 subforum-title-container hidden-mobile">
+                  <p>
+                    Replies
+                  </p>
+                </div>
+                <div class="col-3 subforum-title-container" id="lastPost">
+                  <p>
+                    Last Post
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <!--Load the threads, 10 threads per page-->
+            <div *ngIf="orderedThreads.length > 0">
+              <div class="tab-content">
+                <div *ngFor="let page of [].constructor(totalPages); let i = index" class="tab-pane" [ngClass]="{'active': i + 1 === currentPage}" id="tab-{{i + 1}}">
+                  <ng-container *ngFor="let thread of getThreadsForCurrentPage(); let isLast = last">
+                    <app-thread [thread]="thread" [isLast]="isLast"></app-thread>
+                  </ng-container>
+                </div>
+              </div>
+
+            </div>
+            <!--}-->
+          </ul>
+        </div>
+        <!--End of Subforum Content-->
+      </div>
+    </section>
+
+
+
+    <!--Go back to thread list-->
+    <div class="pager-container topic-listing-link">
+      <a [routerLink]="['/']" class="">
+        <i class="fa-solid fa-chevron-left"></i> Go back to forum listing
+      </a>
+    </div>
+
+    <!-- New Thread Modal -->
+    <div class="modal fade" id="threadModal" tabindex="-1" aria-labelledby="threadModalLabel" aria-hidden="true" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 modal-font" id="threadModalLabel">Create a new topic</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <app-new-thread-form [subforumId]="subforum?.SubforumId"></app-new-thread-form>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+</div>
+

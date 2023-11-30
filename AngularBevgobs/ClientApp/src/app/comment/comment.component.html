@@ -1,0 +1,204 @@
+<!--Post start-->
+<article class="background-white card post-container" id="comment-{{comment?.CommentId}}">
+
+  <div class="row mlr-12">
+    <!--Side content (Author, image, info)-->
+    <div class="aside-post hidden-mobile col-md-2">
+
+      <h3 class="aside-user-style mb-4">
+        <!--Choosing class for color based on rank-->
+        <ng-container>
+          <a href="#" title="Go to User Profile"
+             [ngClass]="{
+              'adminTitle': author?.Rank === 'Admin',
+              'modTitle': author?.Rank === 'Mod',
+              'memberTitle': author?.Rank !== 'Admin' && author?.Rank !== 'Mod'
+               }">
+            {{ author?.Username }}
+          </a>
+        </ng-container>
+      </h3>
+
+      <ul>
+        <li>
+          <a href="#" class="aside-user-photo-container" title="Go to profile">
+            <!-- If user photo exists, display it -->
+            <img *ngIf="author?.UserPhoto" [src]="'data:image/png;base64,' + author?.UserPhoto" alt="Profile Picture" class="img-avatar">
+            <!-- Display default profile picture if no user photo exists -->
+            <i *ngIf="!author?.UserPhoto" class="fa-regular fa-circle-user aside-user-photo"></i>
+          </a>
+        </li>
+
+        <li class="margin-bt-20">
+          <span class="aside-member-title">{{author?.Rank}}</span>
+        </li>
+        <li class="aside-left-align">
+          <span class="aside-subtitle">Posts: {{author?.UserComments?.length}}</span>
+
+        </li>
+        <li class="aside-left-align">
+          <ng-container *ngIf="author?.CreatedAt != null">
+            <span class="aside-subtitle">Joined: <time>{{authorJoinDate}}</time> </span>
+          </ng-container>
+        </li>
+      </ul>
+    </div>
+    <!--End of side content-->
+
+    <!--Main Content-->
+    <div class="col-12 col-md-10 post-top">
+      <!--Top of Post (Title, date, buttons)-->
+      <div>
+        <div class="dropdown-center">
+          <!--Ellipsis-->
+          <a href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-ellipsis ellipsis"></i>
+          </a>
+
+          <ul class="dropdown-menu">
+            <li>
+              <a href="#" class="dropdown-item" data-bs-toggle="modal"
+                 data-bs-target="#shareModal-" data-bs-id="">
+                <i class="fa-solid fa-share-nodes padding-right-icon"></i>
+                Share
+              </a>
+            </li>
+            <li>
+              <ng-container *ngIf="userDataLoaded">
+                <ng-container *ngIf="isAuthenticated">
+                  <ng-container *ngIf="isAuthorOrMod">
+                    <button class="dropdown-item" id="editBtn-{{comment?.CommentId}}" (click)="editComment(comment?.CommentId)">
+                      <i class="fa-solid fa-pen padding-right-icon"></i>
+                      Edit
+                    </button>
+                    <a href="" class="dropdown-item" data-bs-toggle="modal"
+                       [attr.data-bs-target]="'#deleteModal-' + comment?.CommentId" [attr.data-bs-id]="comment?.CommentId">
+                      <i class="fa-solid fa-eraser padding-right-icon"></i>
+                      Delete
+                    </a>
+                  </ng-container>
+                </ng-container>
+              </ng-container>
+            </li>
+          </ul>
+        </div>
+        <!-- Only for mobile -->
+        <div class="only-mobile">
+
+          <div class="post-top-user-photo-automargin">
+            <a href="#" class="post-top-user-photo-container" title="Go to profile">
+              <!-- If user photo exists, display it -->
+              <img *ngIf="author?.UserPhoto" [src]="'data:image/png;base64,' + author?.UserPhoto" alt="Profile Picture" class="img-avatar">
+              <!-- Display default profile picture if no user photo exists -->
+              <i *ngIf="!author?.UserPhoto" class="fa-circle-user aside-user-photo"></i>
+            </a>
+          </div>
+
+          <div>
+            <h4 class="post-top-title">
+              <ng-container *ngIf="comment?.UserId">
+                <a href="#" title="Go to User Profile" class="user-link"
+                   [ngClass]="{
+                    'adminTitle': author?.Rank === 'Admin',
+                    'modTitle': author?.Rank === 'Mod',
+                    'memberTitle': author?.Rank !== 'Admin' && author?.Rank !== 'Mod'
+                     }">
+                  {{ author?.Username }}
+                </a>
+              </ng-container>
+            </h4>
+
+            <a href="#comment-{{comment?.CommentId}}" class="post-top-subtitle" title="Jump to comment">
+              Posted <time>{{getFormattedDate()}}</time>
+            </a>
+          </div>
+        </div>
+
+        <!-- For regular display -->
+        <a [href]="'/thread/' + comment?.ThreadId + '#comment-' + comment?.CommentId" title="Jump to comment">
+          <h4 class="post-top-title hidden-mobile">{{commentTitle}}</h4>
+        </a>
+        <a [href]="'/thread/' + comment?.ThreadId + '#comment-' + comment?.CommentId" class="post-top-subtitle" title="Jump to comment">
+  Posted <time>{{getFormattedDate()}}</time>
+</a>
+
+      </div>
+
+      <!--Body of Post-->
+      <form [formGroup]="commentForm" (ngSubmit)="onSubmit()" class="mb-3">
+        <div class="post-body">
+          <p #commentBody id="comment-{{comment?.CommentId}}-body" [attr.contenteditable]="isEditing ? 'true' : 'false'" class="prevent-blur" *ngIf="!isEditing">
+            {{comment?.Body}}
+          </p>
+          <textarea class="form-control mt-4" id="comment-editable-{{comment?.CommentId}}-body" cols="30" rows="4"
+                    placeholder="{{comment?.Body}}" formControlName="Body" *ngIf="isEditing"> </textarea>
+          <div *ngIf="commentForm.get('Body')?.invalid && commentForm.get('Body')?.touched" class="text-danger m-2-5">
+            Comment is required.
+          </div>
+          <span class="text-danger m-2-5"></span>
+        </div>
+
+        <button *ngIf="isEditing" type="submit" class="std-pink-btn mr-3" id="save-comment-{{comment?.CommentId}}">
+          Save changes
+        </button>
+
+        <button *ngIf="isEditing" class="std-purple-btn" id="cancel-save-{{comment?.CommentId}}" (click)="cancelEditing()">
+          Cancel
+        </button>
+      </form>
+
+    </div>
+
+  </div>
+  <!--End of Main Content-->
+
+</article>
+<!--End of Post Content-->
+
+<!-- Sharing Modal -->
+<div class="modal fade" id="shareModal-{{comment?.CommentId}}" tabindex="-1" aria-labelledby="shareModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 modal-font" id="shareModalLabel">Share this post!</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h5 class="modal-subtitle">Link to this comment:</h5>
+        <input type="text" class="share-input" id="comment-id" value="">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Deleting Modal -->
+<div class="modal fade" id="deleteModal-{{comment?.CommentId}}" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header fd-column">
+        <div>
+          <span class="circle-icon">
+            <i class="fa-solid fa-triangle-exclamation fa-2xl"></i>
+          </span>
+
+        </div>
+        <div>
+          <h1 class="modal-title fs-5 modal-font" id="deleteModalLabel">Are you sure?</h1>
+
+        </div>
+      </div>
+      <div class="modal-body text-center">
+        <h2 class="modal-subtitle mt-2">This action cannot be undone.</h2>
+        <h3 class="modal-subtitle mb-5">The content of your comment (Id #{{comment?.CommentId}}) will be lost forever.</h3>
+
+
+        <div>
+           <button type="submit" class="mb-3 std-pink-btn w-75" (click)="deleteComment(comment?.CommentId)">Delete</button>
+        </div>
+        <div>
+          <button type="button" class="mb-4 std-purple-btn w-75" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

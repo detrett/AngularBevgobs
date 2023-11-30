@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col" id="title">
+    <h1 class="title-font">Forums</h1>
+  </div>
+</div>
+
+<!--Start of Forums Container (Forum Title + Subforum List + Collapsible Button)-->
+<!--Load each forum in the model-->
+<section class="forum-container" *ngFor="let forum of forums">
+
+  <!--Forum Header-->
+  <div class="bg-gradient row" aria-expanded="true">
+
+    <h2 class="col-6 list-title-font">{{ forum.Name }}</h2>
+
+    <a class="col-6"
+       data-bs-toggle="collapse"
+       [attr.data-bs-target]="'#collapseContent-' + forum.ForumId"
+       [id]="'collapseBtn-' + forum.ForumId" role="button"
+       aria-expanded="true">
+      <i class="fa-solid fa-minus icon-right"></i>
+      <i class="fa-solid fa-plus icon-right"></i>
+    </a>
+
+    <div class="collapse show" [id]="'collapseContent-' + forum.ForumId">
+
+      <ul class="mb-0">
+        <li *ngFor="let subforum of forum.Subforums; let isLast = last">
+          <app-subforum [subforum]="subforum" [isLast]="isLast"></app-subforum>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+</section>

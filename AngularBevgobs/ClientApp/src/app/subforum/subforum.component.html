@@ -1,0 +1,81 @@
+<!--MISSING: Background color, round bottom-->
+<div class="row std-height"
+     [ngClass]="setClasses()">
+  <!--Bubble icon-->
+  <div class="col-1 icon-container hidden-mobile">
+    <!--(click)="goToSubforum(subforum.SubforumId)"-->
+    <a title="Go to Subforum" [routerLink]="['/subforums']">
+      <i class="fa-regular fa-message fa-2xl" style="color: #2d293c;"></i>
+    </a>
+  </div>
+
+  <!--Forum title + description -->
+  <div class="col-9 col-md-4 forum-title-container-sm">
+    <a class="forum-title-font std-link" [routerLink]="['/subforum', subforum?.SubforumId]" title="Go to {{ subforum?.Name }}">{{ subforum?.Name }}</a>
+
+    <p class="margin-bt-12">
+      {{ subforum?.Description }}
+    </p>
+  </div>
+
+  <div class="col-2 icon-container">
+    <ul>
+      <!--Last poster user picture-->
+      <li>
+        <!--This would lead you to a user's profile-->
+        <a href="#" title="Go to User Profile">
+          <!--@{
+          if (trueLastComment.User.UserPhoto != null)
+          {
+          var base64Image = Convert.ToBase64String(trueLastComment.User.UserPhoto);
+          var source = String.Format("data:image/png;base64,{0}", base64Image);
+          <div class="useravatar-container">
+            <img src="@source" alt="Profile Picture" class="img-avatar">
+          </div>
+          }
+          else
+          {-->
+          <div class="usericon-container">
+            <i class="fa-regular fa-circle-user fa-2xl"></i>
+          </div>
+        </a>
+      </li>
+      <!-- Only for mobile viewing : date of last post -->
+      <li class="only-mobile">
+        <p class="date-font">
+          {{ getFormattedDate() }}
+        </p>
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-md-5 forum-title-container-sm hidden-mobile">
+    <!--Last post thread title-->
+    <a *ngIf="lastComment" class="thread-title-font-lg" title="Go to Thread">
+      <ng-container *ngFor="let thread of subforum?.Threads">
+        <ng-container *ngIf="thread.ThreadId === lastComment?.ThreadId">
+          {{ thread.Name }}
+        </ng-container>
+      </ng-container>
+    </a>
+
+    <!--Last post username and date-->
+    <p class="std-subtitle-font">
+      By
+
+      <ng-container *ngIf="lastComment?.UserId">
+        <a href="#" title="Go to User Profile"
+           [ngClass]="{
+     'adminTitle': lastUser?.Rank === 'Admin',
+     'modTitle': lastUser?.Rank === 'Mod',
+     'memberTitle': lastUser?.Rank !== 'Admin' && lastUser?.Rank !== 'Mod'
+      }">
+          {{ lastUser?.Username }}
+        </a>
+      </ng-container>
+
+      {{ getFormattedDate() }}
+
+    </p>
+  </div>
+</div>

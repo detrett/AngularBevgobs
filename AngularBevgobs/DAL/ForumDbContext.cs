@@ -17,8 +17,7 @@ namespace AngularBevgobs.DAL
         public DbSet<Subforum> Subforums { get; set; }
         public DbSet<Models.Thread> Threads { get; set; }
         public DbSet<Comment> Comments { get; set; }
-        // Removed the DbSet<ApplicationUser> Users line because IdentityDbContext already provides this
-
+        
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseLazyLoadingProxies();

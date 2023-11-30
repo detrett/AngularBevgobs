@@ -30,9 +30,9 @@ a {
   text-decoration: none;
 }
 
-  a:hover {
-    color: white;
-  }
+a:hover {
+  color: white;
+}
 
   a[aria-expanded=true] .fa-plus {
     display: none;
@@ -42,6 +42,43 @@ a {
     display: none;
   }
 
+.adminTitle {
+  font-weight: 700;
+  color: #285de5;
+}
+
+a.adminTitle:hover {
+  color: #171717;
+  font-weight: 800;
+}
+
+.modTitle {
+  font-weight: 600;
+  color: #b00000;
+}
+
+a.modTitle:hover {
+  font-weight: 700;
+  color: #171717;
+}
+
+.memberTitle {
+  font-weight: 400;
+  color: #433B60;
+}
+
+a.memberTitle:hover {
+  font-weight: 600;
+  color: #171717;
+}
+
+.background-dark {
+  background-color: #ecebd9;
+}
+
+.background-light {
+  background-color: #FFFEEB;
+}
 
 .box {
   margin-top: 80px;
@@ -79,12 +116,36 @@ a {
   transform: scaleX(-1);
 }
 
+.breadcrumb {
+  margin-bottom: 0;
+}
+
+.breadcrumb-item:hover a {
+  color: #F83A5B;
+}
+
+.card-body {
+  padding-bottom: 2px;
+}
+
+.flex-2 {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+#footer {
+  margin-top: 75px;
+  box-shadow: 0 0 4px 1px #FFFEEB, 0 0 6px 2px #f9a3b2;
+}
+
 header > div {
   background: repeating-linear-gradient(-55deg, #2d293c40, #2d293c40 0px, #2d293c 10px, #2d293c 20px);
   display: flex;
   justify-content: center;
   margin: 80px 0px;
 }
+
 
 .logo {
   align-items: center;
@@ -185,7 +246,7 @@ header > div {
   background-color: #fc375c;
   border-radius: 5px;
   border: 1px solid #c12367;
-  box-shadow: var(--box--std-box-shadow);
+  box-shadow: 0px 5px 6px -2px rgba(0, 0, 0, 0.75);
   display: inline-block;
   cursor: pointer;
   color: #ffffff;
@@ -195,25 +256,24 @@ header > div {
   text-decoration: none;
   text-shadow: 0px 1px 0px #2d293c;
   width: 150px;
+}
 
-  &:hover  {
+.std-pink-btn:hover {
   background-color: #ba2b45;
   transform: translateY(1px);
   transition: transform 0.1s ease;
-  }
+}
 
-  &:active {
+.std-pink-btn:active {
   position: relative;
   top: 1px;
-  } 
-
 }
 
 .std-purple-btn {
   background-color: #433b60;
   border-radius: 5px;
   border: 1px solid #2d293c;
-  box-shadow: var(--box--std-box-shadow);
+  box-shadow: 0px 5px 6px -2px rgba(0, 0, 0, 0.75);
   display: inline-block;
   cursor: pointer;
   color: #ffffff;
@@ -246,11 +306,136 @@ header > div {
     text-align: center;
 }
 
+.user-link {
+  color: #505050;
+  font-weight: 600;
+}
 
-/* MEDIA */
+.user-link:hover, .lighter-link:hover, .std-link:hover {
+  color: #F83A5B;
+}
+
+/**************************************************************************************************/
+/** Media dependent attributes **/
+
+/* FROM XS TO M */
+@media only screen and (max-width: 767px) {
+  .border-md {
+    border-top: 1px solid #1D1D1D;
+  }
+
+  .centered-sm {
+    text-align: center;
+  }
+
+  .forum-title-container-sm {
+    margin-left: 25px;
+  }
+
+  .hidden-mobile {
+    display: none;
+  }
+
+  .icon-container {
+    align-items: flex-end;
+  }
+
+  .last-poster-icon {
+    padding-bottom: 10px;
+  }
+
+  .only-mobile {
+    display: flex;
+  }
+
+  #buttonPanel {
+    margin-bottom: 18px;
+  }
+
+  #userPanel {
+    padding: 18px 0px !important;
+    justify-content: space-evenly;
+    margin: 0 0 18px 0 !important;
+  }
+
+  #userWelcome {
+    display: none;
+  }
+}
+
 /* FROM S TO XL */
 @media only screen and (min-width: 576px) {
   .banner {
     padding: 0px 100px;
   }
+}
+
+/* FROM M TO XL */
+@media only screen and (min-width: 768px) {
+  .border-md {
+    border-left: 1px solid #1D1D1D;
+  }
+
+  .col-2.icon-container {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}
+
+/* FROM M TO L*/
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+  #registerBtn {
+    width: 90px;
+  }
+
+  #signInBtn {
+    width: 90px;
+  }
+
+  #userWelcome {
+    display: none;
+  }
+}
+
+.round-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#userPanel {
+  background-color: #fff3f3;
+  border: 1px solid #ff9797;
+  border-radius: 0.35rem;
+}
+
+.flex-1 {
+  display: flex;
+  flex-direction: row;
+}
+
+.user-picture-container-header {
+  height: 80px;
+  width: 80px;
+  padding: 0px;
+  border: 2px solid #2d293c80;
+  border-radius: 0.35em;
+  margin: auto;
+  & img
+
+{
+  height: 100%;
+  width: 100%;
+}
+
+}
+
+#banner-user-options {
+  display: flex;
+}
+
+.lighter-link {
+  color: #505050;
+  font-weight: 600;
 }

@@ -1,0 +1,214 @@
+<!-- MAIN CONTENT -->
+<div class="banner clearfix container-fluid">
+
+  <!-- START OF BANNER (Welcome + Log In/ Sign In + User Icon (After Log In) + Breadcrumbs) -->
+  <div class="background-light card flex-1 row" id="banner">
+
+    <!--Welcome message-->
+    <div class="col-md-6 banner-message">
+      <p class="header-font">
+        Welcome to the Beverage Goblins online community.
+        <br> A place to discuss all things related to drinks with other people that share your enthusiasm
+        for beverages.
+      </p>
+    </div>
+
+    <!--Member only - Member panel-->
+    <!-- Member only - Member panel -->
+    <div *ngIf="isAuthenticated" class="m-1 col-md-5 member-only flex-1" id="userPanel">
+      <!-- User picture -->
+      <div class="user-picture-container-header">
+        <a title="Go to profile">
+          <!-- If user photo exists, display it -->
+          <img *ngIf="currentUser?.UserPhoto" [src]="'data:image/png;base64,' + currentUser.UserPhoto" alt="Profile Picture" class="img-thumbnail">
+          <!-- If user photo URL exists, display it -->
+          <img *ngIf="currentUser?.UserPhotoUrl" [src]="currentUser.UserPhotoUrl" alt="Profile Picture" class="img-thumbnail">
+          <!-- Display default profile picture if no user photo exists -->
+          <img *ngIf="!currentUser?.UserPhoto" src="assets/images/defaultuser.png" alt="Profile Picture" class="img-thumbnail">
+
+        </a>
+      </div>
+      <!-- User welcome -->
+      <div *ngIf="currentUser" class="m-auto text-center" id="userWelcome">
+        <span class="p-1">
+          <em>Welcome, <span class="userTitle">{{ currentUser?.Username }}</span>!</em>
+        </span>
+      </div>
+
+
+      <div class="m-auto" id="banner-user-options">
+
+        <div class="p-2">
+
+          <!--Profile-->
+          <div class="p-1">
+            <a title="Go to profile" class="lighter-link" asp-area="Identity" asp-page="/Account/Manage/Index">
+              <i class="fa-solid fa-user"></i>
+              My Profile
+            </a>
+          </div>
+          <!--Settings-->
+          <div class="p-1">
+            <a title="Edit your profile" class="lighter-link" asp-area="Identity" asp-page="/Account/Manage/Index">
+              <i class="fa-solid fa-gear"></i>
+              Settings
+            </a>
+          </div>
+        </div>
+
+        <div class="p-2">
+
+          <!--Inbox-->
+          <div class="p-1">
+            <a href="#" title="Go to inbox" class="lighter-link">
+              <i class="fa-solid fa-inbox"></i>
+              Inbox
+            </a>
+          </div>
+          <!--Sign Out-->
+          <div class="p-1">
+            <a title="Sign Out" class="lighter-link" (click)="logout()">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              Sign Out
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <!-- Guest only -->
+    <div *ngIf="!isAuthenticated" class="col-md-4 text-justify guest-only" id="buttonPanel">
+      <span class=""><a [routerLink]="['/register']" class="card-body std-pink-btn" id="registerBtn">Register</a></span>
+      <span class=""><a [routerLink]="['/login']" class="card-body std-purple-btn" id="signInBtn">Sign In</a></span>
+    </div>
+
+    <div class="background-dark card-footer justify-content-start">
+
+      <div class="col-md">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">Board Index</li>
+          </ol>
+        </nav>
+      </div>
+
+    </div>
+
+  </div>
+
+  <main role="main" class="pb-3">
+    <!--Subforum Title-->
+    <div class="row">
+      <div class="col" id="title">
+        <h1 class="title-font">{{thread?.Name}}</h1>
+      </div>
+    </div>
+
+    <!--Go back to thread list-->
+    <div class="pager-container topic-listing-link mt-4">
+      <a [routerLink]="['/subforum', thread?.SubforumId]">
+        <i class="fa-solid fa-chevron-left"></i> Go back to topic listing
+      </a>
+    </div>
+
+    <!--Start of Thread Container-->
+    <section class="">
+      <div class="thread-container background-dark card row">
+
+        <!--Thread title-->
+        <div class="d-inline-flex">
+          <h2 class="thread-page-title">{{thread?.Name}}</h2>
+          <ng-container *ngIf="isAuthenticated">
+            <ng-container *ngIf="isAuthorOrMod">
+              <button type="button" class="btn card-body std-purple-btn" data-bs-keyboard="false" data-bs-backdrop="static" data-bs-toggle="modal"
+                      data-bs-target="#editThread" id="editThreadBtn">
+                <i class="fa-solid fa-file-pen"></i>
+                Edit Topic
+              </button>
+
+              <button type="button" class="btn card-body std-pink-btn" data-bs-keyboard="false" data-bs-backdrop="static" data-bs-toggle="modal"
+                      data-bs-target="#deleteThread" id="deleteThreadBtn">
+                <i class="fa-solid fa-trash"></i>
+                Delete
+              </button>
+            </ng-container>
+          </ng-container>
+        </div>
+
+        <ng-container *ngFor="let comment of thread?.Comments">
+          <app-comment [comment]="comment" class="padding-0"></app-comment>
+        </ng-container>
+
+        <ng-container *ngIf="isAuthenticated">
+          <app-comment-box [threadId]="thread?.ThreadId"></app-comment-box>
+        </ng-container>
+
+        <ng-container *ngIf="!isAuthenticated">
+          <section class="teaser-background card comment-container guest-only">
+            <app-guest-teaser></app-guest-teaser>
+          </section>
+        </ng-container>
+
+        <!--end of guest teaser (guest only)-->
+
+      </div>
+    </section>
+    <!--End of Thread Container-->
+    <!--Go back to thread list-->
+    <div class="pager-container topic-listing-link">
+      <a [routerLink]="['/subforum', thread?.SubforumId]">
+        <i class="fa-solid fa-chevron-left"></i> Go back to topic listing
+      </a>
+    </div>
+
+    <!-- Edit Thread Modal -->
+    <!--<div class="modal fade" id="editThread" tabindex="-1" aria-labelledby="editThreadLabel" aria-hidden="true" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 modal-font" id="editThreadLabel">Edit topic</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          @{
+          var editThread = Model;
+          }
+          @await Html.PartialAsync("_EditThreadModal", @editThread);
+
+        </div>
+      </div>
+    </div>-->
+    <!-- Deleting thread Modal -->
+    <!--<div class="modal fade" id="deleteThread" tabindex="-1" aria-labelledby="deleteThreadLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header fd-column">
+            <div>
+              <span class="circle-icon">
+                <i class="fa-solid fa-triangle-exclamation fa-2xl"></i>
+              </span>
+
+            </div>
+            <div>
+              <h1 class="modal-title fs-5 modal-font" id="deleteModalLabel">Are you sure?</h1>
+
+            </div>
+          </div>
+          <div class="modal-body text-center">
+            <h2 class="modal-subtitle mt-2">This action cannot be undone.</h2>
+            <h3 class="modal-subtitle mb-5">The content of your topic: <i>"@Model.Name"</i> will be lost forever.</h3>
+
+
+            <div>
+              <form asp-controller="Thread" asp-action="DeleteConfirmed" asp-route-id="@Model.ThreadId" method="post">
+                <button type="submit" class="mb-3 std-pink-btn w-75">Delete</button>
+              </form>
+            </div>
+            <div>
+              <button type="button" class="mb-4 std-purple-btn w-75" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>-->
+  </main>

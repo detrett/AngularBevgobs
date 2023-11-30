@@ -1,23 +1,26 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { ForumComponent } from './forum/forum.component';
+import { SubforumContainerComponent } from './subforum/subforum-container.component';
+import { ThreadContainerComponent } from './thread/thread-container.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { UserSettingsComponent } from './user-settings/user-settings.component';
 
-import { HomeComponent } from './components/home/home.component';
-import { LoginComponent } from './components/auth/login/login.component';
-import { RegistrationComponent } from './components/auth/registration/register.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent, pathMatch: 'full' },
+  { path: 'forums', component: ForumComponent },
+  { path: 'subforum/:id', component: SubforumContainerComponent },
+  { path: 'thread/:id', component: ThreadContainerComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegistrationComponent },
-  {
-    path: 'forums',
-    loadChildren: () => import('./components/forum/forums.module').then((m) => m.ForumsModule),
-  },
-  { path: '**', redirectTo: '' }, // Redirect unknown routes to the home page
+  { path: 'register', component: RegisterComponent },
+  { path: 'user-settings', component: UserSettingsComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

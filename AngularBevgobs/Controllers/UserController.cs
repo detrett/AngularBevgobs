@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics.Metrics;
 using System.Reflection.Metadata;
 using System.Runtime.InteropServices;
+using Microsoft.AspNetCore.Identity;
+using AngularBevgobs.Models.DTOs;
+
 
 
 namespace AngularBevgobs.Controllers
@@ -17,11 +20,16 @@ namespace AngularBevgobs.Controllers
         // Injecting the Subforum's Repository
         private readonly IUserRepository _userRepository;
         private readonly ILogger<UserController> _logger;
+        private readonly IPasswordHasher<ApplicationUser> _passwordHasher;
 
-        public UserController(IUserRepository userRepository, ILogger<UserController> logger)
+        public UserController(
+            IUserRepository userRepository,
+            ILogger<UserController> logger,
+            IPasswordHasher<ApplicationUser> passwordHasher)
         {
             _userRepository = userRepository;
             _logger = logger;
+            _passwordHasher = passwordHasher;
         }
 
         // CRUD
@@ -63,33 +71,61 @@ namespace AngularBevgobs.Controllers
                 _logger.LogError("[UserController] User not found while executing Details()");
                 return BadRequest("User not found.");
             }
-
-            return Ok(user);
+            Console.WriteLine("[UserController] Data Retrieval OK while executing Get(id)");
+            var userDTO = MapToDTO(user);
+            return Ok(userDTO);
         }
 
         // UPDATE
         // Inject updated data into the DB
         [HttpPut("update/{id}")]
-        public async Task<IActionResult> Update(ApplicationUser applicationUser)
+        public async Task<IActionResult> Update(int id, [FromForm] UpdateUserDTO updatedUser)
         {
-            if(applicationUser == null)
+            _logger.LogInformation($"Attempting to update user with ID: {id}");
+
+            var existingUser = await _userRepository.GetUserById(id);
+            if (existingUser == null)
             {
-                return BadRequest("Invalid user data.");
+                _logger.LogError($"User not found for updating with id {id}");
+                return NotFound("User not found.");
             }
-            bool returnOk = await _userRepository.Update(applicationUser);
-            
-            if (returnOk)
+
+            // Check if updated fields are provided and update accordingly
+            if (!string.IsNullOrWhiteSpace(updatedUser.Username))
             {
-                var response = new { success = true, message = "User " + applicationUser.Id + " updated successfully" };
-                return Ok(response);
+                existingUser.UserName = updatedUser.Username;
             }
-            else
+
+            if (!string.IsNullOrWhiteSpace(updatedUser.Email))
             {
-                _logger.LogError("[UserController] User could not be updated");
-                var response = new { success = false, message = "User " + applicationUser.Id + " failed to update" };
-                return Ok(response);
+                existingUser.Email = updatedUser.Email;
             }
+
+            if (!string.IsNullOrWhiteSpace(updatedUser.Password))
+            {
+                existingUser.PasswordHash = _passwordHasher.HashPassword(existingUser, updatedUser.Password);
+            }
+
+            if (updatedUser.ProfilePicture != null)
+            {
+                using var memoryStream = new MemoryStream();
+                await updatedUser.ProfilePicture.CopyToAsync(memoryStream);
+                existingUser.UserPhoto = memoryStream.ToArray();
+            }
+
+            var result = await _userRepository.Update(existingUser);
+            if (!result)
+            {
+                _logger.LogError($"Failed to update user with id {id}");
+                return BadRequest("User update failed.");
+            }
+
+            return Ok(new { success = true, message = "User updated successfully" });
         }
+
+
+
+
 
         // DELETE
         // Return a Forum object based on its id
@@ -106,6 +142,57 @@ namespace AngularBevgobs.Controllers
             return Ok(response);
 
         }
+        
+        [HttpGet("check-username")]
+        public async Task<IActionResult> CheckUsernameAvailability(string username)
+        {
+            bool exists = await _userRepository.DoesUsernameExist(username);
+            return Ok(!exists); 
+        }
 
+        public static UserDTO MapToDTO(ApplicationUser u)
+        {
+            var userDTO = new UserDTO
+            {
+                CreatedAt = u.CreatedAt,
+                Username = u.UserName,
+                Rank = u.Rank,
+                UserPhoto = u.UserPhoto,
+                Threads = u.Threads.Select(t => new ThreadDTO
+                {
+                    ThreadId = t.ThreadId,
+                    UserId = t.UserId,
+                    Name = t.Name,
+                    CreatedAt = t.CreatedAt,
+                    Description = t.Description,
+                    ParentId = t.SubforumId,
+                    IsLocked = t.IsLocked,
+                    IsAnnouncement = t.IsAnnouncement,
+                    IsPinned = t.IsPinned,
+                    IsFeatured = t.IsFeatured,
+                    Comments = t.Comments?.Select(c => new CommentDTO
+                    {
+                        CommentId = c.CommentId,
+                        ThreadId = c.ThreadId,
+                        UserId = c.UserId,
+                        Title = c.Title,
+                        Body = c.Body,
+                        CreatedAt = c.CreatedAt,
+
+                    }).ToList()
+                }).ToList(),
+                UserComments = u.UserComments.Select(c => new CommentDTO
+                {
+                    CommentId = c.CommentId,
+                    ThreadId = c.ThreadId,
+                    UserId = c.UserId,
+                    Title = c.Title,
+                    Body = c.Body,
+                    CreatedAt = c.CreatedAt,
+                }).ToList()
+            };
+            return userDTO;
+        }
+        
     }
 }
