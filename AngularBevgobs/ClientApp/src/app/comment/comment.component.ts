@@ -82,29 +82,29 @@ export class CommentComponent implements OnInit, AfterViewInit {
   }
 
   getFormattedDate(): string {
-
     console.log("Comment Component: getFormattedDate()");
     console.log("Last comment ID: " + this.comment?.CreatedAt);
 
     if (!this.comment?.CreatedAt) {
-      return "Undefined date"
+      return "Undefined date";
     } else {
-      const createdDate = new Date(this.comment?.CreatedAt);
-
+      const createdDate = new Date(this.comment.CreatedAt);
       const now = new Date();
       const ts = now.getTime() - createdDate.getTime();
       const minutes = Math.floor(ts / 60000);
       const hours = Math.floor(ts / 3600000);
       const days = Math.floor(ts / (3600000 * 24));
 
-      if (minutes < 2) return '1 minute ago';
-      if (hours < 1) return `${minutes} minutes ago`;
-      if (days < 1) return hours >= 2 ? `${hours} hours ago` : '1 hour ago';
-      if (days < 2) return 'yesterday';
-      if (days < 5) return `on ${createdDate.getDay()}`;
-      return `on ${createdDate.toLocaleDateString('en-UK', { day: 'numeric', month: 'long' })}`;
+      if (minutes < 1) return 'Just now';
+      if (minutes < 60) return `${minutes} minutes ago`;
+      if (hours < 24) return hours === 1 ? '1 hour ago' : `${hours} hours ago`;
+      if (days === 1) return 'Yesterday';
+      if (days < 5) return `${days} days ago`;
+      return createdDate.toLocaleDateString('en-UK', { day: 'numeric', month: 'long', year: 'numeric' });
     }
   }
+
+
 
   get authorJoinDate() {
     if (!this.author?.CreatedAt) {
@@ -142,10 +142,18 @@ export class CommentComponent implements OnInit, AfterViewInit {
 
   editComment(btn_id: number | undefined) {
     console.log("Comment Component: editComment()");
-    if (this.comment?.Body != null && btn_id != undefined) {
+    if (this.comment?.Body != null && btn_id != undefined && this.comment?.CommentId != null) {
       this.previousComment = this.comment.Body;
       this.editingContent = this.comment.Body; // Temporary variable for editing
       this.isEditing = true;
+      this.commentForm.patchValue({
+        Title: this.comment?.Title,
+        Body: this.comment?.Body,
+        ThreadId: this.comment?.ThreadId,
+        UserId: this.comment?.UserId,
+        CreatedAt: this.comment?.CreatedAt,
+        CommentId: this.comment?.CommentId // Ensure the comment ID is in the form
+      });
 
       setTimeout(() => {
         const commentBody = document.getElementById(`comment-editable-${btn_id}-body`);
@@ -156,36 +164,34 @@ export class CommentComponent implements OnInit, AfterViewInit {
 
   onSubmit() {
     console.log("Comment Component: onSubmit()");
-    this.isEditing = false;
-    console.log(this.commentForm);
-    var newComment = this.commentForm.value;
 
-    if (this.comment?.CommentId != null) {
-      this._commentService.getCommentById(this.comment?.CommentId)
+    if (this.isEditing && this.comment?.CommentId != null) {
+      var updatedComment = {
+        CommentId: this.comment.CommentId,
+        Title: this.commentForm.get('Title')?.value || this.comment.Title,
+        Body: this.commentForm.get('Body')?.value,
+        ThreadId: this.comment.ThreadId,
+        UserId: this.comment.UserId,
+        CreatedAt: this.comment.CreatedAt
+      };
+
+      this._commentService.updateComment(this.comment.CommentId, updatedComment)
         .subscribe(
-          (comment: any) => {
-            console.log('Retrieved comment: ', comment);
-            this.commentForm.patchValue({
-              Title: comment.Title,
-              Body: newComment.Body,
-              ThreadId: comment.ThreadId,
-              UserId: comment.UserId,
-              CreatedAt: comment.CreatedAt
-            });
-            newComment = this.commentForm.value;
-            this._commentService.updateComment(newComment.CommentId, newComment)
-              .subscribe(response => {
-                if (response.success) {
-                  console.log(response.message);
-                  window.location.reload();
-                }
-              })
+          (response) => {
+            if (response.success) {
+              console.log(response.message);
+              window.location.reload();
+            }
           },
-          (error: any) => {
-            console.error('Error loading item for edit:', error);
+          (error) => {
+            console.error('Error updating comment:', error);
           });
+      this.isEditing = false;
+    } else {
+      console.error("No comment is being edited or comment ID is missing");
     }
   }
+
 
   cancelEditing() {
     console.log("Comment Component: cancelEditing()");
